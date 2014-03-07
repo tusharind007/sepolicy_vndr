@@ -7,4 +7,5 @@ BOARD_SEPOLICY_UNION := \
        file_contexts \
        file.te \
        device.te \
-       vold.te
+       vold.te \
+       file.te
