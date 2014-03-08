@@ -1,0 +1,1 @@
+type sysrq_trigger_proc, fs_type, mlstrustedobject;
