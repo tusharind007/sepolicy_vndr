@@ -9,4 +9,5 @@ BOARD_SEPOLICY_UNION := \
        device.te \
        vold.te \
        file.te \
-       netd.te
+       netd.te \
+       ppp.te
