@@ -1,6 +1,6 @@
 # Board specific SELinux policy variable definitions
 BOARD_SEPOLICY_DIRS := \
-       device/qcom/sepolicy
+        device/qcom/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        genfs_contexts \
@@ -9,4 +9,8 @@ BOARD_SEPOLICY_UNION := \
        device.te \
        vold.te \
        file.te \
-       netd.te
+       netd.te \
+       bluetooth.te \
+       ueventd.te \
+
+-include $(QCPATH)/common/sepolicy/Android.mk

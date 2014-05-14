@@ -1,5 +1,12 @@
 /dev/qseecom      u:object_r:qseecom_device:s0
-/dev/fscklogs(/.*)?      u:object_r:fscklogs:s0
+#/dev/fscklogs(/.*)?      u:object_r:fscklogs:s0
+
+# Serial console
+/dev/ttyHSL0                    u:object_r:tty_device:s0
 
 # Persist filesystem
 /persist(/.*)?                    u:object_r:persist_file:s0
+
+/dev/kgsl-3d0                   u:object_r:gpu_device:s0
+
+/dev/smd.*                      u:object_r:smd_device:s0
