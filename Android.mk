@@ -8,4 +8,5 @@ BOARD_SEPOLICY_UNION := \
        file.te \
        device.te \
        vold.te \
-       file.te
+       file.te \
+       netd.te
