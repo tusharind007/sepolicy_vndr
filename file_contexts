@@ -3,3 +3,6 @@
 
 # Persist filesystem
 /persist(/.*)?                    u:object_r:persist_file:s0
+
+# hostapd filesystem
+/data/hostapd(/.*)?               u:object_r:hostapd_data_file:s0

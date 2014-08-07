@@ -1,0 +1,7 @@
+#Policies for IPv6 tethering
+allow netd netd:capability { setgid setuid };
+allow netd netd:packet_socket { create bind setopt read ioctl };
+
+# write to files in /data/hostapd
+allow netd hostapd_data_file:file create_file_perms;
+allow netd hostapd_data_file:dir create_dir_perms;
