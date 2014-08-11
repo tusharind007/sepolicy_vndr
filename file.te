@@ -1,3 +1,6 @@
 type sysrq_trigger_proc, fs_type, mlstrustedobject;
 # Persist file types
 type persist_file, file_type;
+
+# hostapd file types
+type hostapd_data_file, file_type, data_file_type;
