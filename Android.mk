@@ -23,11 +23,11 @@ BOARD_SEPOLICY_UNION := \
        app.te \
        cnd.te \
        system_server.te \
-       wpa_supplicant.te \
        mediaserver.te \
        msm_irqbalanced.te \
        qmuxd.te \
        netmgrd.te \
+       port-bridge.te \
        atfwd.te \
        radio.te \
        smd_test.te \
@@ -43,7 +43,6 @@ BOARD_SEPOLICY_UNION := \
        system_app.te \
        thermal-engine.te \
        vm_bms.te \
-       global_macros.te \
        system_app.te \
        bluetooth.te \
        init_shell.te \
@@ -56,6 +55,7 @@ BOARD_SEPOLICY_UNION := \
        rmt_storage.te \
        rfs_access.te \
        hvdcp.te \
+       qti.te \
        qseecomd.te \
        mcStarter.te \
        keystore.te \
@@ -70,19 +70,21 @@ BOARD_SEPOLICY_UNION := \
        mdm_helper.te \
        peripheral_manager.te \
        qcomsysd.te \
-       servicemanager.te \
        usb_uicc_daemon.te \
        adsprpcd.te \
        qlogd.te \
        ipacm.te \
        dpmd.te \
        ssr_setup.te \
+       subsystem_ramdump.te \
+       ssr_diag.te \
        sectest.te \
        location.te \
        location_app.te \
        seapp_contexts \
        logd.te \
-       installd.te
+       installd.te \
+       wcnss_service.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084

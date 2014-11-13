@@ -11,6 +11,9 @@ type mhi_device, dev_type;
 #device type for smd device nodes, ie /dev/smd*
 type smd_device, dev_type;
 
+#device type for rmnet device nodes, ie /dev/rmnet_ctrl*
+type rmnet_device, dev_type;
+
 #Define thermal-engine devices
 type thermal_device, dev_type;
 
@@ -45,6 +48,9 @@ type esoc_device, dev_type;
 #SSR device
 type ssr_device, dev_type;
 
+#Ramdump device
+type ramdump_device, dev_type;
+
 #Kickstart bridge devices
 type ksbridgehsic_device, dev_type;
 
@@ -66,4 +72,9 @@ type usb_uicc_device, dev_type;
 # Define IPA devices
 type ipa_dev, dev_type;
 
+type wcnss_device, dev_type;
+
 type mmc_block_device, dev_type;
+
+#Define Gadget serial device
+type gadget_serial_device, dev_type;
