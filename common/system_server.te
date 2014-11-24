@@ -14,8 +14,6 @@ qmux_socket(system_server);
 
 # access to perflock
 allow system_server mpctl_socket:dir r_dir_perms;
-unix_socket_send(system_server, mpctl, mpdecision)
-unix_socket_connect(system_server, mpctl, mpdecision)
 
 # allow  system/framework applications to update the dpmd configuration files
 unix_socket_connect(system_server, dpmd, dpmd);
