@@ -29,7 +29,6 @@ BOARD_SEPOLICY_UNION := \
        netmgrd.te \
        port-bridge.te \
        atfwd.te \
-       radio.te \
        smd_test.te \
        qmi_ping.te \
        qmi_test_service.te \
@@ -46,9 +45,7 @@ BOARD_SEPOLICY_UNION := \
        system_app.te \
        bluetooth.te \
        init_shell.te \
-       mpdecision.te \
        perfd.te \
-       mm-qcamerad.te \
        domain.te \
        init.te \
        time_daemon.te \
@@ -59,18 +56,15 @@ BOARD_SEPOLICY_UNION := \
        qseecomd.te \
        mcStarter.te \
        keystore.te \
-       ims.te \
        healthd.te \
        charger_monitor.te \
        surfaceflinger.te \
-       mm-pp-daemon.te \
        wpa.te \
        bootanim.te \
        zygote.te \
        mdm_helper.te \
        peripheral_manager.te \
        qcomsysd.te \
-       usb_uicc_daemon.te \
        adsprpcd.te \
        qlogd.te \
        ipacm.te \
@@ -87,7 +81,6 @@ BOARD_SEPOLICY_UNION := \
        wcnss_service.te \
        mmi.te \
        dhcp.te \
-       wfd_app.te \
        mediaserver_test.te \
        hbtp.te \
        kernel.te \
