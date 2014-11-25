@@ -4,7 +4,8 @@ BOARD_SEPOLICY_DIRS := \
        device/qcom/sepolicy \
        device/qcom/sepolicy/common \
        device/qcom/sepolicy/test \
-       device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)
+       device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM) \
+       device/google/clockwork/sepolicy
 
 BOARD_SEPOLICY_UNION := \
        genfs_contexts \
@@ -42,7 +43,6 @@ BOARD_SEPOLICY_UNION := \
        system_app.te \
        thermal-engine.te \
        vm_bms.te \
-       system_app.te \
        bluetooth.te \
        init_shell.te \
        perfd.te \
@@ -84,7 +84,8 @@ BOARD_SEPOLICY_UNION := \
        mediaserver_test.te \
        hbtp.te \
        kernel.te \
-       vold.te
+       vold.te \
+       clockwork_proxy.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084
