@@ -15,3 +15,7 @@ allow bluetooth input_device:chr_file { open read write ioctl };
 
 allow bluetooth persist_file:dir search;
 allow bluetooth persist_file:file rw_file_perms;
+
+#dun and sap access
+allow bluetooth dun-server:unix_stream_socket connectto;
+allow bluetooth sapd:unix_stream_socket connectto;
