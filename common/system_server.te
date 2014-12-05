@@ -51,3 +51,7 @@ allow system_server digitalpen_service:service_manager add;
 allow system_server bluetooth_prop:property_service set;
 allow system_server serial_device:chr_file rw_file_perms;
 allow system_server smd_device:chr_file rw_file_perms;
+
+# allow tethering to access dhcp leases
+allow system_server dhcp_data_file:dir search;
+allow system_server dhcp_data_file:file { read getattr open };
