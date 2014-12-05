@@ -12,3 +12,4 @@ profile                                        u:object_r:system_server_service:
 service.gesture                                u:object_r:gesture_service:s0
 improveTouch.TouchService                      u:object_r:improve_touch_service:s0
 improveTouch.TouchManagerService               u:object_r:improve_touch_service:s0
+wfdservice                                     u:object_r:wfdservice_service:s0
