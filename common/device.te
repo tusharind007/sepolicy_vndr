@@ -85,3 +85,6 @@ type hbtp_device, dev_type;
 
 #added for voice device
 type voice_device, dev_type;
+#
+#energy-awareness device
+type pta_device, dev_type;
