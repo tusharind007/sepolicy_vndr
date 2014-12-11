@@ -150,10 +150,9 @@
 /system/bin/location-mq                         u:object_r:location_exec:s0
 /system/bin/xtwifi-inet-agent                   u:object_r:location_exec:s0
 /system/bin/xtwifi-client                       u:object_r:location_exec:s0
-/system/bin/gsiff_daemon                        u:object_r:location_exec:s0
 /system/bin/garden_app                          u:object_r:location_exec:s0
 /system/bin/gpsone_daemon                       u:object_r:location_exec:s0
-/system/vendor/bin/slim_ap_daemon               u:object_r:location_exec:s0
+/system/vendor/bin/slim_daemon                  u:object_r:location_exec:s0
 /system/vendor/bin/qti                          u:object_r:qti_exec:s0
 /system/bin/wcnss_service                       u:object_r:wcnss_service_exec:s0
 /system/vendor/bin/hbtp_daemon                  u:object_r:hbtp_exec:s0
