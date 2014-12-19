@@ -104,3 +104,6 @@ type usf_device, dev_type;
 
 #Define seemplog device
 type seemplog_device, dev_type;
+
+#Define ontario device - ultrasonic fingperprint sensor
+type ontario_device, dev_type;

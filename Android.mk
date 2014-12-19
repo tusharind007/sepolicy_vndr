@@ -50,6 +50,7 @@ BOARD_SEPOLICY_UNION := \
        mpdecision.te \
        perfd.te \
        mm-qcamerad.te \
+       qfp-daemon.te \
        domain.te \
        init.te \
        shell.te \

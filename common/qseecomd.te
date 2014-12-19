@@ -54,3 +54,7 @@ userdebug_or_eng(`
 
 # allow qseecom access to set system property
 allow tee system_prop:property_service set;
+
+#allow access to qfp-daemon
+allow tee qfp-daemon_data_file:dir create_dir_perms;
+allow tee qfp-daemon_data_file:file create_file_perms;
