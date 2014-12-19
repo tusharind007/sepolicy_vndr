@@ -12,5 +12,4 @@ allow untrusted_app oma_drm_data_file:file create_file_perms;
 # using binder call
 userdebug_or_eng(`
   binder_call(untrusted_app, hbtp);
-  binder_call(untrusted_app, imscm)
 ')
