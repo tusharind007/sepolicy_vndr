@@ -87,6 +87,7 @@ BOARD_SEPOLICY_UNION := \
        logd.te \
        installd.te \
        wcnss_service.te \
+       recovery.te \
        mmi.te \
        kernel.te \
        vold.te\
