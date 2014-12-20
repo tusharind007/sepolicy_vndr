@@ -92,7 +92,8 @@ BOARD_SEPOLICY_UNION := \
        mediaserver_test.te \
        hbtp.te \
        kernel.te \
-       vold.te
+       vold.te \
+       energyawareness.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084
