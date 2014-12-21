@@ -15,6 +15,7 @@ allow thermal-engine self:socket create_socket_perms;
 #This is required to access thermal sockets
 allow thermal-engine thermal_socket:dir w_dir_perms;
 allow thermal-engine thermal_socket:sock_file { create setattr open read write };
+allow thermal-engine socket_device:dir w_dir_perms;
 #This is required for thermal sysfs access
 allow thermal-engine sysfs_thermal:dir r_dir_perms;
 allow thermal-engine sysfs_thermal:file rw_file_perms;
