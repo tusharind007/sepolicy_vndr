@@ -97,7 +97,8 @@ BOARD_SEPOLICY_UNION := \
        dun-server.te \
        sapd.te \
        wfdservice.te \
-       nfc.te
+       nfc.te \
+       dtsconfigurator.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084
