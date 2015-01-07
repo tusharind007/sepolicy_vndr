@@ -94,7 +94,8 @@ BOARD_SEPOLICY_UNION := \
        kernel.te \
        vold.te \
        energyawareness.te \
-       usf.te
+       usf.te \
+       dtsconfigurator.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084
