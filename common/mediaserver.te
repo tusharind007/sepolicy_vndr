@@ -45,3 +45,6 @@ allow mediaserver platform_app:unix_stream_socket { connectto read write setopt 
 
 # call bootanim domain and transfer references to it
 allow mediaserver bootanim:binder { transfer call };
+
+# allow mediaserver to communicate with timedaemon
+allow mediaserver time_daemon:unix_stream_socket connectto;
