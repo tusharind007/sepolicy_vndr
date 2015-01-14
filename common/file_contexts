@@ -55,6 +55,7 @@
 /dev/wcnss_ctrl                                 u:object_r:wcnss_device:s0
 /dev/wcnss_wlan                                 u:object_r:wcnss_device:s0
 /dev/hbtp_input                                 u:object_r:hbtp_device:s0
+/dev/hbtp_vm                                    u:object_r:hbtp_device:s0
 /dev/jdi-bu21150                                u:object_r:bu21150_device:s0
 /dev/voice_svc                                  u:object_r:voice_device:s0
 
@@ -204,6 +205,7 @@
 /sys/bus/msm_subsys/devices/subsys3/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/bus/msm_subsys/devices/subsys4/restart_level                   u:object_r:sysfs_ssr_toggle:s0
 /sys/devices/soc0/.*                                                u:object_r:sysfs_socinfo:s0
+/sys/afe_properties(/.*)?                                           u:object_r:sysfs_afe_props:s0
 
 ###################################
 # data files
@@ -246,7 +248,7 @@
 ###################################
 # etc files
 #
-/etc/firmware/hbtp/*                                                u:object_r:hbtp_cfg_file:s0
+###################################
 # cache files
 #
 /cache/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
