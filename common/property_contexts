@@ -6,3 +6,4 @@ sys.audio.init             u:object_r:audio_prop:s0
 persist.sys.shflag         u:object_r:backup_prop:s0
 camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
+persist.power.             u:object_r:power_prop:s0
