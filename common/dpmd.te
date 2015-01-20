@@ -48,3 +48,6 @@ dpmd_socket_perm(drmserver)
 
 #explicitly allow udp socket permissions for appdomain
 allow dpmd appdomain:udp_socket rw_socket_perms;
+
+#permission to communicate with cnd_socket for installing iptable rules
+unix_socket_connect(dpmd, cnd, cnd);
