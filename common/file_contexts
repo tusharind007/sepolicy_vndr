@@ -252,3 +252,8 @@
 # cache files
 #
 /cache/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
+
+/sys/devices/virtual/gesture/gesture_ft5x06/pocket                  u:object_r:sysfs_gesture:s0
+/sys/devices/virtual/gesture/gesture_ft5x06/enable                  u:object_r:sysfs_gesture:s0
+/sys/class/gesture/gesture_ft5x06/pocket                            u:object_r:sysfs_gesture:s0
+/sys/class/gesture/gesture_ft5x06/enable                            u:object_r:sysfs_gesture:s0
