@@ -1,0 +1,15 @@
+# Policy for QM8626 LED setup
+type qm8626-led, domain;
+type qm8626-led_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(qm8626-led)
+
+# Accesses LEDs through SYSFS
+allow qm8626-led sysfs:file { write };
+
+# For start up log
+allow qm8626-led kmsg_device:chr_file { write open };
+
+# FOr LED control
+allow qm8626-led qm8626-led:capability { dac_override };
