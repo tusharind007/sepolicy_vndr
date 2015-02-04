@@ -92,6 +92,7 @@ BOARD_SEPOLICY_UNION := \
        mmi.te \
        kernel.te \
        vold.te\
+       sdcardd.te \
        dhcp.te \
        wfd_app.te \
        mediaserver_test.te \
