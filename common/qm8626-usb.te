@@ -1,0 +1,12 @@
+# Policy for QM8626 USB Control
+type qm8626-usb, domain;
+type qm8626-usb_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(qm8626-usb)
+
+# Accesses GPIO33 through SYSFS
+allow qm8626-usb sysfs:file { write };
+
+# For start up log
+allow qm8626-usb kmsg_device:chr_file { write open };

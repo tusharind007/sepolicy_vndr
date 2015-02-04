@@ -177,6 +177,9 @@
 /system/bin/usf_sw_calib                        u:object_r:usf_exec:s0
 /system/bin/usf_pairing                         u:object_r:usf_exec:s0
 /system/bin/usf_tester                          u:object_r:usf_exec:s0
+/system/bin/qm8626-led-init                     u:object_r:qm8626-led_exec:s0
+/system/bin/qm8626-usb-ctrl                     u:object_r:qm8626-usb_exec:s0
+
 
 ###################################
 # sysfs files
