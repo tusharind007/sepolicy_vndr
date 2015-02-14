@@ -71,3 +71,6 @@ allow cnd ipa_dev:chr_file r_file_perms;
 
 # allow cnd to perform socket operation on itself
 allow cnd self:socket create_socket_perms;
+
+# allow access to nims
+allow cnd socket_device:dir remove_name;
