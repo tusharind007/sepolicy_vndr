@@ -75,6 +75,7 @@ BOARD_SEPOLICY_UNION := \
        adsprpcd.te \
        qlogd.te \
        ipacm.te \
+       ipacm-diag.te \
        dpmd.te \
        ssr_setup.te \
        subsystem_ramdump.te \
@@ -88,13 +89,14 @@ BOARD_SEPOLICY_UNION := \
        wcnss_service.te \
        mmi.te \
        dhcp.te \
-       wfd_app.te \
        mediaserver_test.te \
        hbtp.te \
        kernel.te \
        vold.te \
        energyawareness.te \
-       usf.te
+       usf.te \
+       dtsconfigurator.te \
+       wfdservice.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084

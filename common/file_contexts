@@ -160,6 +160,7 @@
 /system/bin/gpsone_daemon                       u:object_r:location_exec:s0
 /system/vendor/bin/slim_ap_daemon               u:object_r:location_exec:s0
 /system/bin/energy-awareness                    u:object_r:energyawareness_exec:s0
+/system/bin/dts_configurator                    u:object_r:dtsconfigurator_exec:s0
 /system/vendor/bin/qti                          u:object_r:qti_exec:s0
 /system/bin/wcnss_service                       u:object_r:wcnss_service_exec:s0
 /system/vendor/bin/hbtp_daemon                  u:object_r:hbtp_exec:s0
@@ -172,6 +173,7 @@
 /system/bin/usf_sw_calib                        u:object_r:usf_exec:s0
 /system/bin/usf_pairing                         u:object_r:usf_exec:s0
 /system/bin/usf_tester                          u:object_r:usf_exec:s0
+/system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 
 ###################################
 # sysfs files
@@ -225,7 +227,7 @@
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
-/data/time/*                                                        u:object_r:time_data_file:s0
+/data/time(/.*)?                                                    u:object_r:time_data_file:s0
 /data/nfc(/.*)?                                                     u:object_r:nfc_data_file:s0
 /data/system/perfd(/.*)?                                            u:object_r:mpctl_data_file:s0
 /data/misc/perfd(/.*)?                                              u:object_r:mpctl_socket:s0
@@ -237,6 +239,7 @@
 /data/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
 /data/misc/hbtp(/.*)?                                               u:object_r:hbtp_log_file:s0
 /data/usf(/.*)?                                                     u:object_r:usf_data_file:s0
+/data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
 
 ###################################
 # persist files
