@@ -78,3 +78,6 @@ allow system_server tee_device:chr_file rw_file_perms;
 
 #diag read/write
 diag_rw(system_server);
+
+#for QM8626 Piezo
+allow system_server PiezoSoundService:service_manager add;
