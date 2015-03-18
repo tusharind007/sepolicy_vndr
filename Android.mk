@@ -96,7 +96,9 @@ BOARD_SEPOLICY_UNION := \
        energyawareness.te \
        usf.te \
        dtsconfigurator.te \
-       wfdservice.te
+       wfdservice.te \
+       net.te \
+       dnsmasq.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084
