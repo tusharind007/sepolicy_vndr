@@ -56,3 +56,6 @@ allow system_server smd_device:chr_file rw_file_perms;
 # allow tethering to access dhcp leases
 allow system_server dhcp_data_file:dir search;
 allow system_server dhcp_data_file:file { read getattr open };
+
+#For FRP
+allow system_server persistent_data_block_device:blk_file rw_file_perms;
