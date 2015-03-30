@@ -35,6 +35,9 @@ allow sensors persist_file:dir r_dir_perms;
 allow sensors sensors_persist_file:dir create_dir_perms;
 allow sensors sensors_persist_file:file create_file_perms;
 
+# Access to execmem
+allow sensors self:process execmem;
+
 # Wake lock access
 wakelock_use(sensors)
 
@@ -46,6 +49,9 @@ allow sensors self:socket *;
 allow sensors smd_device:chr_file rw_file_perms;
 allow sensors smem_log_device:chr_file rw_file_perms;
 allow sensors device_latency:chr_file w_file_perms;
+
+#diag read/write
+diag_rw(sensors);
 
 # Access to tests from userdebug/eng builds
 userdebug_or_eng(`
