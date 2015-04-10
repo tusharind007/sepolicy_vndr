@@ -36,3 +36,4 @@ allow per_mgr sysfs_ssr:lnk_file { read open };
 
 #Needed by pm-proxy to talk to peripheral manager
 binder_call(per_mgr, per_mgr);
+binder_call(per_mgr, sensors);
