@@ -175,6 +175,7 @@
 /system/bin/usf_pairing                         u:object_r:usf_exec:s0
 /system/bin/usf_tester                          u:object_r:usf_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
+/system/bin/mcStarter                           u:object_r:mcStarter_exec:s0
 
 ###################################
 # sysfs files
@@ -237,6 +238,7 @@
 /data/dpm(/.*)?                                                     u:object_r:dpmd_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
 /data/misc/location(/.*)?                                           u:object_r:location_data_file:s0
+/data/misc/location/mq/location-mq-s                                u:object_r:location_socket:s0
 /data/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
 /data/misc/hbtp(/.*)?                                               u:object_r:hbtp_log_file:s0
 /data/usf(/.*)?                                                     u:object_r:usf_data_file:s0
