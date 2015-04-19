@@ -3,3 +3,5 @@ allow platform_app oma_drm_data_file:dir rw_dir_perms;
 allow platform_app oma_drm_data_file:file create_file_perms;
 
 binder_call(platform_app, hbtp);
+# smd11 is specific to CSVT app
+allow platform_app smd11_device:chr_file rw_file_perms;
