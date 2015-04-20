@@ -1,8 +1,18 @@
 allow surfaceflinger sysfs_graphics:file rw_file_perms;
 allow surfaceflinger shell_data_file:dir search;
+allow surfaceflinger sysfs:file write;
 
 # Allows pp-daemon to refresh the screen in calibration mode
 r_dir_file(surfaceflinger, mm-pp-daemon)
 
 binder_call(surfaceflinger, location)
 binder_call(surfaceflinger, tee)
+
+# access to perflock
+allow surfaceflinger mpctl_socket:dir r_dir_perms;
+unix_socket_send(surfaceflinger, mpctl, perfd)
+unix_socket_connect(surfaceflinger, mpctl, perfd)
+
+# access to /data/misc/display for dumping input frames
+allow surfaceflinger display_misc_file:dir create_dir_perms;
+allow surfaceflinger display_misc_file:file create_file_perms;

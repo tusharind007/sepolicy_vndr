@@ -61,6 +61,9 @@ type efsbridgehsic_device, dev_type;
 #EFS sync block devices
 type efs_boot_dev, dev_type;
 
+#MBA debug image partition
+type mba_debug_dev, dev_type;
+
 #Misc partition
 type misc_partition, dev_type;
 
@@ -83,6 +86,9 @@ type qdss_device, dev_type;
 #Define Gadget serial device
 type gadget_serial_device, dev_type;
 
+#energy-awareness device
+type pta_device, dev_type;
+
 #Added for hbtp
 type bu21150_device, dev_type;
 type hbtp_device, dev_type;
@@ -95,3 +101,6 @@ type system_health_monitor_device, dev_type;
 
 #Define usf device
 type usf_device, dev_type;
+
+#Define seemplog device
+type seemplog_device, dev_type;
