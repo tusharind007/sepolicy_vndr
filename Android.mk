@@ -97,7 +97,8 @@ BOARD_SEPOLICY_UNION := \
        wfdservice.te \
        usf.te \
        qm8626-led.te \
-       qm8626-usb.te
+       qm8626-usb.te \
+       net.te
 
 # Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084
