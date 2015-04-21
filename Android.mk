@@ -1,12 +1,14 @@
 # Board specific SELinux policy variable definitions
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 BOARD_SEPOLICY_DIRS := \
+       $(BOARD_SEPOLICY_DIRS) \
        device/qcom/sepolicy \
        device/qcom/sepolicy/common \
        device/qcom/sepolicy/test \
        device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)
 
 BOARD_SEPOLICY_UNION := \
+       $(BOARD_SEPOLICY_UNION) \
        genfs_contexts \
        file_contexts \
        service_contexts \
@@ -43,7 +45,6 @@ BOARD_SEPOLICY_UNION := \
        system_app.te \
        thermal-engine.te \
        vm_bms.te \
-       system_app.te \
        bluetooth.te \
        init_shell.te \
        mpdecision.te \
@@ -51,6 +52,7 @@ BOARD_SEPOLICY_UNION := \
        mm-qcamerad.te \
        domain.te \
        init.te \
+       shell.te \
        time_daemon.te \
        rmt_storage.te \
        rfs_access.te \
@@ -91,12 +93,18 @@ BOARD_SEPOLICY_UNION := \
        mmi.te \
        dhcp.te \
        mediaserver_test.te \
+       energyawareness.te \
        hbtp.te \
        kernel.te \
        vold.te \
        wfdservice.te \
        usf.te \
-       net.te
+       seempd.te \
+       platform_app.te \
+       dtsconfigurator.te \
+       dtseagleservice.te \
+       net.te \
+       dnsmasq.te
 
 # Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084

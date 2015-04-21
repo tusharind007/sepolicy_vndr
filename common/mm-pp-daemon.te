@@ -14,8 +14,8 @@ allow mm-pp-daemon persist_file:dir rw_dir_perms;
 allow mm-pp-daemon persist_file:file create_file_perms;
 
 # Allow reading/writing data config files
-allow mm-pp-daemon display_config:dir create_dir_perms;
-allow mm-pp-daemon display_config:file create_file_perms;
+allow mm-pp-daemon display_misc_file:dir create_dir_perms;
+allow mm-pp-daemon display_misc_file:file create_file_perms;
 
 # Allow read to sensor device and read/write to sensor socket
 allow mm-pp-daemon sensors_device:chr_file r_file_perms;
@@ -48,5 +48,6 @@ allow mm-pp-daemon sysfs:file rw_file_perms;
 # Allow socket calls in pp-daemon
 unix_socket_connect(mm-pp-daemon, property, init)
 unix_socket_connect(mm-pp-daemon, pps, init)
-allow mm-pp-daemon init:unix_stream_socket listen;
-allow mm-pp-daemon init:unix_stream_socket accept;
+
+allow mm-pp-daemon init:unix_stream_socket { listen accept };
+allow mm-pp-daemon system_server:unix_stream_socket { read write };

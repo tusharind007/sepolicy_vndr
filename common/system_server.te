@@ -2,8 +2,8 @@
 # allow system_server to communicate with cnd process over cnd_socket
 unix_socket_connect(system_server, cnd, cnd)
 # allow  system/framework applications to update the cnd configuration files
-allow system_server cnd_data_file:dir { read open write getattr add_name };
-allow system_server cnd_data_file:file { create write getattr setattr read lock open };
+allow system_server cnd_data_file:dir rw_dir_perms;
+allow system_server cnd_data_file:file create_file_perms;
 
 # Access to sensors socket
 unix_socket_connect(system_server, sensors, sensors)
@@ -29,7 +29,7 @@ unix_socket_send(system_server, mpctl, perfd)
 unix_socket_connect(system_server, mpctl, perfd)
 
 # For location
-type_transition system_server location_data_file:sock_file location_socket;
+type_transition system_server location_data_file:sock_file location_socket "location-mq-s";
 allow system_server location:unix_stream_socket connectto;
 allow system_server location_data_file:file create_file_perms;
 allow system_server location_data_file:dir rw_dir_perms;
@@ -78,3 +78,4 @@ allow system_server tee_device:chr_file rw_file_perms;
 
 #diag read/write
 diag_rw(system_server);
+allow system_server usf_prop:property_service set;
