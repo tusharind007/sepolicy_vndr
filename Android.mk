@@ -7,6 +7,8 @@ BOARD_SEPOLICY_DIRS := \
        device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)
 
 BOARD_SEPOLICY_UNION := \
+       qm8626-led.te \
+       qm8626-usb.te \
        genfs_contexts \
        file_contexts \
        service_contexts \
@@ -96,9 +98,8 @@ BOARD_SEPOLICY_UNION := \
        vold.te \
        wfdservice.te \
        usf.te \
-       qm8626-led.te \
-       qm8626-usb.te \
-       net.te
+       net.te \
+       dnsmasq.te
 
 # Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084
