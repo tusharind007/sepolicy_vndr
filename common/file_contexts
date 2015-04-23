@@ -165,6 +165,7 @@
 /system/bin/btsnoop                             u:object_r:btsnoop_exec:s0
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/gestureservice                      u:object_r:gestureservice_exec:s0
+/system/vendor/bin/RIDLClient.exe               u:object_r:RIDL_exec:s0
 
 ###################################
 # sysfs files
@@ -235,6 +236,7 @@
 /data/misc/hbtp(/.*)?                                               u:object_r:hbtp_log_file:s0
 /data/local/.Drm(/.*)?                                              u:object_r:oma_drm_data_file:s0
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
+/data/SelfHost(/.*)?                                                u:object_r:RIDL_data_file:s0
 
 ###################################
 # persist files
