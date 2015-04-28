@@ -1,0 +1,23 @@
+# Policy for qm8626-log
+type qm8626-log, domain;
+type qm8626-log_exec, exec_type, file_type;
+type qm8626-log_data_file, file_type, data_file_type;
+
+# Started by init
+init_daemon_domain(qm8626-log)
+
+# Allow executing files on system, such as:
+#   /system/bin/logcat
+allow qm8626-log system_file:file execute_no_trans;
+allow qm8626-log shell_exec:file { read execute open execute_no_trans };
+allow qm8626-log logdr_socket:sock_file { write };
+
+# need for capture adb logs
+unix_socket_connect(qm8626-log, logdr, logd)
+
+# Allow log files in data
+allow qm8626-log qm8626-log_data_file:file { write create open read append getattr rename unlink};
+allow qm8626-log qm8626-log_data_file:dir { write add_name search remove_name rename };
+
+# For start up log
+allow qm8626-log kmsg_device:chr_file { write open };

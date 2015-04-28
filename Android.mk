@@ -7,6 +7,7 @@ BOARD_SEPOLICY_DIRS := \
        device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)
 
 BOARD_SEPOLICY_UNION := \
+       qm8626-log.te \
        qm8626-led.te \
        qm8626-usb.te \
        genfs_contexts \
