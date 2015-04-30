@@ -172,6 +172,7 @@
 /system/bin/gestureservice                      u:object_r:gestureservice_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /system/bin/seempd                              u:object_r:seempd_exec:s0
+/system/vendor/bin/RIDLClient.exe               u:object_r:RIDL_exec:s0
 
 ###################################
 # sysfs files
@@ -243,6 +244,7 @@
 /data/local/.Drm(/.*)?                                              u:object_r:oma_drm_data_file:s0
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
 /data/misc/seemp(/.*)?                                              u:object_r:seemp_file:s0
+/data/SelfHost(/.*)?                                                u:object_r:RIDL_data_file:s0
 
 ###################################
 # persist files
