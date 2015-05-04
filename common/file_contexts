@@ -194,6 +194,7 @@
 /system/bin/usf_pairing                         u:object_r:usf_exec:s0
 /system/bin/usf_tester                          u:object_r:usf_exec:s0
 /system/bin/mcStarter                           u:object_r:mcStarter_exec:s0
+/system/vendor/bin/RIDLClient.exe               u:object_r:RIDL_exec:s0
 
 ###################################
 # sysfs files
@@ -267,6 +268,7 @@
 /data/usf(/.*)?                                                     u:object_r:usf_data_file:s0
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
 /data/misc/seemp(/.*)?                                              u:object_r:seemp_file:s0
+/data/SelfHost(/.*)?                                                u:object_r:RIDL_data_file:s0
 
 ###################################
 # persist files
