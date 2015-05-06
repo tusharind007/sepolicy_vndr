@@ -64,7 +64,7 @@ BOARD_SEPOLICY_UNION := \
        hvdcp.te \
        qti.te \
        qseecomd.te \
-       mcStarter.te \
+       tbaseLoader.te \
        keystore.te \
        ims.te \
        imscm.te \
