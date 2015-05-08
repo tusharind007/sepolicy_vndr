@@ -59,3 +59,6 @@ binder_call(system_app, imscm)
 # access to seemp folder
 allow system_app seemp_file:dir r_dir_perms;
 allow system_app seemp_file:{ file fifo_file } rw_file_perms;
+
+# allow system_app to access netd
+unix_socket_connect(system_app, netd, netd)
