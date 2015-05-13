@@ -3,8 +3,7 @@ type port-bridge_exec, exec_type, file_type;
 init_daemon_domain(port-bridge)
 
 userdebug_or_eng(`
-  domain_auto_trans(shell, port-bridge_exec, netmgrd)
-  domain_auto_trans(adbd, port-bridge_exec, netmgrd)
+  domain_auto_trans(shell, port-bridge_exec, port-bridge)
 ')
 
 #Allow operations on different types of sockets
@@ -18,3 +17,10 @@ allow port-bridge mhi_device:chr_file rw_file_perms;
 
 #Allow operations on gadget serial device
 allow port-bridge gadget_serial_device:chr_file { rw_file_perms };
+
+#Allow operations on ATCoP g-link transport
+allow port-bridge at_device:chr_file rw_file_perms;
+
+#Allow write permissions for log file
+allow port-bridge port_bridge_data_file:file create_file_perms;
+allow port-bridge port_bridge_data_file:dir w_dir_perms;
