@@ -82,3 +82,7 @@ diag_rw(system_server);
 
 #For FRP
 allow system_server persistent_data_block_device:blk_file rw_file_perms;
+
+# So init can manage our process
+allow system_server RIDL:fd use;
+allow system_server RIDL:fifo_file write;
