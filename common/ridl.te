@@ -29,59 +29,42 @@
 type RIDL, domain;
 type RIDL_exec, exec_type, file_type;
 
+type_transition RIDL RIDL_data_file:sock_file RIDL_socket;
+allow RIDL RIDL_socket:sock_file create_file_perms;
+allow RIDL RIDL_socket:dir create_dir_perms;
+
 # make transition from init to its domain
 init_daemon_domain(RIDL)
 
-# Every macro needs to be in here for USERDEBUG
-userdebug_or_eng(`
+# allow socket connections to us
+net_domain(RIDL)
 
-   # USERDEBUG only!!!
-   # allow all operations for now
-   permissive RIDL;
+allow RIDL RIDL_data_file:dir create_dir_perms;
+allow RIDL RIDL_data_file:file create_file_perms;
+allow RIDL RIDL_data_file:lnk_file { create read unlink };
+allow RIDL debugfs:file read;
 
-   # allow socket connections to us
-   net_domain(RIDL)
+# ver_info.txt
+r_dir_file(RIDL, firmware_file)
 
-   # Various permissions from audit2allow
-   allow RIDL RIDL_data_file:dir { setattr read create write getattr remove_name open add_name };
-   allow RIDL RIDL_data_file:file { rename setattr read lock create write getattr unlink open };
-   allow RIDL dalvikcache_data_file:dir { write add_name };
-   allow RIDL dalvikcache_data_file:file { write create };
-   allow RIDL debugfs:file read;
-   #allow RIDL device:chr_file { read open };
-   allow RIDL device:dir { read open };
-   allow RIDL firmware_file:file { read open };
-   allow RIDL fuse:dir { write search create setattr add_name };
-   allow RIDL healthd:dir { getattr search };
-   allow RIDL healthd:file { read open };
-   allow RIDL init:dir { getattr search };
-   allow RIDL init:file { read open };
-   allow RIDL kernel:dir { getattr search };
-   allow RIDL kernel:file { read open };
-   allow RIDL kernel:system { module_request syslog_mod };
-   allow RIDL lmkd:dir { getattr search };
-   allow RIDL lmkd:file { read open };
-   allow RIDL logd:dir { getattr search };
-   allow RIDL logd:file { read open };
-   allow RIDL logd:unix_stream_socket connectto;
-   allow RIDL logdr_socket:sock_file write;
-   allow RIDL qmuxd:unix_stream_socket connectto;
-   allow RIDL qmuxd_socket:dir { write add_name };
-   allow RIDL qmuxd_socket:sock_file { write create };
-   allow RIDL ramdump_device:chr_file { read open setattr };
-   allow RIDL self:capability { sys_module net_raw fsetid net_admin fowner dac_override };
-   allow RIDL self:capability2 syslog;
-   allow RIDL self:packet_socket { create ioctl };
-   allow RIDL servicemanager:binder call;
-   allow RIDL servicemanager:dir { getattr search };
-   allow RIDL servicemanager:file { read open };
-   allow RIDL shell_exec:file { read execute open execute_no_trans };
-   allow RIDL sysfs:file write;
-   allow RIDL system_file:file execute_no_trans;
-   allow RIDL ueventd:dir { getattr search };
-   allow RIDL ueventd:file { read open };
-   allow RIDL vold:dir { getattr search };
-   #allow RIDL zygote_exec:file { read getattr open execute execute_no_trans }
+# sdcard0/1
+allow RIDL fuse:dir create_dir_perms;
+allow RIDL fuse:file create_file_perms;
 
-')
+# dmesg
+allow RIDL kernel:system syslog_read;
 
+# QMUX
+qmux_socket(RIDL)
+
+# ramdumps
+allow RIDL ramdump_device:chr_file rw_file_perms;
+
+# logcat
+unix_socket_connect(RIDL, logdr, logd)
+
+binder_use(RIDL)
+allow RIDL shell_exec:file { rx_file_perms };
+allow RIDL sysfs:file write;
+allow RIDL system_file:file x_file_perms;
+binder_call(RIDL, system_server)
