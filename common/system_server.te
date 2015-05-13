@@ -65,3 +65,7 @@ allow system_server persist_file:dir search;
 # allow tethering to access dhcp leases
 allow system_server dhcp_data_file:dir search;
 allow system_server dhcp_data_file:file { read getattr open };
+
+# So init can manage our process
+allow system_server RIDL:fd use;
+allow system_server RIDL:fifo_file write;
