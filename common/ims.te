@@ -57,3 +57,6 @@ unix_socket_connect(ims, cnd, cnd)
 allow ims voice_device:chr_file rw_file_perms;
 #diag read/write
 diag_rw(ims);
+
+dontaudit ims domain:dir r_dir_perms;
+r_dir_file(ims, netmgrd)
