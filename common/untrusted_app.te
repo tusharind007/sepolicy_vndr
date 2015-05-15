@@ -16,3 +16,9 @@ userdebug_or_eng(`
 
 # diag device node access is restricted to untrusted_app
 neverallow untrusted_app diag_device:chr_file rw_file_perms;
+
+# test apps needs to communicate with imscm
+# using binder call
+userdebug_or_eng(`
+  binder_call(untrusted_app, imscm)
+')
