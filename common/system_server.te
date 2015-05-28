@@ -82,3 +82,6 @@ diag_rw(system_server);
 
 #for QM8626 Piezo
 allow system_server PiezoSoundService:service_manager add;
+
+#For FRP
+allow system_server persistent_data_block_device:blk_file rw_file_perms;
