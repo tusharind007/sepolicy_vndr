@@ -1,12 +1,14 @@
 # Board specific SELinux policy variable definitions
 ifeq ($(call is-vendor-board-platform,QCOM),true)
 BOARD_SEPOLICY_DIRS := \
+       $(BOARD_SEPOLICY_DIRS) \
        device/qcom/sepolicy \
        device/qcom/sepolicy/common \
        device/qcom/sepolicy/test \
        device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)
 
 BOARD_SEPOLICY_UNION := \
+       $(BOARD_SEPOLICY_UNION) \
        genfs_contexts \
        file_contexts \
        service_contexts \
@@ -97,6 +99,7 @@ BOARD_SEPOLICY_UNION := \
        dhcp.te \
        mediaserver_test.te \
        hbtp.te \
+       qfips.te \
        wfdservice.te \
        dtsconfigurator.te \
        platform_app.te \
