@@ -62,6 +62,7 @@
 /dev/coresight-tmc-etr                          u:object_r:qdss_device:s0
 /dev/coresight-tmc-etr-stream                   u:object_r:qdss_device:s0
 /dev/system_health_monitor                      u:object_r:system_health_monitor_device:s0
+/dev/block/bootdevice/by-name/config            u:object_r:persistent_data_block_device:s0
 
 ###################################
 # Dev socket nodes
@@ -70,6 +71,7 @@
 /dev/socket/qmux_bluetooth(/.*)?                u:object_r:qmuxd_socket:s0
 /dev/socket/qmux_gps(/.*)?                      u:object_r:qmuxd_socket:s0
 /dev/socket/qmux_radio(/.*)?                    u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_nfc(/.*)?                      u:object_r:qmuxd_socket:s0
 /dev/socket/sensor_ctl_socket                   u:object_r:sensors_socket:s0
 /dev/socket/cnd                                 u:object_r:cnd_socket:s0
 /dev/socket/nims                                u:object_r:cnd_socket:s0
@@ -182,7 +184,8 @@
 #
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
 /sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
-/sys/devices/.*bcl.*(/.*)?                                          u:object_r:sysfs_thermal:s0
+/sys/devices/soc.0/qcom,bcl.*(/.*)?                                 u:object_r:sysfs_thermal:s0
+/sys/devices/qcom,bcl.*(/.*)?                                       u:object_r:sysfs_thermal:s0
 /sys/devices/f9200000.*/power_supply/usb(/.*)?                      u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_dwc3/power_supply/usb(/.*)?                        u:object_r:sysfs_usb_supply:s0
 /sys/devices/msm_otg/power_supply/usb(/.*)?                         u:object_r:sysfs_usb_supply:s0
@@ -192,6 +195,7 @@
 /sys/devices/virtual/graphics/fb([0-2])+/idle_time                  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-2])+/product_description        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-2])+/vendor_name                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-2])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/hsicctl/hsicctl1[0-9]/modem_wait               u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/hsicctl/hsicctl[0-9]/modem_wait                u:object_r:sysfs_hsic_modem_wait:s0
 /sys/devices/virtual/smdpkt/smdcntl1[0-9]/open_timeout              u:object_r:sysfs_smd_open_timeout:s0
@@ -223,7 +227,7 @@
 /data/data_test(/.*)?                                               u:object_r:data_test_data_file:s0
 /data/diag_log(/.*)?                                                u:object_r:diag_data_file:s0
 /data/misc/sensors(/.*)?                                            u:object_r:sensors_data_file:s0
-/data/rfs.*                                                         u:object_r:rfs_data_file:s0
+/data/rfs.*                                                         u:object_r:rfs_file:s0
 /data/hlos_rfs(/.*)?                                                u:object_r:rfs_shared_hlos_file:s0
 /data/camera(/.*)?                                                  u:object_r:camera_socket:s0
 /data/system/sensors(/.*)?                                          u:object_r:sensors_data_file:s0
@@ -236,6 +240,8 @@
 /data/dpm(/.*)?                                                     u:object_r:dpmd_data_file:s0
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
 /data/misc/location(/.*)?                                           u:object_r:location_data_file:s0
+/data/misc/location/mq/location-mq-s                                u:object_r:location_socket:s0
+/data/misc/location/mq/alarm_svc                                    u:object_r:location_socket:s0
 /data/FTM_AP(/.*)?                                                  u:object_r:mmi_data_file:s0
 /data/misc/hbtp(/.*)?                                               u:object_r:hbtp_log_file:s0
 /data/misc/qlogd(/.*)?                                              u:object_r:qlogd_data_file:s0
@@ -246,6 +252,8 @@
 #
 /persist(/.*)?                                                      u:object_r:persist_file:s0
 /persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
+/persist/rfs.*                                                      u:object_r:rfs_file:s0
+/persist/hlos_rfs(/.*)?                                             u:object_r:rfs_shared_hlos_file:s0
 /persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
 /persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0

@@ -41,6 +41,7 @@ BOARD_SEPOLICY_UNION := \
        audiod.te \
        service.te \
        system_app.te \
+       platform_app.te \
        thermal-engine.te \
        vm_bms.te \
        system_app.te \
@@ -66,6 +67,7 @@ BOARD_SEPOLICY_UNION := \
        surfaceflinger.te \
        mm-pp-daemon.te \
        wpa.te \
+       hostapd.te \
        bootanim.te \
        zygote.te \
        mdm_helper.te \
@@ -94,9 +96,11 @@ BOARD_SEPOLICY_UNION := \
        kernel.te \
        vold.te \
        wfdservice.te \
-       usf.te
+       usf.te \
+       net.te \
+       dnsmasq.te
 
-# Compile sensor pilicy only for SSC targets
+# Compile sensor policy only for SSC targets
 SSC_TARGET_LIST := apq8084
 SSC_TARGET_LIST += msm8226
 SSC_TARGET_LIST += msm8960
@@ -107,5 +111,7 @@ SSC_TARGET_LIST += msm8994
 BOARD_SEPOLICY_UNION += sensors.te
 BOARD_SEPOLICY_UNION += sensors_test.te
 #endif
+
+-include device/qcom/sepolicy/$(TARGET_BOARD_PLATFORM)/Android.mk
 
 endif
