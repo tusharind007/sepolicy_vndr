@@ -131,3 +131,6 @@ unix_socket_connect(system_app, netd, netd)
 
 # access to qseeproxy domain
 allow system_app qseeproxy:unix_dgram_socket sendto;
+allow system_app persist_file:dir rw_dir_perms;
+allow system_app persist_misc_file:dir rw_dir_perms;
+allow system_app persist_misc_file:file create_file_perms;
