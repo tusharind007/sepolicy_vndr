@@ -266,6 +266,7 @@
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
 /persist/display(/.*)?                                              u:object_r:persist_display_file:s0
+/persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
 
 ###################################
 # adsp files
