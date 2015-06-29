@@ -105,7 +105,8 @@ BOARD_SEPOLICY_UNION := \
        gestureservice.te \
        hbtp.te \
        platform_app.te \
-       dtsconfigurator.te
+       dtsconfigurator.te \
+       ridl.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084

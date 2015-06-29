@@ -130,3 +130,6 @@ type sysfs_gesture, fs_type, sysfs_type;
 
 # dts notifier files
 type dts_data_file, file_type, data_file_type;
+
+# RIDL data files
+type RIDL_data_file, file_type, data_file_type;
