@@ -4,3 +4,13 @@ userdebug_or_eng(`
   allow tee system_data_file:dir create_dir_perms;
   allow tee system_data_file:file create_file_perms;
 ')
+
+# Required for proper operation of nqs
+unix_socket_connect(tee, property, init)
+allow tee nqs_exec:file r_file_perms;
+
+# Allow tee create tqs directory and logs in it
+allow tee tqs_data_file:file create_file_perms;
+
+allow tee persist_file:file create_file_perms;
+allow tee persist_file:dir create_dir_perms;
