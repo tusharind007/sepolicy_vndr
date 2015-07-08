@@ -91,6 +91,8 @@
 /dev/socket/rild3                               u:object_r:rild_socket:s0
 /dev/socket/rild3-debug                         u:object_r:rild_debug_socket:s0
 /dev/socket/msm_irqbalance                      u:object_r:msm_irqbalance_socket:s0
+/dev/socket/RIDL(/.*)?                          u:object_r:RIDL_socket:s0
+/dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 
 ###################################
 # System files
@@ -160,10 +162,9 @@
 /system/bin/location-mq                         u:object_r:location_exec:s0
 /system/bin/xtwifi-inet-agent                   u:object_r:location_exec:s0
 /system/bin/xtwifi-client                       u:object_r:location_exec:s0
-/system/bin/gsiff_daemon                        u:object_r:location_exec:s0
 /system/bin/garden_app                          u:object_r:location_exec:s0
 /system/bin/gpsone_daemon                       u:object_r:location_exec:s0
-/system/vendor/bin/slim_ap_daemon               u:object_r:location_exec:s0
+/system/vendor/bin/slim_daemon                  u:object_r:location_exec:s0
 /system/vendor/bin/qti                          u:object_r:qti_exec:s0
 /system/vendor/bin/fidodaemon                   u:object_r:fidodaemon_exec:s0
 /system/bin/dts_configurator                    u:object_r:dtsconfigurator_exec:s0
@@ -175,6 +176,7 @@
 /system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/bin/wfdservice                          u:object_r:wfdservice_exec:s0
 /system/vendor/bin/RIDLClient.exe               u:object_r:RIDL_exec:s0
+/system/bin/wifi_ftmd                           u:object_r:wifi_ftmd_exec:s0
 
 ###################################
 # sysfs files
@@ -246,7 +248,7 @@
 /data/misc/qsee(/.*)?                                               u:object_r:data_qsee_file:s0
 /data/misc/location(/.*)?                                           u:object_r:location_data_file:s0
 /data/misc/dts(/.*)?                                                u:object_r:dts_data_file:s0
-/data/SelfHost(/.*)?                                                u:object_r:RIDL_data_file:s0
+/data/misc/SelfHost(/.*)?                                           u:object_r:RIDL_data_file:s0
 /data/ramdump(/.*)?                                                 u:object_r:ssr_ramdump_data_file:s0
 
 ###################################
