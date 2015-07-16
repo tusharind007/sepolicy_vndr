@@ -91,6 +91,9 @@ BOARD_SEPOLICY_UNION := \
        installd.te \
        wcnss_service.te \
        mmi.te \
+       sdcardd.te \
+       kernel.te \
+       vold.te\
        dhcp.te \
        mediaserver_test.te \
        energyawareness.te \
