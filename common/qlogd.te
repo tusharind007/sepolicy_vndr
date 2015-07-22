@@ -34,3 +34,8 @@ allow qlogd kernel:system syslog_mod;
 # need for capture adb logs
 allow qlogd logdr_socket:sock_file write;
 allow qlogd logd:unix_stream_socket connectto;
+
+# need to read the shell instance
+userdebug_or_eng(`
+	r_dir_file(qlogd, su)
+')
