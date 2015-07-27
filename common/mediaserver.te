@@ -47,6 +47,6 @@ allow mediaserver audio_data_file:sock_file { create setattr unlink };
 allow mediaserver audio_data_file:dir remove_name;
 
 #access to audio
-userdebug_or_eng('
+userdebug_or_eng(`
 allow mediaserver debugfs:file rw_file_perms;
 ')
