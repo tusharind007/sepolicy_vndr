@@ -16,6 +16,6 @@ allow time_daemon alarm_device:chr_file { open read write ioctl };
 allow time_daemon time_data_file:file { write create open read};
 allow time_daemon time_data_file:dir { write add_name search};
 allow time_daemon self:socket { write read create ioctl};
-allow time_daemon self:capability { setuid setgid };
+allow time_daemon self:capability { setuid setgid sys_time};
 
 r_dir_file(time_daemon, sysfs_esoc);
