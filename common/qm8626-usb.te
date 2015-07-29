@@ -1,5 +1,6 @@
 # Policy for QM8626 USB Control
 type qm8626-usb, domain;
+
 type qm8626-usb_exec, exec_type, file_type;
 
 # Started by init
@@ -10,3 +11,20 @@ allow qm8626-usb sysfs:file { write };
 
 # For start up log
 allow qm8626-usb kmsg_device:chr_file { write open };
+
+# So init can wait for usbctrlclientset.txt to be available
+allow init fuse:file getattr;
+
+# read/open to control file usbctrlclientset.txt
+allow qm8626-usb fuse:file { read open };
+allow qm8626-usb fuse:dir { search };
+
+# set property persist.qm8626.usbclonly.enable
+allow qm8626-usb default_prop:property_service { set };
+
+# property socket write
+allow qm8626-usb property_socket:sock_file { write };
+
+# For property service connection
+allow qm8626-usb init:unix_stream_socket { connectto };
+
