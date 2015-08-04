@@ -7,14 +7,18 @@ init_daemon_domain(sensors)
 
 type_transition sensors system_data_file:{ dir file } sensors_data_file;
 
-# Change own perms to (nobody,nobody)
-allow sensors self:capability { setuid setgid };
-# Chown /data/misc/sensors/debug/ to nobody
-allow sensors self:capability chown;
-dontaudit sensors self:capability fsetid;
-
-# Access /data/misc/sensors/debug and /data/system/sensors/settings
-allow sensors self:capability { dac_override dac_read_search net_bind_service };
+allow sensors self:capability {
+    # Change own perms to (nobody,nobody)
+    setuid
+    setgid
+    # Chown /data/misc/sensors/debug/ to nobody
+    chown
+    # Access /data/misc/sensors/debug and /data/system/sensors/settings
+    dac_override
+    dac_read_search
+    net_bind_service
+};
+dontaudit sensors self:capability { fsetid net_raw };
 
 # Sensors socket
 allow sensors sensors_socket:sock_file create_file_perms;
