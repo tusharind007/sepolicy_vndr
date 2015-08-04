@@ -61,3 +61,6 @@ userdebug_or_eng(`
   allow mm-qcamerad camera_prop:property_service set;
 ')
 
+#Allow access to /dev/graphics/fb* for screen capture
+allow mm-qcamerad graphics_device:dir search;
+allow mm-qcamerad graphics_device:chr_file rw_file_perms;
