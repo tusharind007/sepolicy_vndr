@@ -111,7 +111,8 @@ BOARD_SEPOLICY_UNION := \
        dnsmasq.te \
        recovery.te \
        nfc.te \
-       ridl.te
+       ridl.te \
+       ppp.te
 
 # Compile sensor pilicy only for SSC targets
 SSC_TARGET_LIST := apq8084
