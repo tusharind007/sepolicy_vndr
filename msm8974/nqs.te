@@ -29,3 +29,22 @@ type nqs, domain;
 type nqs_exec, exec_type, file_type;
 
 init_daemon_domain(nqs)
+
+# define nqs_data_file, nqs_fifo which will be created at runtime
+file_type_auto_trans(nqs, system_data_file, nqs_data_file)
+
+# Allow interracting with nqs directory
+allow nqs nqs_data_file:dir create_dir_perms;
+allow nqs nqs_data_file:{ file fifo_file } create_file_perms;
+
+# Allow unlink nqs directory
+allow nqs system_data_file:dir { remove_name };
+
+# Allow interracting with qseecom
+allow nqs tee_device:chr_file rw_file_perms;
+
+# Allow interracting with trust-zone
+r_dir_file(nqs, firmware_file)
+
+# Allow interracting with nqs socket
+allow nqs nqs:unix_stream_socket listen;
