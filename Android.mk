@@ -35,6 +35,7 @@ BOARD_SEPOLICY_UNION := \
        qmi_test_service.te \
        irsc_util.te \
        netd.te \
+       platform_app.te \
        rild.te \
        diag.te \
        diag_test.te \
