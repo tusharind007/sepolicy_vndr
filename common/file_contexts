@@ -102,10 +102,10 @@
 ###################################
 # System files
 #
-/system/bin/ATFWD-daemon                        u:object_r:atfwd_exec:s0
+/system/vendor/bin/ATFWD-daemon                 u:object_r:atfwd_exec:s0
 /system/vendor/bin/PktRspTest                   u:object_r:diag_exec:s0
 /system/bin/audiod                              u:object_r:audiod_exec:s0
-/system/bin/charger_monitor                     u:object_r:charger_monitor_exec:s0
+/system/vendor/bin/charger_monitor              u:object_r:charger_monitor_exec:s0
 /system/bin/cnd                                 u:object_r:cnd_exec:s0
 /system/vendor/bin/diag_callback_client         u:object_r:diag_exec:s0
 /system/vendor/bin/diag_dci_sample              u:object_r:diag_exec:s0
@@ -115,19 +115,19 @@
 /system/vendor/bin/diag_socket_log              u:object_r:diag_exec:s0
 /system/vendor/bin/diag_uart_log                u:object_r:diag_exec:s0
 /system/bin/drmdiagapp                          u:object_r:diag_exec:s0
-/system/bin/irsc_util                           u:object_r:irsc_util_exec:s0
 /system/vendor/bin/mm-pp-daemon                 u:object_r:mm-pp-daemon_exec:s0
 /system/vendor/bin/mmi                          u:object_r:mmi_exec:s0
+/system/vendor/bin/irsc_util                    u:object_r:irsc_util_exec:s0
 /system/bin/mpdecision                          u:object_r:mpdecision_exec:s0
 /system/bin/perfd                               u:object_r:perfd_exec:s0
 /system/bin/msm_irqbalance                      u:object_r:msm_irqbalanced_exec:s0
-/system/bin/imsdatadaemon                       u:object_r:ims_exec:s0
-/system/bin/imsqmidaemon                        u:object_r:ims_exec:s0
-/system/bin/ims_rtp_daemon                      u:object_r:ims_exec:s0
-/system/bin/imscmservice                        u:object_r:imscm_exec:s0
-/system/bin/netmgrd                             u:object_r:netmgrd_exec:s0
-/system/bin/qmuxd                               u:object_r:qmuxd_exec:s0
-/system/bin/port-bridge                         u:object_r:port-bridge_exec:s0
+/system/vendor/bin/imsdatadaemon                u:object_r:ims_exec:s0
+/system/vendor/bin/imsqmidaemon                 u:object_r:ims_exec:s0
+/system/vendor/bin/ims_rtp_daemon               u:object_r:ims_exec:s0
+/system/vendor/bin/imscmservice                 u:object_r:imscm_exec:s0
+/system/vendor/bin/netmgrd                      u:object_r:netmgrd_exec:s0
+/system/vendor/bin/qmuxd                        u:object_r:qmuxd_exec:s0
+/system/vendor/bin/port-bridge                  u:object_r:port-bridge_exec:s0
 /system/bin/sensors.qcom                        u:object_r:sensors_exec:s0
 /system/bin/sns.*                               u:object_r:sensors_test_exec:s0
 /system/vendor/bin/vm_bms                       u:object_r:vm_bms_exec:s0
@@ -136,10 +136,10 @@
 /system/bin/mm-qcamera-daemon                   u:object_r:mm-qcamerad_exec:s0
 /system/bin/qfp-daemon                          u:object_r:qfp-daemon_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
-/system/bin/time_daemon                         u:object_r:time_daemon_exec:s0
+/system/vendor/bin/time_daemon                  u:object_r:time_daemon_exec:s0
 /system/vendor/bin/rmt_storage                  u:object_r:rmt_storage_exec:s0
 /system/bin/rfs_access                          u:object_r:rfs_access_exec:s0
-/system/bin/tftp_server                         u:object_r:rfs_access_exec:s0
+/system/vendor/bin/tftp_server                  u:object_r:rfs_access_exec:s0
 /system/bin/hvdcp                               u:object_r:hvdcp_exec:s0
 /system/vendor/bin/qseecomd                     u:object_r:tee_exec:s0
 /system/bin/hostapd_cli                         u:object_r:hostapd_exec:s0
@@ -156,11 +156,11 @@
 /system/xbin/qlogd                              u:object_r:qlogd_exec:s0
 /system/bin/ipacm                               u:object_r:ipacm_exec:s0
 /system/bin/ipacm-diag                          u:object_r:ipacm-diag_exec:s0
-/system/bin/dpmd                                u:object_r:dpmd_exec:s0
-/system/bin/ssr_setup                           u:object_r:ssr_setup_exec:s0
-/system/bin/subsystem_ramdump                   u:object_r:subsystem_ramdump_exec:s0
-/system/bin/ssr_diag                            u:object_r:ssr_diag_exec:s0
-/system/bin/loc_launcher                        u:object_r:location_exec:s0
+/system/vendor/bin/dpmd                         u:object_r:dpmd_exec:s0
+/system/vendor/bin/ssr_setup                    u:object_r:ssr_setup_exec:s0
+/system/vendor/bin/subsystem_ramdump            u:object_r:subsystem_ramdump_exec:s0
+/system/vendor/bin/ssr_diag                     u:object_r:ssr_diag_exec:s0
+/system/vendor/bin/loc_launcher                 u:object_r:location_exec:s0
 /system/bin/quipc_main                          u:object_r:location_exec:s0
 /system/bin/ipepb                               u:object_r:location_exec:s0
 /system/bin/quipc_igsn                          u:object_r:location_exec:s0
@@ -168,8 +168,8 @@
 /system/vendor/bin/location-mq                  u:object_r:location_exec:s0
 /system/vendor/bin/xtwifi-inet-agent            u:object_r:location_exec:s0
 /system/vendor/bin/xtwifi-client                u:object_r:location_exec:s0
-/system/bin/garden_app                          u:object_r:location_exec:s0
-/system/bin/gpsone_daemon                       u:object_r:location_exec:s0
+/system/vendor/bin/garden_app                   u:object_r:location_exec:s0
+/system/vendor/bin/gpsone_daemon                u:object_r:location_exec:s0
 /system/vendor/bin/slim_daemon                  u:object_r:location_exec:s0
 /system/vendor/bin/qti                          u:object_r:qti_exec:s0
 /system/vendor/bin/fidodaemon                   u:object_r:fidodaemon_exec:s0
@@ -178,10 +178,10 @@
 /system/bin/wcnss_service                       u:object_r:wcnss_service_exec:s0
 /system/vendor/bin/hbtp_daemon                  u:object_r:hbtp_exec:s0
 /system/bin/seempd                              u:object_r:seempd_exec:s0
-/system/bin/sapd                                u:object_r:sapd_exec:s0
+/system/vendor/bin/sapd                         u:object_r:sapd_exec:s0
 /system/bin/btsnoop                             u:object_r:btsnoop_exec:s0
-/system/bin/dun-server                          u:object_r:dun-server_exec:s0
 /system/vendor/bin/wfdservice                   u:object_r:wfdservice_exec:s0
+/system/vendor/bin/dun-server                   u:object_r:dun-server_exec:s0
 /system/vendor/bin/RIDLClient.exe               u:object_r:RIDL_exec:s0
 /system/bin/tbaseLoader                         u:object_r:tbaseLoader_exec:s0
 /system/vendor/bin/wifi_ftmd                    u:object_r:wifi_ftmd_exec:s0
