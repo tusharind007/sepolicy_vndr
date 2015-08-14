@@ -1,9 +1,31 @@
+#Adding all bt related service to bt domains
+type sapd, bluetoothdomain;
+type sapd_exec, exec_type, file_type;
+domain_auto_trans(init, sapd_exec, bluetooth)
+
+type dun-server,  bluetoothdomain;
+type dun-server_exec, exec_type, file_type;
+domain_auto_trans(init, dun-server_exec, bluetooth)
+
+type btsnoop,  bluetoothdomain;
+type btsnoop_exec, exec_type, file_type;
+domain_auto_trans(init, btsnoop_exec, bluetooth)
+
+type wcnss_filter, bluetoothdomain;
+type wcnss_filter_exec, exec_type, file_type;
+domain_auto_trans(init, wcnss_filter_exec, bluetooth)
+
 #BT needes  read and write on smd device node
 allow bluetooth smd_device:chr_file rw_file_perms;
 
 allow bluetooth bluetooth_prop:property_service set;
 allow bluetooth serial_device:chr_file rw_file_perms;
 allow bluetooth sysfs:file rw_file_perms;
+
+#allow proc_sysrq access for crash dump
+userdebug_or_eng(`
+ allow bluetooth proc_sysrq:file w_file_perms;
+')
 
 #BT Snoop logging
 allow bluetooth self:tcp_socket { create setopt bind accept listen };
@@ -19,3 +41,13 @@ allow bluetooth persist_file:file rw_file_perms;
 #For bluetooth firmware
 allow bluetooth bt_firmware_file:dir r_dir_perms;
 allow bluetooth bt_firmware_file:file r_file_perms;
+#dun-server requires interaction with net_domain socket
+net_domain(bluetooth);
+
+#dun-server requires binding with system_app and servicemanager
+binder_use(bluetooth);
+binder_call(bluetooth, system_app);
+binder_call(bluetooth, servicemanager);
+
+#sapd requires interaction with qmux sockets
+qmux_socket(bluetooth);
