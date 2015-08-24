@@ -11,6 +11,7 @@
 /dev/msm_dsps                                   u:object_r:sensors_device:s0
 /dev/msm_thermal_query                          u:object_r:thermal_device:s0
 /dev/nfc-nci                                    u:object_r:nfc_device:s0
+/dev/nq-nci                                     u:object_r:nfc_device:s0
 /dev/qseecom                                    u:object_r:tee_device:s0
 /dev/qce                                        u:object_r:qce_device:s0
 /dev/radio0                                     u:object_r:fm_radio_device:s0
@@ -147,6 +148,7 @@
 /system/bin/mdm_helper_proxy                    u:object_r:mdm_helper_exec:s0
 /system/bin/ks                                  u:object_r:mdm_helper_exec:s0
 /system/bin/pm-service                          u:object_r:per_mgr_exec:s0
+/system/bin/pm-proxy                            u:object_r:per_mgr_exec:s0
 /system/bin/usb_uicc_client                     u:object_r:usb_uicc_daemon_exec:s0
 /system/bin/qcom-system-daemon                  u:object_r:qcomsysd_exec:s0
 /system/xbin/qlogd                              u:object_r:qlogd_exec:s0
