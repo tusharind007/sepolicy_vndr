@@ -1,6 +1,10 @@
 # allow application to access cnd domain and socket
 unix_socket_connect(appdomain, cnd, cnd)
 
+# allow all apps to read log files
+allow appdomain qm8626-log_data_file:file r_file_perms;
+allow appdomain qm8626-log_data_file:dir r_dir_perms;
+
 # allow application to access dpmd domain and socket
 unix_socket_connect(appdomain, dpmwrapper, dpmd)
 
