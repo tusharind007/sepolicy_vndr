@@ -70,18 +70,15 @@ allow RIDL system_file:file x_file_perms;
 binder_call(RIDL, system_server)
 
 # recovery
-allow RIDL cache_file:dir { create write remove_name add_name };
-allow RIDL cache_file:file { setattr open create write unlink };
-
-# /dev watch diag/HLOS
-allow RIDL system_data_file:dir read;
-allow RIDL device:dir read;
+allow RIDL cache_file:dir create_dir_perms;
+allow RIDL cache_file:file create_file_perms;
 
 # reboot recovery
 allow RIDL powerctl_prop:property_service set;
-allow RIDL property_socket:sock_file write;
-allow RIDL init:unix_stream_socket connectto;
+unix_socket_connect(RIDL, property, init)
 
 # Access to ANR/segfaults
-allow RIDL tombstone_data_file:dir { open read search write getattr remove_name };
-allow RIDL tombstone_data_file:file { unlink rw_file_perms };
+userdebug_or_eng(`
+	allow RIDL tombstone_data_file:dir rw_dir_perms;
+	allow RIDL tombstone_data_file:file { unlink rw_file_perms };
+')
