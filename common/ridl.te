@@ -68,3 +68,31 @@ allow RIDL shell_exec:file { rx_file_perms };
 allow RIDL sysfs:file write;
 allow RIDL system_file:file x_file_perms;
 binder_call(RIDL, system_server)
+
+# recovery
+allow RIDL cache_file:dir { create write remove_name add_name };
+allow RIDL cache_file:file { setattr open create write unlink };
+
+# /dev watch diag/HLOS
+allow RIDL system_data_file:dir read;
+allow RIDL device:dir read;
+
+# reboot recovery
+allow RIDL powerctl_prop:property_service set;
+unix_socket_connect(RIDL, property, init)
+
+# Access to ANR/segfaults
+userdebug_or_eng(`
+	allow RIDL tombstone_data_file:dir rw_dir_perms;
+	allow RIDL tombstone_data_file:file { unlink rw_file_perms };
+')
+
+# drop root caps
+allow RIDL self:capability { setuid setgid };
+
+# access to /proc/kmsg
+allow RIDL self:capability2 syslog;
+allow RIDL kernel:system syslog_mod;
+
+# tcpdump
+allow RIDL self:packet_socket create;
