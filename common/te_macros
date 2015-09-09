@@ -9,3 +9,14 @@ allow $1 qmuxd_socket:dir create_dir_perms;
 unix_socket_connect($1, qmuxd, qmuxd)
 allow $1 qmuxd_socket:sock_file { read getattr write setattr create unlink };
 ')
+
+#####################################
+# cnd_nims_socket_perm(clientdomain)
+# allow cnd to read /proc/pid/cmdline to get appname
+# allow cnd to use inet socket created by app.
+define(`cnd_nims_socket_perm', `
+allow cnd $1:dir r_dir_perms;
+allow cnd $1:file r_file_perms;
+allow cnd $1:fd use;
+allow cnd $1:tcp_socket rw_socket_perms;
+')
