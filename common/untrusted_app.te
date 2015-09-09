@@ -13,6 +13,3 @@ allow untrusted_app oma_drm_data_file:file create_file_perms;
 userdebug_or_eng(`
   binder_call(untrusted_app, hbtp);
 ')
-
-# diag device node access is restricted to untrusted_app
-neverallow untrusted_app diag_device:chr_file rw_file_perms;
