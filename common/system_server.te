@@ -83,6 +83,12 @@ diag_rw(system_server);
 #for QM8626 Piezo
 allow system_server PiezoSoundService:service_manager add;
 
+# for QM8626 HAL lights support
+allow system_server sysfs_qm8626_led:dir {search};
+allow system_server sysfs_qm8626_led:file { write open read };
+allow system_server sysfs_qm8626_led:lnk_file {read write open};
+
+
 #For FRP
 allow system_server persistent_data_block_device:blk_file rw_file_perms;
 

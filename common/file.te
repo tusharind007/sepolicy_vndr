@@ -126,3 +126,6 @@ type persist_usf_file, file_type;
 # RIDL data files
 type RIDL_data_file, file_type, data_file_type;
 type RIDL_socket, file_type;
+
+# qm8626 file type
+type sysfs_qm8626_led, sysfs_type, fs_type;

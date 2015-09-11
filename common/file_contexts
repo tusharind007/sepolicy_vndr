@@ -102,6 +102,7 @@
 /system/bin/qm8626-log-native                   u:object_r:qm8626-log_exec:s0
 /system/bin/qm8626-led-init                     u:object_r:qm8626-led_exec:s0
 /system/bin/qm8626-usb-ctrl                     u:object_r:qm8626-usb_exec:s0
+/system/bin/qm8626-led-check                    u:object_r:shell_exec:s0
 /system/bin/ATFWD-daemon                        u:object_r:atfwd_exec:s0
 /system/bin/PktRspTest                          u:object_r:diag_exec:s0
 /system/bin/audiod                              u:object_r:audiod_exec:s0
@@ -191,6 +192,18 @@
 ###################################
 # sysfs files
 #
+/sys/devices/f9924000.i2c/i2c-1/1-0032/leds/red(/.*)?               u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0032/leds/green(/.*)?             u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0032/leds/blue(/.*)?              u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel0(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel1(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel2(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel3(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel4(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel5(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel6(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel7(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel8(/.*)?   u:object_r:sysfs_qm8626_led:s0
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
 /sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
 /sys/devices/soc.0/qcom,bcl.*(/.*)?                                 u:object_r:sysfs_thermal:s0

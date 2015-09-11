@@ -7,9 +7,12 @@ init_daemon_domain(qm8626-led)
 
 # Accesses LEDs through SYSFS
 allow qm8626-led sysfs:file { write };
+allow qm8626-led sysfs_qm8626_led:file { write open };
+allow qm8626-led sysfs_qm8626_led:dir {search};
+allow qm8626-led sysfs_qm8626_led:lnk_file {read write open};
 
 # For start up log
 allow qm8626-led kmsg_device:chr_file { write open };
 
-# FOr LED control
+# For LED control
 allow qm8626-led qm8626-led:capability { dac_override };
