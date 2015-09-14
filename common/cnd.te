@@ -56,6 +56,7 @@ cnd_nims_socket_perm(system_server)
 cnd_nims_socket_perm(mediaserver)
 cnd_nims_socket_perm(mtp)
 cnd_nims_socket_perm(wfdservice)
+cnd_nims_socket_perm(drmserver)
 
 # allow cnd to perform socket operation on itself
 allow cnd self:socket create_socket_perms;
@@ -65,3 +66,6 @@ allow cnd ipa_dev:chr_file r_file_perms;
 
 # allow access to nims
 allow cnd socket_device:dir remove_name;
+
+# explicitly allow udp socket permissions for appdomain
+allow cnd appdomain:udp_socket rw_socket_perms;
