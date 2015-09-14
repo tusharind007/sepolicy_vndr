@@ -129,3 +129,4 @@ type RIDL_socket, file_type;
 
 # qm8626 file type
 type sysfs_qm8626_led, sysfs_type, fs_type;
+type sysfs_qm8626_piezo, sysfs_type, fs_type;

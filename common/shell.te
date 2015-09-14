@@ -32,3 +32,5 @@ r_dir_file(shell, RIDL_data_file)
 allow shell sysfs_qm8626_led:lnk_file {write open};
 allow shell sysfs_qm8626_led:file {write open};
 allow shell sysfs_qm8626_led:dir {search};
+
+allow shell sysfs_qm8626_piezo:file {write open read};

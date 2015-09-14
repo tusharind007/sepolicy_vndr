@@ -82,6 +82,9 @@ diag_rw(system_server);
 
 #for QM8626 Piezo
 allow system_server PiezoSoundService:service_manager add;
+allow system_server sysfs_qm8626_piezo:dir {search};
+allow system_server sysfs_qm8626_piezo:file { write open read };
+allow system_server sysfs_qm8626_piezo:lnk_file {read write open};
 
 # for QM8626 HAL lights support
 allow system_server sysfs_qm8626_led:dir {search};

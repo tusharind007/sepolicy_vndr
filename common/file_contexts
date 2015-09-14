@@ -103,6 +103,7 @@
 /system/bin/qm8626-led-init                     u:object_r:qm8626-led_exec:s0
 /system/bin/qm8626-usb-ctrl                     u:object_r:qm8626-usb_exec:s0
 /system/bin/qm8626-led-check                    u:object_r:shell_exec:s0
+/system/bin/qm8626-piezo-check                  u:object_r:shell_exec:s0
 /system/bin/ATFWD-daemon                        u:object_r:atfwd_exec:s0
 /system/bin/PktRspTest                          u:object_r:diag_exec:s0
 /system/bin/audiod                              u:object_r:audiod_exec:s0
@@ -192,6 +193,10 @@
 ###################################
 # sysfs files
 #
+/sys/kernel/piezo/command                                           u:object_r:sysfs_qm8626_piezo:s0
+/sys/kernel/piezo/duration                                          u:object_r:sysfs_qm8626_piezo:s0
+/sys/kernel/piezo/duty_cycle                                        u:object_r:sysfs_qm8626_piezo:s0
+/sys/kernel/piezo/frequency                                         u:object_r:sysfs_qm8626_piezo:s0
 /sys/devices/f9924000.i2c/i2c-1/1-0032/leds/red(/.*)?               u:object_r:sysfs_qm8626_led:s0
 /sys/devices/f9924000.i2c/i2c-1/1-0032/leds/green(/.*)?             u:object_r:sysfs_qm8626_led:s0
 /sys/devices/f9924000.i2c/i2c-1/1-0032/leds/blue(/.*)?              u:object_r:sysfs_qm8626_led:s0
