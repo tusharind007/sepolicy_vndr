@@ -53,3 +53,6 @@ allow mediaserver bootanim:binder { transfer call };
 
 # allow mediaserver to communicate with timedaemon
 allow mediaserver time_daemon:unix_stream_socket connectto;
+
+#allow IPCam service
+allow mediaserver qipcam_service:service_manager add;
