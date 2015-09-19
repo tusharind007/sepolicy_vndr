@@ -34,6 +34,7 @@ init_daemon_domain(qm8626-mcd-id)
 
 # set property persist.qm8626.mcdid
 allow qm8626-mcd-id default_prop:property_service { set };
+allow qm8626-mcd-id persist_qm8626_prop_mcdid:property_service { set };
 
 # property socket write
 allow qm8626-mcd-id property_socket:sock_file { write };

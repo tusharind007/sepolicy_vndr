@@ -10,3 +10,7 @@ type camera_prop, property_type;
 
 #properties for wcnss_wlan daemons.
 type qti_wlan_prop, property_type;
+
+#properites for persist.qm8626
+type persist_qm8626_prop_sernum, property_type;
+type persist_qm8626_prop_mcdid, property_type;

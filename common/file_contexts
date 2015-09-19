@@ -97,6 +97,7 @@
 ###################################
 # System files
 #
+/system/bin/qm8626-id-prog-native              u:object_r:shell_exec:s0
 /system/bin/qm8626-hubmcd-id                   u:object_r:qm8626-mcd-id_exec:s0
 /system/bin/qm8626-module-id                   u:object_r:qm8626-mod-id_exec:s0
 /system/bin/qm8626-log-native                   u:object_r:qm8626-log_exec:s0

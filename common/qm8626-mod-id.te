@@ -34,6 +34,7 @@ init_daemon_domain(qm8626-mod-id)
 
 # set property persist.qm8626.sernum
 allow qm8626-mod-id default_prop:property_service { set };
+allow qm8626-mod-id persist_qm8626_prop_sernum:property_service { set };
 
 # property socket write
 allow qm8626-mod-id property_socket:sock_file { write };

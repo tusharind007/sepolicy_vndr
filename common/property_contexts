@@ -8,3 +8,5 @@ camera.                    u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
 persist.bluetooth.         u:object_r:bluetooth_prop:s0
 wifi.change_nv_owner       u:object_r:qti_wlan_prop:s0
+persist.qm8626.sernum      u:object_r:persist_qm8626_prop_sernum:s0
+persist.qm8626.mcdid       u:object_r:persist_qm8626_prop_mcdid:s0
