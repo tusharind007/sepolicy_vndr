@@ -210,6 +210,7 @@
 /sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel6(/.*)?   u:object_r:sysfs_qm8626_led:s0
 /sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel7(/.*)?   u:object_r:sysfs_qm8626_led:s0
 /sys/devices/f9924000.i2c/i2c-1/1-0033/leds/lp5523:channel8(/.*)?   u:object_r:sysfs_qm8626_led:s0
+/sys/devices/f9924000.i2c/i2c-1/1-0032(/.*)?                        u:object_r:sysfs_qm8626_led:s0
 /sys/class/graphics/fb0/mdp/caps                                    u:object_r:sysfs_graphics:s0
 /sys/class/thermal(/.*)?                                            u:object_r:sysfs_thermal:s0
 /sys/devices/soc.0/qcom,bcl.*(/.*)?                                 u:object_r:sysfs_thermal:s0

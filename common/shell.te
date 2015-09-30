@@ -29,7 +29,7 @@
 r_dir_file(shell, RIDL_data_file)
 
 # QM8626 allow shell access for factory/service centre
-allow shell sysfs_qm8626_led:lnk_file {write open};
+allow shell sysfs_qm8626_led:lnk_file {write open read};
 allow shell sysfs_qm8626_led:file {write open};
 allow shell sysfs_qm8626_led:dir {search};
 allow shell sysfs_qm8626_piezo:file {write open read};
