@@ -35,3 +35,4 @@ allow shell sysfs_qm8626_led:dir {search};
 allow shell sysfs_qm8626_piezo:file {write open read};
 allow shell persist_qm8626_prop_sernum:property_service set;
 allow shell persist_qm8626_prop_mcdid:property_service set;
+allow shell persist_qm8626_prop_misc:property_service set;
