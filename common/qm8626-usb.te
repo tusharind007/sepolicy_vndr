@@ -21,6 +21,7 @@ allow qm8626-usb fuse:dir { search };
 
 # set property persist.qm8626.usbclonly.enable
 allow qm8626-usb default_prop:property_service { set };
+allow qm8626-usb persist_qm8626_prop_misc:property_service { set };
 
 # property socket write
 allow qm8626-usb property_socket:sock_file { write };
@@ -28,3 +29,9 @@ allow qm8626-usb property_socket:sock_file { write };
 # For property service connection
 allow qm8626-usb init:unix_stream_socket { connectto };
 
+# allow access to persist
+allow qm8626-usb persist_qm8626_prop_file:file { write create open read append getattr rename unlink};
+allow qm8626-usb persist_qm8626_prop_file:dir { write add_name search remove_name rename read write };
+allow qm8626-usb persist_file:dir { write add_name search remove_name rename };
+
+allow qm8626-usb qm8626-usb:capability { dac_override  dac_read_search };
