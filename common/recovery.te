@@ -8,4 +8,8 @@ recovery_only(`
     allow recovery system_data_file:dir r_dir_perms;
     allow recovery rfs_system_file:{file lnk_file } { create_file_perms relabelfrom relabelto };
     allow recovery rfs_system_file:dir { create_dir_perms relabelfrom relabelto };
+    allow recovery sysfs:file { write };
+    allow recovery sysfs_qm8626_led:file { write open };
+    allow recovery sysfs_qm8626_led:dir {search};
+    allow recovery sysfs_qm8626_led:lnk_file {read write open};
 ')
