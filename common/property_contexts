@@ -13,3 +13,4 @@ persist.qm8626.mcdid       u:object_r:persist_qm8626_prop_mcdid:s0
 persist.qm8626.andled_1.enable    u:object_r:persist_qm8626_prop_misc:s0
 persist.qm8626.andled_2.enable    u:object_r:persist_qm8626_prop_misc:s0
 persist.qm8626.usbclonly.enable   u:object_r:persist_qm8626_prop_misc:s0
+persist.qm8626.product.manuf      u:object_r:persist_qm8626_prop_misc:s0
