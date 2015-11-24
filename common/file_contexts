@@ -106,6 +106,7 @@
 /system/bin/qm8626-led-check                    u:object_r:shell_exec:s0
 /system/bin/qm8626-piezo-check                  u:object_r:shell_exec:s0
 /system/bin/qm8626-prop-misc                    u:object_r:qm8626-misc_exec:s0
+/system/bin/qm8626-clean-up                     u:object_r:qm8626-clean_exec:s0
 /system/bin/ATFWD-daemon                        u:object_r:atfwd_exec:s0
 /system/bin/PktRspTest                          u:object_r:diag_exec:s0
 /system/bin/audiod                              u:object_r:audiod_exec:s0

@@ -15,5 +15,9 @@ persist.qm8626.andled_2.enable    u:object_r:persist_qm8626_prop_misc:s0
 persist.qm8626.usbclonly.enable   u:object_r:persist_qm8626_prop_misc:s0
 persist.qm8626.product.manuf      u:object_r:persist_qm8626_prop_misc:s0
 persist.qm8626.btm.page.timeout   u:object_r:persist_qm8626_prop_misc:s0
-persist.qm8626.extled1.pwrup     u:object_r:persist_qm8626_prop_misc:s0
-persist.qm8626.extled2.pwrup     u:object_r:persist_qm8626_prop_misc:s0
+persist.qm8626.extled1.pwrup      u:object_r:persist_qm8626_prop_misc:s0
+persist.qm8626.extled2.pwrup      u:object_r:persist_qm8626_prop_misc:s0
+persist.2net.ghir_server          u:object_r:persist_qm8626_prop_misc:s0
+persist.2net.vh_id                u:object_r:persist_qm8626_prop_misc:s0
+persist.2net.auth_code            u:object_r:persist_qm8626_prop_misc:s0
+ro.qm8626.usb_temp_cl             u:object_r:persist_qm8626_prop_misc:s0
