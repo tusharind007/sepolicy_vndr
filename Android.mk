@@ -13,6 +13,7 @@ BOARD_SEPOLICY_UNION := \
        qm8626-led.te \
        qm8626-usb.te \
        qm8626-misc.te \
+       qm8626-clean.te \
        genfs_contexts \
        file_contexts \
        service_contexts \
