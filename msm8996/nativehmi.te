@@ -1,4 +1,4 @@
-# Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2016, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,7 +25,16 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-binder_call(system_app, qvop)
+type nativehmi, domain;
+init_daemon_domain(nativehmi)
+type nativehmi_exec , exec_type, file_type;
 
-#nativeHMI need this
-allow system_app ctl_nativehmi_prop:property_service set;
+binder_use(nativehmi)
+binder_call(nativehmi, surfaceflinger);
+
+#need this for the detecting the keys
+allow nativehmi input_device:dir r_dir_perms;
+allow nativehmi input_device:chr_file rw_file_perms;
+allow nativehmi surfaceflinger_service:service_manager find;
+allow nativehmi gpu_device:chr_file rw_file_perms;
+set_prop(nativehmi, ctl_nativehmi_prop);

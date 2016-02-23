@@ -26,7 +26,8 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #This is need for the nativehmi bootanimation
-nativehmi.appname              u:object_r:ctl_bootanim_prop:s0
+nativehmi.appname              u:object_r:ctl_nativehmi_prop:s0
+ctl.nativehmi                  u:object_r:ctl_nativehmi_prop:s0
 sys.mediaserver.ready          u:object_r:audio_prop:s0
 early.audionative.id           u:object_r:audio_prop:s0
 early.audio.start              u:object_r:audio_prop:s0
