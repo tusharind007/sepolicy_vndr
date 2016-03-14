@@ -35,7 +35,13 @@ allow location system_server:unix_stream_socket { read write connectto};
 allow location sensorservice_service:service_manager find;
 
 #wifi
-allow location wifi_data_file:dir r_dir_perms;
+userdebug_or_eng(`
+allow location wifi_data_file:dir rw_dir_perms;
+allow location wifi_data_file:dir add_name;
+allow location wifi_data_file:dir remove_name;
+allow location wifi_data_file:sock_file { create write setattr unlink };
+allow location su:unix_dgram_socket sendto;
+')
 unix_socket_send(wpa, location, location)
 allow location wpa:unix_dgram_socket sendto;
 allow location wpa_socket:dir rw_dir_perms;
