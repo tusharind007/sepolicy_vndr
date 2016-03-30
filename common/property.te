@@ -43,3 +43,5 @@ type boot_animation_prop, property_type;
 
 #properties set from script read from apps
 type radio_noril_prop, property_type;
+
+type ctl_fm_dl_prop, property_type;
