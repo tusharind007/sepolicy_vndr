@@ -11,10 +11,6 @@ type btsnoop, bluetoothdomain;
 type btsnoop_exec, exec_type, file_type;
 domain_auto_trans(init, btsnoop_exec, bluetooth)
 
-type wcnss_filter, bluetoothdomain;
-type wcnss_filter_exec, exec_type, file_type;
-domain_auto_trans(init, wcnss_filter_exec, bluetooth)
-
 allow bluetooth bluetooth_prop:property_service set;
 allow bluetooth sysfs:file w_file_perms;
 
@@ -53,3 +49,6 @@ qmux_socket(bluetooth);
 
 # for finding wbc_service
 allow bluetooth wbc_service:service_manager find;
+
+#connect to wcnss_filter
+allow bluetooth wcnss_filter:unix_stream_socket connectto;
