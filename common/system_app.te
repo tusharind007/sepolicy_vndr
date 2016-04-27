@@ -36,6 +36,10 @@ userdebug_or_eng(`
   allow system_app sensors_persist_file:file rw_file_perms;
   # access to firmware file
   r_dir_file(system_app, firmware_file);
+
+  # Access to tombstone segfaults
+  allow system_app tombstone_data_file:dir r_dir_perms;
+  allow system_app tombstone_data_file:file r_file_perms;
 ')
 
 allow system_app cnd_data_file:dir w_dir_perms;
@@ -135,3 +139,9 @@ allow system_app persist_misc_file:file create_file_perms;
 
 # allow access to system app for FM
 set_prop(system_app, ctl_fm_dl_prop)
+
+# ANR
+allow system_app anr_data_file:dir r_dir_perms;
+allow system_app anr_data_file:file r_file_perms;
+# detect /data/anr directory is created
+allow system_app system_data_file:dir read;
