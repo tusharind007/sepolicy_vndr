@@ -82,3 +82,7 @@ allow init firmware_file:dir mounton;
 allow init block_device:blk_file write;
 allow init proc_drop_caches:file write;
 allow init sysfs_boot_adsp:file write;
+
+#For configfs file permission
+allow init configfs:dir r_dir_perms;
+allow init configfs:file { rw_file_perms link };
