@@ -1,0 +1,16 @@
+type concam, domain;
+type concam_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(concam)
+
+#Access for base socket permissions from netd domain
+net_domain(concam);
+
+# Allow concam to call binder for webserver
+binder_use(concam)
+binder_call(concam, system_server)
+
+allow concam self:capability { net_admin net_raw };
+allow concam qipcam_service:service_manager find;
+allow concam mediaserver:fd use;
