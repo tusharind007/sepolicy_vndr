@@ -87,6 +87,7 @@
 /system/bin/tloc_daemon   u:object_r:tlocd_exec:s0
 /system/bin/nativehmi     u:object_r:nativehmi_exec:s0
 /system/bin/earlyaudio    u:object_r:earlyaudio_exec:s0
+/system/bin/DR_AP_Service u:object_r:location_exec:s0
 
 ###################################
 # data files
