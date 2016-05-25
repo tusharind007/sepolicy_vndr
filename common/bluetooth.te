@@ -11,6 +11,10 @@ type btsnoop, bluetoothdomain;
 type btsnoop_exec, exec_type, file_type;
 domain_auto_trans(init, btsnoop_exec, bluetooth)
 
+type fmhal_service, bluetoothdomain;
+type fmhal_service_exec, exec_type, file_type;
+domain_auto_trans(init, fmhal_service_exec, bluetooth)
+
 allow bluetooth bluetooth_prop:property_service set;
 allow bluetooth sysfs:file w_file_perms;
 
