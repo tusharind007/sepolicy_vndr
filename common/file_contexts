@@ -311,6 +311,7 @@
 /persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
 /persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
 /persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
+/persist/data/app_g(/.*)?                                           u:object_r:persist_drm_file:s0
 /persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
 /persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
 /persist/hlos_rfs(/.*)?                                             u:object_r:rfs_shared_hlos_file:s0
