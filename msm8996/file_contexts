@@ -28,6 +28,7 @@
 # Dev nodes
 #
 /dev/i2c-6                                                                      u:object_r:audio_device:s0
+/dev/spidev0.0                                                                  u:object_r:audio_device:s0
 
 ###################################
 # Dev block nodes
