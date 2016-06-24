@@ -9,3 +9,6 @@ unix_socket_connect(radio, ims, ims)
 
 # IMS needs permission to use avtimer
 allow radio avtimer_device:chr_file r_file_perms;
+
+# Allow NFC service to be found by radio
+allow radio nfc_service:service_manager find;
