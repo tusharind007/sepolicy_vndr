@@ -30,6 +30,9 @@
 /dev/i2c-6                                                                      u:object_r:audio_device:s0
 /dev/spidev0.0                                                                  u:object_r:audio_device:s0
 
+#PPS device
+/dev/pps[0-9]                                                                   u:object_r:gss_device:s0
+
 ###################################
 # Dev block nodes
 
