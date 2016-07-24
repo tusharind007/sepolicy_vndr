@@ -160,6 +160,7 @@ r_dir_file(system_app, audio_pp_data_file);
 # allow access to system app for radio files
 allow system_app radio_data_file:dir rw_dir_perms;
 allow system_app radio_data_file:file create_file_perms;
+
 # DOLBY_START
 set_prop(system_app, dolby_prop)
 # DOLBY_END
@@ -176,3 +177,6 @@ allow system_app anr_data_file:dir r_dir_perms;
 allow system_app anr_data_file:file r_file_perms;
 # detect /data/anr directory is created
 allow system_app system_data_file:dir read;
+
+# access to qseeproxy domain
+allow system_app qseeproxy:unix_dgram_socket sendto;
