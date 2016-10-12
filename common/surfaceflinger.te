@@ -41,3 +41,6 @@ allow surfaceflinger cameraserver_service:service_manager find;
 userdebug_or_eng(`
     diag_use(surfaceflinger)
 ')
+
+#Allow access to perf_ctl service
+allow surfaceflinger perf_feedback_service:service_manager find;

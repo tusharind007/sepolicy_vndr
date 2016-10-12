@@ -26,6 +26,9 @@ unix_socket_connect(system_server, mpctl, mpdecision)
 #access to gamed
 unix_socket_connect(system_server, gamed, gamed)
 
+#access to perffeedbackd
+unix_socket_connect(system_server, perffeedbackd, perffeedbackd)
+
 allow system_server {
     # For wifistatemachine
     wbc_service

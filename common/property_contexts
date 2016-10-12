@@ -38,6 +38,7 @@ ro.min_freq_0                 u:object_r:freq_prop:s0
 ro.min_freq_4                 u:object_r:freq_prop:s0
 ctl.perfd                  u:object_r:perfd_prop:s0
 ctl.gamed                  u:object_r:gamed_prop:s0
+ctl.perffeedbackd          u:object_r:perffeedbackd_prop:s0
 ctl.iop                    u:object_r:perfd_prop:s0
 ctl.vm_bms                 u:object_r:vm_bms_prop:s0
 ro.qualcomm.bluetooth.        u:object_r:bluetooth_prop:s0

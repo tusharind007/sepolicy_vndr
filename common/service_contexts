@@ -32,3 +32,4 @@ uce                                            u:object_r:uce_service:s0
 eSEPowerManagerService                         u:object_r:esepmdaemon_service:s0
 wigigp2p                                       u:object_r:wigigp2p_service:s0
 wigig                                          u:object_r:wigig_service:s0
+android.perf.UserspaceCtlService               u:object_r:perf_feedback_service:s0
