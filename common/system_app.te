@@ -6,6 +6,7 @@ allow system_app {
     ctl_default_prop
     fm_prop
     usf_prop
+    ctl_fm_dl_prop
 }:property_service set;
 
 allow system_app {
