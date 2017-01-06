@@ -38,7 +38,7 @@ allow qtitetherservice_app ipa_dev:chr_file rw_file_perms;
 unix_socket_connect(qtitetherservice_app, netd, netd);
 
 qmux_socket(qtitetherservice_app);
-
+set_prop(qtitetherservice_app,eogre_prop);
 allow qtitetherservice_app qtitetherservice_app_data_file:dir create_dir_perms;
 allow qtitetherservice_app qtitetherservice_app_data_file:{ file lnk_file } create_file_perms;
 
