@@ -25,3 +25,8 @@ type uce_service,                 service_manager_type;
 type wigigp2p_service,            app_api_service, system_server_service, service_manager_type;
 type wigig_service,               app_api_service, system_server_service, service_manager_type;
 type esepmdaemon_service,         service_manager_type;
+type qmmf_audio_service,          service_manager_type;
+type qmmf_recorder_service,       service_manager_type;
+type qmmf_player_service,         service_manager_type;
+type qmmf_display_service,        service_manager_type;
+type qmmf_system_service,         service_manager_type;
