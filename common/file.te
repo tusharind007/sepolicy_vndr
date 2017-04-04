@@ -210,3 +210,6 @@ type sysfs_kgsl, sysfs_type, fs_type;
 
 # secure touch files
 type sysfs_securetouch, fs_type, sysfs_type;
+
+# qmmf data file
+type qmmf_data_file, file_type, data_file_type;

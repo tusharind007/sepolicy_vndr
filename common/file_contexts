@@ -179,6 +179,7 @@
 /system/bin/vm_bms                              u:object_r:vm_bms_exec:s0
 /system/bin/mm-qcamera-daemon                   u:object_r:mm-qcamerad_exec:s0
 /system/bin/qfp-daemon                          u:object_r:qfp-daemon_exec:s0
+/system/bin/qmmf-server                         u:object_r:qmmf-servd_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
 /system/bin/time_daemon                         u:object_r:time_daemon_exec:s0
 /system/bin/rmt_storage                         u:object_r:rmt_storage_exec:s0
@@ -356,6 +357,7 @@
 /data/misc/wifi/wigig_sockets(/.*)?                                 u:object_r:wpa_socket:s0
 /data/misc/wifi/wigig_sockets/wpa_ctrl.*                            u:object_r:system_wpa_socket:s0
 /data/app-regional(/.*)?                                            u:object_r:regionalization_data_file:s0
+/data/misc/qmmf(/.*)?                                               u:object_r:qmmf_data_file:s0
 ###################################
 # persist files
 #
