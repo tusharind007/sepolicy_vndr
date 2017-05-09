@@ -61,4 +61,13 @@ wigig                                          u:object_r:wigig_service:s0
 media.dolby_memoryservice                      u:object_r:audioserver_service:s0
 # DOLBY_END
 sms-sec                                        u:object_r:radio_service:s0
-MinkBinderSvc                                  u:object_r:MinkBinderSvc:s0
+# qmmf system service
+qmmf_system.service                            u:object_r:qmmf_system_service:s0
+# qmmf audio service
+qmmf_audio.service                             u:object_r:qmmf_audio_service:s0
+# qmmf recoder service
+qmmf_recorder.service                          u:object_r:qmmf_recorder_service:s0
+# qmmf player service
+qmmf_player.service                            u:object_r:qmmf_player_service:s0
+# qmmf display service
+qmmf_display.service                           u:object_r:qmmf_display_service:s0

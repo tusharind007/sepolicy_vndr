@@ -54,6 +54,7 @@ allow perfd {
     audioserver
     cameraserver
     wcnss_service
+    qmmf-servd
 }:process signull;
 
 #Allow perfd to set properties
