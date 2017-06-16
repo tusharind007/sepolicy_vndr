@@ -30,10 +30,14 @@ attribute hal_display_color;
 attribute hal_display_color_client;
 attribute hal_display_color_server;
 
+attribute hal_display_config;
+attribute hal_display_config_client;
+attribute hal_display_config_server;
+
 attribute hal_display_postproc;
 attribute hal_display_postproc_client;
 attribute hal_display_postproc_server;
 
-attribute hal_dpm_qmi;
-attribute hal_dpm_qmi_client;
-attribute hal_dpm_qmi_server;
+attribute hal_perf;
+attribute hal_perf_client;
+attribute hal_perf_server;
