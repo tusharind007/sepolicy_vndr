@@ -18,5 +18,5 @@ allow vm_bms self:capability { setpcap setgid setuid };
 #allow vm_bms to block the system suspend and get wake lock
 wakelock_use(vm_bms)
 
-#allow vm_bms to visit sysfs
-allow vm_bms sysfs:file w_file_perms;
+#allow vm_bms to visit power_supply sysfs
+allow vm_bms sysfs_battery_supply:file rw_file_perms;
