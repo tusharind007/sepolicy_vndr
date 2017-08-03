@@ -33,6 +33,11 @@ allow qti_init_shell {
     media_msm8956_version_prop
 }:property_service set;
 
+#For executing init shell scripts when in root (init.qcom.early_boot.sh)
+allow qti_init_shell rootfs:file entrypoint;
+allow qti_init_shell shell_exec:file { read getattr };
+allow qti_init_shell toolbox_exec:file { read getattr open execute execute_no_trans };
+
 # For regionalization
 allow qti_init_shell regionalization_file:dir r_dir_perms;
 allow qti_init_shell regionalization_file:file create_file_perms;
