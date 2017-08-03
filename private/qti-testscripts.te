@@ -70,9 +70,8 @@ userdebug_or_eng(`
   # All domains can read proc enrty of qti-testscripts
   r_dir_file(domain, qti-testscripts)
   r_dir_file(qti-testscripts, domain)
-  r_dir_file(domain, sysfs_devices_system_cpu)
-
-  #allow adbd qti-testscripts:process dyntransition;
+  
+# allow adbd qti-testscripts:process dyntransition;
   #allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket connectto;
   allow domain qti-testscripts:fd use;
   allow { domain -mediaextractor -mediacodec } qti-testscripts:unix_stream_socket { getattr getopt read write shutdown };
