@@ -27,3 +27,4 @@
 
 #Define rawdump block device
 type rawdump_block_device, dev_type;
+type earlycamera_device,dev_type;
