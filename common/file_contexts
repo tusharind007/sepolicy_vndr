@@ -180,7 +180,6 @@
 /system/bin/mm-qcamera-daemon                   u:object_r:mm-qcamerad_exec:s0
 /system/bin/qfp-daemon                          u:object_r:qfp-daemon_exec:s0
 /system/bin/qmmf-server                         u:object_r:qmmf-servd_exec:s0
-/system/bin/qmmf-webserver-zygote               u:object_r:qmmf-webserverd_exec:s0
 /system/rfs.*                                   u:object_r:rfs_system_file:s0
 /system/bin/time_daemon                         u:object_r:time_daemon_exec:s0
 /system/bin/rmt_storage                         u:object_r:rmt_storage_exec:s0
