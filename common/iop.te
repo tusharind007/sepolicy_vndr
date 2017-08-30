@@ -42,3 +42,7 @@ allow dumpstate iop_socket:sock_file { create_file_perms unlink };
 allow dumpstate iop_data_file:dir rw_dir_perms;
 allow dumpstate iop_data_file:file create_file_perms;
 dontaudit dumpstate self:capability fsetid;
+
+#####################  KAI TAG-Bug.Id:24822 ##########################
+allow dumpstate anr_data_file:dir create_dir_perms;
+allow dumpstate anr_data_file:file create_file_perms;

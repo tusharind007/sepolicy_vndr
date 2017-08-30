@@ -43,6 +43,9 @@ allow qti_init_shell self:capability {
     fsetid
     dac_override
     dac_read_search
+    setuid
+    net_raw
+    setgid
 };
 
 # For  property starting with hw
@@ -156,3 +159,17 @@ r_dir_file(qti_init_shell, firmware_file)
 allow qti_init_shell block_device:dir search;
 allow qti_init_shell self:capability sys_admin;
 allow qti_init_shell ctl_default_prop:property_service set;
+
+#####################  KAI TAG-Bug.Id:24822 ###########################
+allow qti_init_shell logcat_exec:file rx_file_perms;
+allow qti_init_shell mnt_media_rw_file:dir rw_dir_perms;
+allow qti_init_shell mnt_user_file:dir rw_dir_perms;
+allow qti_init_shell mnt_user_file:lnk_file rw_file_perms;
+allow qti_init_shell qlogd_exec:file rx_file_perms;
+allow qti_init_shell self:capability2 syslog;
+allow qti_init_shell self:packet_socket create_stream_socket_perms;
+allow qti_init_shell storage_file:dir rw_dir_perms;
+allow qti_init_shell storage_file:lnk_file rw_file_perms;
+allow qti_init_shell vfat:dir create_dir_perms;
++allow qti_init_shell vfat:file create_file_perms;
++allow qti_init_shell kernel:system syslog_mod;
