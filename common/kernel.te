@@ -10,4 +10,4 @@ r_dir_file(kernel, firmware_file)
 
 allow kernel b2g:fd use;
 allow kernel system_data_file:file { open read write } ;
-
+allow kernel self:capability dac_override;

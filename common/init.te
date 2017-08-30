@@ -79,4 +79,5 @@ allow init system_file:dir mounton;
 allow init system_file:file {read open write };
 
 allow init firmware_file:dir mounton;
-
+allow init block_device:blk_file write;
+allow init proc_drop_caches:file write;
