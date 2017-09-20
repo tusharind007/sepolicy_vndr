@@ -81,6 +81,14 @@
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
 /dev/bg_com_dev                                 u:object_r:bg_daemon_device:s0
+/dev/dvb0.dvr0                                       u:object_r:dvb_device:s0
+/dev/dvb0.dvr1                                       u:object_r:dvb_device:s0
+/dev/dvb0.dvr2                                       u:object_r:dvb_device:s0
+/dev/dvb0.dvr3                                       u:object_r:dvb_device:s0
+/dev/dvb0.demux0                                       u:object_r:dvb_device:s0
+/dev/dvb0.demux1                                       u:object_r:dvb_device:s0
+/dev/dvb0.demux2                                       u:object_r:dvb_device:s0
+/dev/dvb0.demux3                                       u:object_r:dvb_device:s0
 
 ###################################
 # Dev block nodes
