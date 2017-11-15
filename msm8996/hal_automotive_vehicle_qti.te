@@ -32,5 +32,10 @@ init_daemon_domain(hal_automotive_vehicle_qti)
 
 hal_server_domain(hal_automotive_vehicle_qti, hal_vehicle);
 
-allow hal_automotive_vehicle_qti self:can_socket create_socket_perms_no_ioctl;
+allow hal_automotive_vehicle_qti self:can_socket { create_socket_perms_no_ioctl ioctl };
 allowxperm hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
+
+binder_call(hal_automotive_vehicle_qti, system_app)
+get_prop(hal_automotive_vehicle_qti, hwservicemanager_prop)
+hwbinder_use(hal_automotive_vehicle_qti)
+add_hwservice(hal_automotive_vehicle_qti,hal_automotive_vehicle_hwservice)
