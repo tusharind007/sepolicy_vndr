@@ -47,6 +47,8 @@ allow wcnss_service persist_file:file setattr;
 allow wcnss_service self:capability chown;
 allow wcnss_service storage_file:dir search;
 allow wcnss_service storage_file:lnk_file read;
+allow wcnss_service mnt_media_rw_file:dir search;
+allow wcnss_service self:capability chown;
 
 # This is needed for ptt_socket app to write logs file collected to sdcard
 r_dir_file(wcnss_service, storage_file)
