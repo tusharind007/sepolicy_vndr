@@ -57,6 +57,8 @@ set_prop(mmi, ctl_default_prop)
 #bluetooth case
 allow mmi bluetooth_data_file:dir rw_dir_perms;
 allow mmi bluetooth_data_file:file create_file_perms;
+allow mmi bluetooth_logs_data_file:dir rw_dir_perms;
+allow mmi bluetooth_logs_data_file:file create_file_perms;
 set_prop(mmi, bluetooth_prop)
 allow mmi smd_device:chr_file rw_file_perms;
 allow mmi persist_bluetooth_file:file r_file_perms;
