@@ -97,3 +97,6 @@ get_prop(netmgrd, hwservicemanager_prop)
 hwbinder_use(netmgrd)
 binder_call(netmgrd, netd)
 allow netmgrd system_net_netd_hwservice:hwservice_manager find;
+
+allow netmgrd hal_cne_hwservice:hwservice_manager find;
+binder_call(netmgrd, cnd)
