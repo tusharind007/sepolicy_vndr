@@ -49,6 +49,7 @@ userdebug_or_eng(`
   diag_use(hal_rcsservice)
 ')
 
+allow hal_rcsservice sysfs_devices_system_cpu:file r_file_perms;
 allow hal_rcsservice sysfs_data:file r_file_perms;
 binder_call(hal_rcsservice, dataservice_app)
 userdebug_or_eng(`
