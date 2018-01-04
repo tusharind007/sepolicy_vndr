@@ -96,3 +96,8 @@
 
 # sdm845 specific sysfs file
 /sys/devices/platform/soc/17d41000.qcom,cpucc/17d41000.qcom,cpucc:qcom,wil6210/subsys8/name    u:object_r:sysfs_ssr:s0
+
+###################################
+# System files
+#
+/(vendor|system/vendor)/bin/hdcp_srm            u:object_r:hdcp_srm_exec:s0
