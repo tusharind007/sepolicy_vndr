@@ -13,6 +13,8 @@ userdebug_or_eng(`
   # IMS use camera daemon to make VT call
   allow mm-qcamerad port:tcp_socket name_bind;
   allow mm-qcamerad self:tcp_socket { accept listen };
+  allow mm-qcamerad self:tcp_socket { create setopt };
+  allow mm-qcamerad sysfs:file { read open };
   allow mm-qcamerad camera_data_file:file create_file_perms;
 
   # mm-qcamerad needs to set persist.camera. property
