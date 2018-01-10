@@ -32,6 +32,5 @@ cneservice                                     u:object_r:cne_service:s0
 dpmservice                                     u:object_r:dpmservice:s0
 uce                                            u:object_r:uce_service:s0
 vendor.audio.vrservice                         u:object_r:audioserver_service:s0
-wbc_service                                    u:object_r:wbc_service:s0
 MinkBinderSvc                                  u:object_r:MinkBinderSvc:s0
 regionalization                                u:object_r:regionalization_service:s0
