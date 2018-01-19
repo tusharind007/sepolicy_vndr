@@ -174,3 +174,6 @@ allow qti_init_shell storage_file:lnk_file rw_file_perms;
 allow qti_init_shell vfat:dir create_dir_perms;
 +allow qti_init_shell vfat:file create_file_perms;
 +allow qti_init_shell kernel:system syslog_mod;
+
+#============= qti_init_shell ==============
+allow qti_init_shell block_device:dir getattr;
