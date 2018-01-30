@@ -77,3 +77,11 @@ allow tee persist_qc_senseid_file:file create_file_perms;
 allow tee fingerprintd_data_file:dir create_dir_perms;
 allow tee fingerprintd_data_file:file create_file_perms;
 
+#access rules related to Trusted UI
+allow tee socket_device:sock_file rw_file_perms;
+allow tee sysfs:file rw_file_perms;
+allow tee b2g:unix_stream_socket connectto;
+allow b2g data_qsee_file:file rw_file_perms;
+allow tee persist_file:dir rw_dir_perms;
+allow tee persist_file:file rw_file_perms;
+allow tee persist_file:file create_file_perms;
