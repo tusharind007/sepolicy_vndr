@@ -46,6 +46,8 @@ get_prop(hal_dpmQmiMgr, hwservicemanager_prop)
 #Allow binder call from dpmd
 binder_call(hal_dpmQmiMgr,dpmd)
 
+#allow dpmd to access qmux radio socket
+qmux_socket(hal_dpmQmiMgr);
 #sysfs_data file permissions
 allow hal_dpmQmiMgr sysfs_data:file r_file_perms;
 allow hal_dpmQmiMgr sysfs_ssr:file r_file_perms;
