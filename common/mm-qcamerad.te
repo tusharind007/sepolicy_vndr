@@ -80,6 +80,9 @@ allow mm-qcamerad ion_device:chr_file rw_file_perms;
 allow mm-qcamerad fwk_sensor_hwservice:hwservice_manager find;
 binder_call(mm-qcamerad, system_server)
 
+#allow camera to access service manager binder call
+allow mm-qcamerad servicemanager:binder call;
+
 # from sensors team
 
 allow mm-qcamerad self:socket create_socket_perms;
