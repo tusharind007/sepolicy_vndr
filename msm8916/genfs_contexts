@@ -1,0 +1,158 @@
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/enable                           u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/enable_wakeup                    u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/fifo_max_event_count             u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/fifo_reserved_event_count        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/flags                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/handle                           u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/max_delay                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/max_latency                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/max_range                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/min_delay                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/name                             u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/poll_delay                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/resolution                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/sensor_power                     u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/type                             u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/uevent                           u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/vendor                           u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/version                          u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/calibrate                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/device                           u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/flush                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/power                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/self_test                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input5/MPU6050-accel/subsystem                        u:object_r:sysfs_sensors:s0
+
+genfscon sysfs   /bus/i2c/drivers/bma2x2-accel/bind                                                                  u:object_r:sysfs_sensors:s0
+genfscon sysfs   /bus/i2c/drivers/bma2x2-accel/unbind                                                                u:object_r:sysfs_sensors:s0
+genfscon sysfs   /bus/i2c/drivers/bma2x2-accel/uevent                                                                u:object_r:sysfs_sensors:s0
+
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/calibrate                         u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/device                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/enable                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/enable_wakeup                     u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/fifo_max_event_count              u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/fifo_reserved_event_count         u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/flags                             u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/flush                             u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/handle                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/max_delay                         u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/max_latency                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/max_range                         u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/min_delay                         u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/name                              u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/poll_delay                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/power                             u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/resolution                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/self_test                         u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/sensor_power                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/subsystem                         u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/type                              u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/uevent                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/vendor                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0068/input/input6/MPU6050-gyro/version                           u:object_r:sysfs_sensors:s0
+
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/calibrate                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/device                          u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/enable                          u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/enable_wakeup                   u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/fifo_max_event_count            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/fifo_reserved_event_count       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/flags                           u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/flush                           u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/handle                          u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/max_delay                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/max_latency                     u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/max_range                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/min_delay                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/name                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/poll_delay                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/power                           u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/resolution                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/self_test                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/sensor_power                    u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/subsystem                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/type                            u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/uevent                          u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/vendor                          u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input0/apds9930-light/version                         u:object_r:sysfs_sensors:s0
+
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/calibrate                   u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/device                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/enable                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/enable_wakeup               u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/fifo_max_event_count        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/fifo_reserved_event_count   u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/flags                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/flush                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/handle                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/max_delay                   u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/max_latency                 u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/max_range                   u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/min_delay                   u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/name                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/poll_delay                  u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/power                       u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/resolution                  u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/self_test                   u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/sensor_power                u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/subsystem                   u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/type                        u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/uevent                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/vendor                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/soc.0/78b6000.i2c/i2c-0/0-0039/input/input1/apds9930-proximity/version                     u:object_r:sysfs_sensors:s0
+
+genfscon sysfs   /devices/virtual/compass/akm8963                                                                    u:object_r:sysfs_sensors:s0
+
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/calibrate                                                 u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/device                                                    u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/enable                                                    u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/enable_wakeup                                             u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/fifo_max_event_count                                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/fifo_reserved_event_count                                 u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/flags                                                     u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/flush                                                     u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/handle                                                    u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/max_delay                                                 u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/max_latency                                               u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/max_range                                                 u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/min_delay                                                 u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/name                                                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/poll_delay                                                u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/power                                                     u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/resolution                                                u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/self_test                                                 u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/sensor_power                                              u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/subsystem                                                 u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/type                                                      u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/uevent                                                    u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/vendor                                                    u:object_r:sysfs_sensors:s0
+genfscon sysfs   /devices/virtual/input/input7/akm8963-mag/version                                                   u:object_r:sysfs_sensors:s0
