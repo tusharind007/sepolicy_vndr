@@ -72,3 +72,10 @@ allow qmmf-servd audio_data_file:file create_file_perms;
 allow qmmf-servd proc_audiod:file r_file_perms;
 
 allow qmmf-servd ion_device:chr_file r_file_perms;
+
+allow qmmf-servd hal_graphics_mapper_hwservice:hwservice_manager find;
+allow qmmf-servd hal_graphics_allocator_hwservice:hwservice_manager find;
+binder_call(qmmf-servd, hal_graphics_allocator_default)
+allow qmmf-servd hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
+binder_call(qmmf-servd, hal_configstore_default)
+r_dir_file(qmmf-servd, oemfs)
