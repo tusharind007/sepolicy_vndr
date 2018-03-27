@@ -97,6 +97,10 @@ userdebug_or_eng(`
 #Split A2dp specific
 binder_call(hal-server,bluetooth)
 
+#SplitA2dp bluetooth requires binding with audio hal
+binder_call(bluetooth, hal-server);
+allow bluetooth hal_audio_hwservice:hwservice_manager find;
+
 #for perf hal call
 hal_client_domain(hal-server, hal_perf)
 #allow acess to wcd_cpe
