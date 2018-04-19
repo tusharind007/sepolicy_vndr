@@ -214,8 +214,8 @@ allow qti_init_shell persist_alarm_file:file r_file_perms;
 allow qti_init_shell sysfs_zram:dir r_dir_perms;
 allow qti_init_shell sysfs_zram:file w_file_perms;
 
-# To get GPU frequencies
-allow qti_init_shell sysfs_kgsl:file r_file_perms;
+# To get GPU frequencies  and set attributes
+allow qti_init_shell sysfs_kgsl:file { r_file_perms setattr };
 
 allow qti_init_shell proc:file r_file_perms;
 allow qti_init_shell rootfs:file r_file_perms;
@@ -268,6 +268,9 @@ allow qti_init_shell sysfs_usb_mtp_device:file rw_file_perms;
 # For IO Cgroups
 allow qti_init_shell cgroup:dir { mounton create_dir_perms };
 allow qti_init_shell cgroup:file { create_file_perms };
+
+allow qti_init_shell sysfs_cpu_boost:dir r_dir_perms;
+allow qti_init_shell sysfs_cpu_boost:file rw_file_perms;
 
 # For USB RNDIS configuration
 allow qti_init_shell sysfs_android_usb:dir r_dir_perms;
