@@ -26,3 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow qti_init_shell ctl_qvrd_prop:property_service set;
+allow qti_init_shell self:capability net_raw;
+allow qti_init_shell shell_exec:file { getattr read };
+allow qti_init_shell self:netlink_route_socket { create bind read write nlmsg_write setopt getattr };
+allow qti_init_shell self:udp_socket { create bind read ioctl };
