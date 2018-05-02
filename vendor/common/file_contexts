@@ -535,6 +535,7 @@
 /data/vendor/ssrdump(/.*)?                                          u:object_r:ramdump_vendor_data_file:s0
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
 /data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
+/data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
 
 ###################################
 # persist files
@@ -558,7 +559,7 @@
 /persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
 /persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
 /persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
-/persist/FTM_AP(/.*)?                                               u:object_r:persist_mmi_file:s0
+/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
 
 ###################################
 # etc files
@@ -568,6 +569,7 @@
 ###################################
 # adsp files
 #
+/(vendor|system/vendor)/dsp(/.*)?                                   u:object_r:adsprpcd_file:s0
 /dsp(/.*)?                                                          u:object_r:adsprpcd_file:s0
 
 ###################################

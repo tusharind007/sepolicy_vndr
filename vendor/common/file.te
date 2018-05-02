@@ -41,7 +41,7 @@ type data_qtee_file, file_type, data_file_type;
 type persist_misc_file, file_type;
 type persist_bms_file, file_type;
 type persist_secnvm_file, file_type;
-type persist_mmi_file, file_type;
+type vendor_persist_mmi_file, file_type;
 
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type, proc_type;
@@ -201,7 +201,7 @@ type qti_logkit_priv_socket, file_type, data_file_type;
 type qti_logkit_pub_socket, file_type, mlstrustedobject, data_file_type;
 
 # used for /dsp files
-type adsprpcd_file, file_type, mlstrustedobject;
+type adsprpcd_file, file_type, mlstrustedobject, vendor_file_type;
 
 #mdtp_svc_app file types
 type mdtp_svc_app_data_file, file_type, data_file_type;
@@ -315,8 +315,14 @@ type data_qsee_file, file_type, data_file_type;
 #secure touch
 type sysfs_sectouch, sysfs_type, fs_type;
 
+#TUI Files
+type vendor_tui_data_file, file_type, data_file_type;
+
 #sysfs jpeg
 type sysfs_jpeg, fs_type, sysfs_type;
 
 #SSR Log Files
 type ramdump_vendor_data_file, file_type, data_file_type, mlstrustedobject;
+
+# npu file
+type sysfs_npu, fs_type, sysfs_type;
