@@ -120,6 +120,14 @@ allow hal-server input_device:dir r_dir_perms;
 allow hal-server input_device:chr_file r_file_perms;
 allow hal-server persist_file:dir search;
 
+allow hal-server sysfs_wake_lock:file rw_file_perms;
+allow hal-server sensors_persist_file:file r_file_perms;
+allow hal-server self:capability2 block_suspend;
+r_dir_file(hal-server, sensors_persist_file)
+allow hal-server self:socket create_socket_perms;
+# ioctlcmd=c304
+allowxperm hal-server self:socket ioctl msm_sock_ipc_ioctls;
+
 ##########################
 # DRM services
 #
