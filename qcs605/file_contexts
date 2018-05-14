@@ -158,9 +158,10 @@
 # qmmf server
 /(vendor|system/vendor)/bin/qmmf-server   u:object_r:qmmf-servd_exec:s0
 /(vendor|system/vendor)/bin/qmmf-webserver-zygote    u:object_r:qmmf-webserverd_exec:s0
-/(vendor|system/vendor)/bin/ipc-webserver-zygote     u:object_r:ipc-webserverd_exec:s0
 
 # qmmf data files
 /data/misc/qmmf(/.*)?                     u:object_r:qmmf_data_file:s0
 /data/misc/vam(/.*)?                      u:object_r:qmmf_vam_data_file:s0
 /sys/firmware/devicetree/base/model       u:object_r:sysfs_devices_base_model:s0
+
+/(vendor|system/vendor)/bin/discoveryd          u:object_r:discoveryd_exec:s0
