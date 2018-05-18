@@ -6,3 +6,6 @@ dontaudit domain kernel:system module_request;
 
 # Allow all domains read access to sysfs_thermal
 r_dir_file(domain, sysfs_thermal);
+
+allow domain sysfs_kgsl_gpuclk:file r_file_perms;
+allow domain  sysfs_kgsl_gpuclk:lnk_file r_file_perms;
