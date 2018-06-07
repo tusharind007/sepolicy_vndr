@@ -20,13 +20,10 @@
 /dev/spcom                                      u:object_r:spcom_device:s0
 /dev/sp_kernel                                  u:object_r:skp_device:s0
 /dev/sp_ssr                                     u:object_r:sp_ssr_device:s0
-/dev/sec_nvm_sp_kernel                          u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_jcos                               u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_spiris                             u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_keymaster                          u:object_r:sec_nvm_device:s0
-/dev/sec_nvm_iuicc                              u:object_r:sec_nvm_device:s0
+/dev/sec_nvm_.*                                 u:object_r:sec_nvm_device:s0
 /dev/sp_keymaster                               u:object_r:sp_keymaster_device:s0
 /dev/cryptoapp                                  u:object_r:cryptoapp_device:s0
+/dev/spdaemon_ssr                               u:object_r:spdaemon_ssr_device:s0
 /dev/qsee_ipc_irq_spss                          u:object_r:qsee_ipc_irq_spss_device:s0
 /dev/radio0                                     u:object_r:fm_radio_device:s0
 /dev/btpower                                    u:object_r:bt_device:s0
@@ -122,6 +119,7 @@
 #/dev/socket/dpmd                                u:object_r:dpmd_socket:s0
 #/dev/socket/dpmwrapper                          u:object_r:dpmwrapper_socket:s0
 /dev/socket/pps                                 u:object_r:pps_socket:s0
+/dev/socket/qdcmsocket                          u:object_r:qdcmsocket_socket:s0
 /dev/socket/rild2                               u:object_r:rild_socket:s0
 /dev/socket/rild2-debug                         u:object_r:rild_debug_socket:s0
 /dev/socket/rild-debug2                         u:object_r:rild_debug_socket:s0
@@ -134,6 +132,7 @@
 /dev/socket/ssgtzd                              u:object_r:ssgtzd_socket:s0
 /dev/socket/wififtmd_server                     u:object_r:wififtmd_socket:s0
 /dev/socket/wpa_wigig[0-9]                      u:object_r:wifi_vendor_wpa_socket:s0
+/dev/socket/vendor_wpa_wlan[0-9]                u:object_r:wifi_vendor_wpa_socket:s0
 /dev/socket/mmi                                 u:object_r:vendor_mmi_socket:s0
 /dev/socket/location(/.*)?                      u:object_r:location_socket:s0
 /dev/socket/wigignpt                            u:object_r:wigignpt_socket:s0
@@ -190,6 +189,7 @@
 /(vendor|system/vendor)/bin/mm-pp-dpps          u:object_r:mm-pp-daemon_exec:s0
 /(vendor|system/vendor)/bin/mmi                 u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                u:object_r:vendor_mmi_exec:s0
+/(vendor|system/vendor)/bin/qdcmss              u:object_r:qdcm-ss_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
 /(vendor|system/vendor)/bin/imsdatadaemon       u:object_r:ims_exec:s0
 /(vendor|system/vendor)/bin/imsqmidaemon        u:object_r:ims_exec:s0
@@ -214,9 +214,11 @@
 /(vendor|system/vendor)/bin/qseecomd            u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/bg_daemon           u:object_r:bg_daemon_exec:s0
 /(vendor|system/vendor)/bin/spdaemon            u:object_r:spdaemon_exec:s0
+/(vendor|system/vendor)/bin/sec_nvm             u:object_r:sec_nvm_exec:s0
 /(vendor|system/vendor)/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/hostapd_cli         u:object_r:hostapd_exec:s0
 /(vendor|system/vendor)/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
+/(vendor|system/vendor)/bin/cdsprpcd            u:object_r:cdsprpcd_exec:s0
 /(vendor|system/vendor)/bin/wpa_cli             u:object_r:wcnss_service_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper          u:object_r:mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mdm_helper_proxy    u:object_r:mdm_helper_exec:s0
@@ -337,6 +339,7 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qpnp,fg/power_supply/bms(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/class/qcom-battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/class/charge_pump(/.*)?               u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/qpnp-linear-charger-[a-z0-9]+/power_supply/battery(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices(/platform)?/soc/qpnp-vm-bms-[a-z0-9]+/power_supply/bms(/.*)?    u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/qpnp-smbcharger-[a-z0-9]+/power_supply/battery(/.*)?        u:object_r:sysfs_battery_supply:s0
@@ -491,6 +494,7 @@
 /sys/kernel/boot_adsp/boot                                          u:object_r:sysfs_boot_adsp:s0
 /sys/kernel/boot_slpi(/.*)?                                         u:object_r:sysfs_slpi:s0
 /sys/module/process_reclaim(/.*)?                                   u:object_r:sysfs_process_reclaim:s0
+/sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
 
 ###################################
 # data files
@@ -526,8 +530,8 @@
 /data/vendor/wifi/sockets(/.*)?                                     u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets(/.*)?                               u:object_r:wifi_vendor_wpa_socket:s0
 /data/vendor/wifi/wigig_sockets/wpa_ctrl.*                          u:object_r:wifi_vendor_wpa_socket:s0
-/data/vendor/qdmastats(/.*)?                                        u:object_r:qdma_data_file:s0
-/data/vendor/qdma(/.*)?                                             u:object_r:qdma_data_file:s0
+/data/vendor/qdmastats(/.*)?                                        u:object_r:vendor_qdma_data_file:s0
+/data/vendor/qdma(/.*)?                                             u:object_r:vendor_qdma_data_file:s0
 /data/vendor/vpp(/.*)?                                              u:object_r:vendor_vpp_data_file:s0
 /data/vendor/camera(/.*)?                                           u:object_r:vendor_camera_data_file:s0
 /data/vendor/wifi/wigig_hostapd(/.*)?                               u:object_r:wigig_hostapd_socket:s0
@@ -542,11 +546,35 @@
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
 /data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
 /data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
+/data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
 
 ###################################
 # persist files
 #
-/persist(/.*)?                                                      u:object_r:persist_file:s0
+/persist(/.*)?                                                                 u:object_r:mnt_vendor_file:s0
+/mnt/vendor/persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
+/mnt/vendor/persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
+/mnt/vendor/persist/alarm(/.*)?                                                u:object_r:persist_alarm_file:s0
+/mnt/vendor/persist/time(/.*)?                                                 u:object_r:persist_time_file:s0
+/mnt/vendor/persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
+/mnt/vendor/persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
+/mnt/vendor/persist/usf(/.*)?                                                  u:object_r:persist_usf_file:s0
+/mnt/vendor/persist/hlos_rfs(/.*)?                                             u:object_r:persist_rfs_shared_hlos_file:s0
+/mnt/vendor/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
+/mnt/vendor/persist/rfs.*                                                      u:object_r:persist_rfs_file:s0
+/mnt/vendor/persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
+/mnt/vendor/persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
+/mnt/vendor/persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
+/mnt/vendor/persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
+/mnt/vendor/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
+/mnt/vendor/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
+###################################
+# persist changes for backword comptaibily
+# this changes would be removed once tech team make the changes
+#
 /persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
 /persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
 /persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
@@ -652,6 +680,10 @@
 /vendor/lib(64)?/libfastcvdsp_stub\.so      u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libfastcvadsp_stub\.so     u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libfastcvopt\.so           u:object_r:same_process_hal_file:s0
+
+# SVA files
+/vendor/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
 ###################################
 # firmware images
 #
