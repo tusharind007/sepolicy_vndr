@@ -1,4 +1,4 @@
-# Copyright (c) 2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,11 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Add new domain for pdt apps
-user=system seinfo=platform name=.pdtapps domain=pdt_app type=system_app_data_file
+## sysmon_app
+##
+## This file defines the permissions that sysmon_apps can carry
 
-#Add new domain for usta app
-user=system seinfo=platform name=com.qualcomm.qti.usta domain=usta_app type=system_app_data_file
+type sysmon_app, domain;
 
-#Add new domain for sysmon app
-user=_app seinfo=platform name=com.qualcomm.qti.sysmonappExternal domain=sysmon_app type=app_data_file levelFrom=all
+app_domain(sysmon_app)
+
+# display by the com.qualcomm.qti.sysmonappExternal.SysMonApp
+allow sysmon_app app_api_service:service_manager find;
+
+# Allow access to FastRPC
+allow sysmon_app qdsp_device:chr_file r_file_perms;
+allow sysmon_app xdsp_device:chr_file r_file_perms;
+allow sysmon_app dsp_device:chr_file r_file_perms;
