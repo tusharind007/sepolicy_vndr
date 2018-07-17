@@ -13,6 +13,9 @@ type qti_data_file, file_type, data_file_type;
 #Define the pps socket type
 type pps_socket, file_type;
 
+#Define the qdcmss socket type
+type qdcmsocket_socket, file_type;
+
 # Define cnd socket and data file type
 type cnd_socket, file_type, mlstrustedobject;
 type cnd_data_file, file_type, data_file_type;
@@ -46,6 +49,7 @@ type persist_secnvm_file, file_type;
 type persist_mmi_file, file_type;
 
 type diag_data_file, file_type, data_file_type;
+type persist_hvdcp_file, file_type, data_file_type;
 
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type;
