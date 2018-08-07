@@ -182,3 +182,6 @@ allow qti_init_shell block_device:dir getattr;
 allow qti_init_shell configfs:dir r_dir_perms;
 allow qti_init_shell configfs:file rw_file_perms;
 
+# For USB RNDIS configuration
+allow qti_init_shell sysfs_android_usb:dir r_dir_perms;
+allow qti_init_shell sysfs_android_usb:file rw_file_perms;
