@@ -86,6 +86,10 @@ allow system_server {
     bt_device
 }:chr_file rw_file_perms;
 
+#For Vehicle HAL
+allow system_server audioserver:file write;
+allow system_server hal_audio_default:file write;
+
 #For firmware
 r_dir_file(system_server, bt_firmware_file)
 
