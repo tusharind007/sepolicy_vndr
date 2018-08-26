@@ -13,3 +13,10 @@ r_dir_file(kernel, firmware_file)
 # Allow kernel to schedule process to different cpuset
 # when the current cpu is hotplugged out
 allow kernel domain:process setsched;
+
+#Allow remove_name, rmdir in the storage directory  and blk_file
+allow kernel device:chr_file { create setattr  getattr unlink };
+allow kernel device:dir { create add_name write remove_name rmdir};
+allow kernel self:capability mknod;
+allow kernel self:socket create;
+allow kernel device:blk_file { create getattr setattr unlink };
