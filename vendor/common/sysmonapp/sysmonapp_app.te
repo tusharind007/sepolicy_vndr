@@ -24,23 +24,20 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#
-type vendor_audioftm, domain;
-type vendor_audioftm_exec, exec_type, vendor_file_type, file_type;
 
-init_daemon_domain(vendor_audioftm)
-domain_auto_trans(vendor_mmi, vendor_audioftm_exec, vendor_audioftm)
+## sysmonapp_app
+## This file defines permissions that sysmonapp_app can carry
 
-allow vendor_audioftm vendor_audioftm_exec:file { rx_file_perms entrypoint };
+type sysmonapp_app, domain;
+app_domain(sysmonapp_app);
 
-allow vendor_audioftm proc_audiod:file r_file_perms;
-allow vendor_audioftm proc_audiod:dir search;
-allow vendor_audioftm proc_asound:dir search;
+# For service manager access
+allow sysmonapp_app app_api_service:service_manager find;
 
-allow vendor_audioftm devpts:chr_file rw_file_perms;
+# For access to camera and media
+allow sysmonapp_app cameraserver_service:service_manager find;
+allow sysmonapp_app mediaserver_service:service_manager find;
 
-allow vendor_audioftm vendor_audio_data_file:dir create_dir_perms;
-allow vendor_audioftm vendor_audio_data_file:file create_file_perms;
-
-allow vendor_audioftm audio_device:dir r_dir_perms;
-allow vendor_audioftm audio_device:chr_file rw_file_perms;
+# To access FastRPC devices
+allow sysmonapp_app qdsp_device:chr_file r_file_perms;
+allow sysmonapp_app xdsp_device:chr_file r_file_perms;
