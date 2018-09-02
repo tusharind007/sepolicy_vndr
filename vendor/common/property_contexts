@@ -123,6 +123,10 @@ vendor.debug.egl.changepixelformat  u:object_r:public_vendor_default_prop:s0
 vendor.debug.prerotation.disable  u:object_r:public_vendor_default_prop:s0
 vendor.debug.rs.           u:object_r:public_vendor_default_prop:s0
 
+# cgroup follow
+ro.vendor.qti.cgroup_follow.enable u:object_r:vendor_cgroup_follow_prop:s0
+ro.vendor.qti.cgroup_follow.dex2oat_only u:object_r:vendor_cgroup_follow_prop:s0
+
 #Bservice Property
 ro.vendor.qti.sys.fw.bservice_ u:object_r:bservice_prop:s0
 #Delayed Service Restart Property
@@ -194,7 +198,6 @@ persist.vendor.wifi.softap.        u:object_r:vendor_softap_prop:s0
 #mm-parser
 vendor.mm.enable.qcom_parser       u:object_r:mm_parser_prop:s0
 vendor.qcom_parser.                u:object_r:mm_parser_prop:s0
-vendor.audio.parser.ip.buffer.size u:object_r:mm_parser_prop:s0
 
 #mm-osal
 vendor.debug.mmosal.config         u:object_r:debug_prop:s0
