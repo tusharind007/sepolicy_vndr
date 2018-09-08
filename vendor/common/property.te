@@ -99,6 +99,9 @@ type hwui_prop, property_type;
 
 type graphics_vulkan_prop, property_type;
 
+#cgroup follow
+type vendor_cgroup_follow_prop, property_type;
+
 #Bservice property
 type bservice_prop, property_type;
 
@@ -176,3 +179,5 @@ type vendor_camera_prop, property_type;
 type ctl_vendor_rmt_storage_prop, property_type;
 
 type vendor_gpu_prop, property_type;
+
+type vendor_data_ko_prop, property_type;
