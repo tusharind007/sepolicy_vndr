@@ -140,3 +140,7 @@ type ctl_vendor_imsrcsservice_prop, property_type;
 
 #qdcmss property
 type vendor_qdcmss_prop, property_type;
+
+#seccam property
+type vendor_seccam_prop, property_type;
+type vendor_core_ctl_prop, property_type;
