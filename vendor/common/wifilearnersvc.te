@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,26 +25,20 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type poweroffalarm_app, domain;
-app_domain(poweroffalarm_app);
+type wifilearnersvc, domain;
+type wifilearnersvc_exec, exec_type, vendor_file_type, file_type;
 
-allow poweroffalarm_app app_api_service:service_manager find;
+init_daemon_domain(wifilearnersvc)
+hal_server_domain(wifilearnersvc, hal_wifilearner)
 
-allow poweroffalarm_app mnt_vendor_file:dir r_dir_perms;
-allow poweroffalarm_app persist_alarm_file:dir rw_dir_perms;
-allow poweroffalarm_app persist_alarm_file:file create_file_perms;
+#allows calls between client and server and vice-versa
+binder_call(hal_wifilearner_client, hal_wifilearner_server)
+binder_call(hal_wifilearner_server, hal_wifilearner_client)
 
-hal_client_domain(poweroffalarm_app, hal_alarm_qti);
+#allow hal clients to find the service
+allow hal_wifilearner_client hal_wifilearner_hwservice:hwservice_manager find;
 
-allow poweroffalarm_app hal_alarm_qti_default:binder call;
+#register hal service
+add_hwservice(hal_wifilearner, hal_wifilearner_hwservice)
 
-allow poweroffalarm_app system_app_data_file:dir create_dir_perms;
-allow poweroffalarm_app system_app_data_file:{ file lnk_file } create_file_perms;
-
-allow poweroffalarm_app surfaceflinger_service:service_manager find;
-allow poweroffalarm_app audioserver_service:service_manager find;
-allow poweroffalarm_app mediaserver_service:service_manager find;
-
-get_prop(poweroffalarm_app, vendor_alarm_boot_prop);
-
-get_prop(poweroffalarm_app, vendor_iop_prop)
+allow hal_wifilearner self:netlink_generic_socket create_socket_perms_no_ioctl;
