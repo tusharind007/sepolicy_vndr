@@ -45,6 +45,7 @@ allow hal_automotive_vehicle_qti hal_audio_default:binder call;
 allow hal_automotive_vehicle_qti audio_data_file:file create;
 allow hal_automotive_vehicle_qti audio_data_file:file { append open read };
 allow hal_automotive_vehicle_qti audio_data_file:dir getattr;
+allow hal_automotive_vehicle_qti audio_data_file:file getattr;
 
 binder_call(hal_automotive_vehicle_qti, system_app)
 add_hwservice(hal_automotive_vehicle_qti,hal_automotive_vehicle_hwservice)
