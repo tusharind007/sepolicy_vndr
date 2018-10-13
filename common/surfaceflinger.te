@@ -46,3 +46,5 @@ allow surfaceflinger {
 
 #set qemu.gles prop
 set_prop(surfaceflinger, qemu_gles_prop)
+
+allow surfaceflinger hal_tv_input_default:fd use;
