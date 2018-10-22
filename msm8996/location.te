@@ -25,7 +25,7 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_sensors_default qvrd:fd use;
-allow hal_sensors_default sysfs:file { read write getattr open };
-allow hal_sensors_default system_data_file:dir { write create add_name setattr };
-
+#============= location ==============
+allow location hal_automotive_vehicle_qti:binder { call transfer } ;
+allow location hidl_base_hwservice:hwservice_manager add;
+allow location vendor_file:file execute_no_trans;
