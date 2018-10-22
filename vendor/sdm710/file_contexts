@@ -90,3 +90,6 @@
 
 #LED sysfs nodes
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-03/c440000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds(/.*)? u:object_r:sysfs_leds:s0
+
+#Android NN Driver
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti u:object_r:hal_neuralnetworks_default_exec:s0
