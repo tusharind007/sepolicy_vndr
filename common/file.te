@@ -283,6 +283,9 @@ type qti_debugfs, fs_type, debugfs_type;
 # vendor radio files
 type vendor_radio_data_file, file_type, data_file_type;
 
+#vendor MBN files
+type vendor_mbn_data_file, file_type, data_file_type;
+
 #uio sysfs
 type sysfs_uio_file, fs_type, sysfs_type;
 
@@ -343,3 +346,6 @@ type sysfs_emmc_dload, sysfs_type, fs_type;
 
 # vservices sysfs files
 type sysfs_vservices, sysfs_type, fs_type;
+
+#qvrservice sysfs files
+type sysfs_qvr_external_sensor, sysfs_type, fs_type;
