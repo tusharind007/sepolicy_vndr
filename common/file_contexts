@@ -348,4 +348,4 @@
 ###################################
 # usbmsc files
 #
-file_contexts:/usbmsc(/.*)?               		    	     u:object_r:usbmsc_data_file:s0
+file_contexts:/data/usbmsc_mnt(/.*)?               		    u:object_r:usbmsc_data_file:s0
