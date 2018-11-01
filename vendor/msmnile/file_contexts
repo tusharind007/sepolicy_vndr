@@ -146,3 +146,5 @@
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/qrtr-cfg                                u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/qrtr-ns                                 u:object_r:qrtr_exec:s0
+
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:hal_audiocontrol_qti_exec:s0
