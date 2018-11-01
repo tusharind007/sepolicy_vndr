@@ -27,6 +27,3 @@
 
 hal_client_domain(priv_app, hal_perf)
 hal_client_domain(priv_app, hal_iop)
-
-allow priv_app default_android_service:service_manager find;
-allow priv_app hal_tv_input_default:binder call;
