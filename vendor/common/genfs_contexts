@@ -41,6 +41,7 @@ genfscon sysfs /module/cpu_boost                                        u:object
 genfscon sysfs /devices/virtual/thermal                                 u:object_r:sysfs_thermal:s0
 genfscon sysfs /class/thermal                                           u:object_r:sysfs_thermal:s0
 genfscon sysfs /class/lcd_bias                                          u:object_r:sysfs_lcd:s0
+genfscon sysfs /class/amoled_bias                                       u:object_r:sysfs_oled:s0
 genfscon sysfs /module/msm_thermal                                      u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/platform/battery_current_limit                  u:object_r:sysfs_thermal:s0
 genfscon sysfs /module/tcp_cubic/parameters                             u:object_r:sysfs_net:s0
