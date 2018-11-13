@@ -205,5 +205,5 @@ hal_client_domain(system_server, hal_iop)
 #kgsl
 r_dir_file(system_server, kgsl_debugfs);
 
-# allow read ro.radio.noril peop
-allow system_server radio_noril_prop:file { open read getattr };
+# allow system_server to read ro.radio.noril property
+get_prop(system_server, radio_noril_prop)
