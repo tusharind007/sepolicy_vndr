@@ -107,7 +107,7 @@ sys.boot_mode              u:object_r:boot_mode_prop:s0
 ro.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
 sys.nfc.nq.                u:object_r:nfc_nq_prop:s0
-#ctl.ppd                    u:object_r:ppd_prop:s0
+ctl.ppd                    u:object_r:ppd_prop:s0
 qemu.gles                  u:object_r:qemu_gles_prop:s0
 # LKCore start
 ctl.vendor.LKCore-dbg      u:object_r:ctl_LKCore_prop:s0
