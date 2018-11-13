@@ -27,3 +27,4 @@ vendor.qti.hardware.tui_comm::ITuiComm                       u:object_r:hal_tui_
 vendor.qti.hardware.qdutils_disp::IQdutilsDisp               u:object_r:hal_qdutils_disp_hwservice:s0
 hardware.google.media.c2::IConfigurable                         u:object_r:hal_codec2_hwservice:s0
 hardware.google.media.c2::IComponentStore                       u:object_r:hal_codec2_hwservice:s0
+vendor.qti.gnss::ILocHidlGnss                                u:object_r:hal_gnss_hwservice:s0
