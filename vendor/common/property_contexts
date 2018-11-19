@@ -139,8 +139,6 @@ ro.vendor.qti.am.reschedule_service u:object_r:reschedule_service_prop:s0
 persist.vendor.graphics.vulkan.disable     u:object_r:graphics_vulkan_prop:s0
 #boot mode property
 vendor.sys.boot_mode              u:object_r:vendor_boot_mode_prop:s0
-# GPU
-ro.vendor.gpu.available_frequencies u:object_r:freq_prop:s0
 # NFC
 vendor.qti.nfc.            u:object_r:nfc_nq_prop:s0
 # LKCore start
@@ -260,3 +258,7 @@ vendor.fastrpc.                  u:object_r:adsprpc_prop:s0
 
 #qvr properties
 vendor.qvr                       u:object_r:qvr_prop:s0
+
+#seccam hal service
+vendor.seccam_hal_service  u:object_r:vendor_seccam_prop:s0
+vendor.hyp_core_ctl        u:object_r:vendor_core_ctl_prop:s0
