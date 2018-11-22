@@ -218,6 +218,7 @@
 /data/vendor/bluetooth(/.*)?           u:object_r:vendor_bt_data_file:s0
 # audio_data_file
 /data/vendor/audio(/.*)? u:object_r:vendor_audio_data_file:s0
+/data/vendor/time(/.*)?                u:object_r:vendor_time_data_file:s0
 
 # /
 /tombstones             u:object_r:rootfs:s0
