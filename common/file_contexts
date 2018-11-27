@@ -702,3 +702,8 @@
 # rawdump partition
 /sys/kernel/dload/emmc_dload                                        u:object_r:sysfs_emmc_dload:s0
 /sys/kernel/dload/dload_mode                                        u:object_r:sysfs_emmc_dload:s0
+
+#####################################
+# DVR
+/mnt/dvr_ctl(/.*)?                                                  u:object_r:dvr_pipe_file:s0
+/mnt/dvr_mux(/.*)?                                                  u:object_r:dvr_mux_file:s0
