@@ -70,3 +70,6 @@ hal_client_domain(hal_audio_default, hal_health)
 #allow acess to wcd_cpe
 allow hal_audio sysfs_audio:file rw_file_perms;
 allow hal_audio sysfs_audio:dir r_dir_perms ;
+
+#Rule to enable sys_nice capability to run FFV thread with real time priority
+allow hal_audio self:capability sys_nice;
