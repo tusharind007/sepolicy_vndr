@@ -175,3 +175,6 @@
 
 # device node for external anc
 /dev/msm_audio_anc                              u:object_r:msm_audio_anc_device:s0
+
+#GPS service
+/(vendor|system/vendor)/bin/engine-service      u:object_r:location_exec:s0
