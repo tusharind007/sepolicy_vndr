@@ -106,6 +106,10 @@
 
 /sys/devices/soc/b00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/gpu_available_frequencies   u:object_r:sysfs_kgsl:s0
 
+
+/sys/bus/iio(/.*)?                                                              u:object_r:sysfs_sensors_default:s0
+/sys/devices/soc/75b8000.i2c/i2c-10/10-0069/iio:device[0-9](/.*)?               u:object_r:sysfs_sensors_default:s0
+
 #rawdump partition
 /dev/block/platform/soc/7464900.sdhci/by-name/rawdump                           u:object_r:rawdump_block_device:s0
 
