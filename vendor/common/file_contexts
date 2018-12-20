@@ -223,9 +223,10 @@
 # /
 /tombstones             u:object_r:rootfs:s0
 /vendor/dsp(/.*)?       u:object_r:adsprpcd_file:s0
-
+/dsp(/.*)?              u:object_r:adsprpcd_file:s0
 
 # /persist
+/persist(/.*)?                       u:object_r:mnt_vendor_file:s0
 /mnt/vendor/persist/data(/.*)?       u:object_r:persist_data_file:s0
 /mnt/vendor/persist/display(/.*)?    u:object_r:persist_display_file:s0
 /mnt/vendor/persist/drm(/.*)?        u:object_r:persist_drm_file:s0
