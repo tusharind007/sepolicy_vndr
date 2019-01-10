@@ -65,4 +65,4 @@ allow init qti_debugfs:file rw_file_perms;
 allow init cgroup:file create;
 
 #init access to sysfs_android_usb
-allow init sysfs_android_usb:dir write;
+allow init sysfs_android_usb_cfg:dir write;
