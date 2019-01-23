@@ -32,3 +32,9 @@ allow bootanim boot_animation_prop:file r_file_perms;
 allow bootanim debug_gralloc_prop:file r_file_perms;
 set_prop(bootanim, qemu_gles_prop)
 userdebug_or_eng(`allow bootanim self:process execmem;')
+allow bootanim regionalization_file:dir search;
+allow bootanim regionalization_file:file r_file_perms;
+allow bootanim hab_audio_device:chr_file rw_file_perms;
+allow bootanim vendor_file:file rx_file_perms;
+allow bootanim persist_file:dir search;
+allow bootanim sw_sync_device:chr_file rw_file_perms;

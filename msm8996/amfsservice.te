@@ -35,4 +35,4 @@ init_daemon_domain(amfsservice)
 # For reading files under /vendor
 allow amfsservice vendor_file:dir r_dir_perms;
 allow amfsservice vendor_configs_file:dir r_dir_perms;
-allow amfsservice audio_device:chr_file rw_file_perms;
+allow amfsservice hab_audio_device:chr_file rw_file_perms;

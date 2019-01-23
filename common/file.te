@@ -53,6 +53,7 @@ type diag_data_file, file_type, data_file_type;
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type;
 
+type sw_sync_file, file_type;
 #file type for irqbalance socket
 type msm_irqbalance_socket, file_type;
 
@@ -341,3 +342,7 @@ type kgsl_debugfs, debugfs_type, fs_type;
 type sysfs_emmc_dload, sysfs_type, fs_type;
 
 type sysfs_android_usb_cfg, fs_type, sysfs_type;
+
+# DVR
+type dvr_pipe_file, file_type;
+type dvr_mux_file, file_type;

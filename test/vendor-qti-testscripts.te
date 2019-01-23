@@ -65,7 +65,7 @@ userdebug_or_eng(`
   dontaudit vendor-qti-testscripts domain:drmservice *;
   dontaudit vendor-qti-testscripts unlabeled:filesystem *;
   #super_user - end
-
+  get_prop(vendor-qti-testscripts, vendor_coresight_prop)
   #Added below rule in same file to keep all debug policies
   #under one common file.
 
@@ -78,7 +78,7 @@ userdebug_or_eng(`
   allow domain vendor-qti-testscripts:fd use;
   allow { domain -mediaextractor -mediacodec -hal_configstore_default } vendor-qti-testscripts:unix_stream_socket { getattr getopt read write shutdown };
   #binder_call({ domain -init -netd }, vendor-qti-testscripts)
-  allow domain vendor-qti-testscripts:fifo_file { write getattr };
+  allow domain vendor-qti-testscripts:fifo_file w_file_perms;
   allow domain vendor-qti-testscripts:process sigchld;
   diag_use(radio)
 ')

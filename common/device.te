@@ -46,7 +46,8 @@ type sg_device, dev_type;
 type dip_device, dev_type;
 type mdtp_device, dev_type;
 type sd_device, dev_type;
-
+type sw_sync_device, dev_type, mlstrustedobject;
+type hab_audio_device, dev_type, mlstrustedobject;
 #ESOC device
 type esoc_device, dev_type;
 

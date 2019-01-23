@@ -66,3 +66,4 @@ allow init cgroup:file create;
 
 #init access to sysfs_android_usb
 allow init sysfs_android_usb_cfg:dir write;
+allow init debugfs:file write;

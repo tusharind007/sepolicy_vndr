@@ -241,7 +241,10 @@ hal_client_domain(system_app, hal_sensorscalibrate_qti);
 
 #allow system_app access pps_socket
 allow system_app pps_socket:sock_file write;
-
+allow system_app hab_audio_device:chr_file rw_file_perms;
+allow system_app sw_sync_device:chr_file rw_file_perms;
+allow system_app regionalization_file:dir search;
 allow system_app hal_automotive_vehicle_hwservice:hwservice_manager find;
 binder_call(system_app, hal_automotive_vehicle_qti);
 set_prop(system_app, car_prop);
+set_prop(system_app , ppd_prop);

@@ -18,3 +18,4 @@ userdebug_or_eng(`
   binder_call(radio, hal_rcsservice)
 ')
 hal_client_domain(radio, hal_perf)
+allow radio opengles_prop:file r_file_perms;

@@ -27,6 +27,8 @@ get_prop(platform_app, debug_gralloc_prop)
 
 #for perf-hal call
 hal_client_domain(platform_app, hal_perf)
-
 #for iop-hal call
 hal_client_domain(platform_app, hal_iop)
+
+allow platform_app hab_audio_device:chr_file rw_file_perms;
+allow platform_app sw_sync_device:chr_file rw_file_perms;

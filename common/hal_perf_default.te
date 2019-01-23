@@ -62,6 +62,7 @@ allow hal_perf_default self:capability {dac_override sys_resource kill};
 #Acess to ion  memory /sys/class/kgsl/kgsl/proc/<pid>/ion
 allow hal_perf sysfs_kgsl_proc:dir r_dir_perms;
 allow hal_perf sysfs_kgsl_proc:file r_file_perms;
+unix_socket_connect(hal_perf_default, property, init)
 
 allow hal_perf {
     sysfs_devices_system_cpu

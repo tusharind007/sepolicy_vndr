@@ -32,7 +32,9 @@ allow surfaceflinger cameraserver_service:service_manager find;
 
 #Allow access to binder callback's to camera hal
 binder_call(surfaceflinger, hal_camera_default)
-
+allow surfaceflinger vendor_file:file rx_file_perms;
+allow surfaceflinger audio_device:chr_file rw_file_perms;
+allow surfaceflinger hab_audio_device:chr_file rw_file_perms;
 #diag
 userdebug_or_eng(`
     diag_use(surfaceflinger)
@@ -48,3 +50,4 @@ allow surfaceflinger {
 set_prop(surfaceflinger, qemu_gles_prop)
 
 allow surfaceflinger hal_tv_input_default:fd use;
+allow surfaceflinger sw_sync_device:chr_file rw_file_perms;

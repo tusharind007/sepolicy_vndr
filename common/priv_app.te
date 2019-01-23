@@ -30,3 +30,6 @@ hal_client_domain(priv_app, hal_iop)
 
 allow priv_app default_android_service:service_manager find;
 allow priv_app hal_tv_input_default:binder call;
+allow priv_app proc_stat:file r_file_perms;
+allow priv_app hab_audio_device:chr_file rw_file_perms;
+allow priv_app sw_sync_device:chr_file rw_file_perms;

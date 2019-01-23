@@ -35,17 +35,11 @@ hal_server_domain(hal_automotive_vehicle_qti, hal_vehicle);
 allow hal_automotive_vehicle_qti self:can_socket { create_socket_perms_no_ioctl ioctl };
 allowxperm hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
 
-allow hal_automotive_vehicle_qti audio_device:chr_file ioctl;
-allow hal_automotive_vehicle_qti audio_device:chr_file open;
-allow hal_automotive_vehicle_qti audio_device:chr_file { read write };
-allow hal_automotive_vehicle_qti audio_data_file:dir search;
-allow hal_automotive_vehicle_qti audio_data_file:dir write;
-allow hal_automotive_vehicle_qti audio_data_file:dir add_name;
+allow hal_automotive_vehicle_qti hab_audio_device:chr_file rw_file_perms;
+allow hal_automotive_vehicle_qti audio_data_file:dir rw_dir_perms;
+
 allow hal_automotive_vehicle_qti hal_audio_default:binder call;
-allow hal_automotive_vehicle_qti audio_data_file:file create;
-allow hal_automotive_vehicle_qti audio_data_file:file { append open read };
-allow hal_automotive_vehicle_qti audio_data_file:dir getattr;
-allow hal_automotive_vehicle_qti audio_data_file:file getattr;
+allow hal_automotive_vehicle_qti audio_data_file:file create_file_perms;
 
 binder_call(hal_automotive_vehicle_qti, system_app)
 add_hwservice(hal_automotive_vehicle_qti,hal_automotive_vehicle_hwservice)
