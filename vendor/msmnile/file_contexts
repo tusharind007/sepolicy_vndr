@@ -144,3 +144,5 @@
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/qrtr-cfg                                u:object_r:qrtr_exec:s0
+/(vendor|system/vendor)/bin/qrtr-ns                                 u:object_r:qrtr_exec:s0
