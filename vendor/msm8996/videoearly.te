@@ -33,4 +33,4 @@ init_daemon_domain(videoearly)
 allow videoearly gpu_device:chr_file rw_file_perms;
 allow videoearly ion_device:chr_file rw_file_perms;
 allow videoearly graphics_device:chr_file rw_file_perms;
-allow videoearly video_device:chr_file r_file_perms;
+allow videoearly video_device:chr_file rw_file_perms;
