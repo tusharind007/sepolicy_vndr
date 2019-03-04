@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,22 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# Hypervisor DVR backend daemon
-type hyp_dvr_be, domain;
-type hyp_dvr_be_exec, exec_type, vendor_file_type, file_type;
-
-# Started by init
-init_daemon_domain(hyp_dvr_be)
-
-hal_client_domain(hyp_dvr_be, hal_graphics_allocator)
-allow hyp_dvr_be ion_device:chr_file r_file_perms;
-allow hyp_dvr_be dvr_mux_file:dir rw_dir_perms;
-allow hyp_dvr_be dvr_mux_file:file create_file_perms;
-allow hyp_dvr_be dvr_pipe_file:dir rw_dir_perms;
-allow hyp_dvr_be dvr_pipe_file:fifo_file create_file_perms;
-allow hyp_dvr_be hab_audio_device:chr_file rw_file_perms;
-allow hyp_dvr_be self:capability { dac_override dac_read_search };
-allow hyp_dvr_be media_data_file:dir search;
-userdebug_or_eng(`
-  diag_use(hyp_dvr_be)
-')
+vendor.qti.dvr::IDvr                                         u:object_r:hal_dvr_hwservice:s0

@@ -342,7 +342,3 @@ type kgsl_debugfs, debugfs_type, fs_type;
 type sysfs_emmc_dload, sysfs_type, fs_type;
 
 type sysfs_android_usb_cfg, fs_type, sysfs_type;
-
-# DVR
-type dvr_pipe_file, file_type;
-type dvr_mux_file, file_type;
