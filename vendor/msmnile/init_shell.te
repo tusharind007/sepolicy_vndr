@@ -27,3 +27,4 @@
 
 # WLAN dynamic detect
 set_prop(qti_init_shell, qcom_wlan_prop);
+allow qti_init_shell sysfs_ssusb:file w_file_perms;

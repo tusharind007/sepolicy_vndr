@@ -63,8 +63,11 @@ allow qti_init_shell {
     sysfs_devices_system_cpu
     sysfs_thermal
     sysfs_lowmemorykiller
+    sysfs_mmc_host
+    sysfs_process_reclaim
 }:file w_file_perms;
 
+allow qti_init_shell sysfs_vmpressure:file write;
 r_dir_file(qti_init_shell, sysfs_thermal)
 r_dir_file(qti_init_shell, sysfs_type)
 r_dir_file(qti_init_shell, sysfs_devfreq)
@@ -140,3 +143,8 @@ set_prop(qti_init_shell, vendor_alarm_boot_prop)
 set_prop(qti_init_shell, vendor_wifi_prop)
 
 set_prop(qti_init_shell, radio_noril_prop)
+# To read /proc/meminfo
+allow qti_init_shell proc_meminfo:file r_file_perms;
+
+# allow rw access to sysfs_npu
+allow qti_init_shell sysfs_npu:file rw_file_perms;
