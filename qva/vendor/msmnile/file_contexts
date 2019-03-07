@@ -28,6 +28,7 @@
 # Dev nodes
 #
 /dev/spidev2.0                                                                             u:object_r:audio_device:s0
+/dev/i2c-7                                                                                 u:object_r:audio_device:s0
 
 #GNSS device
 /dev/ttyHS1                                                                                u:object_r:location_device:s0
