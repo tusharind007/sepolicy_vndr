@@ -66,6 +66,8 @@ allow qmmf-servd { qmmf_system_service
                    qmmf_display_service
                  }:service_manager { add find };
 
+r_dir_file(qmmf-servd, system_file)
+
 r_dir_file(qmmf-servd,  qmmf_config_file)
 allow qmmf-servd qmmf_data_file:dir rw_dir_perms;
 
