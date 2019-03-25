@@ -148,3 +148,6 @@ type sysfs_npu, fs_type, sysfs_type;
 
 #ssg tz daemon socket
 type ssgtzd_socket, file_type, mlstrustedobject;
+
+#camera file
+type camera_socket_device, file_type;
