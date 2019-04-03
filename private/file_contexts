@@ -1,4 +1,9 @@
 /data/misc/elabel(/.*)?         u:object_r:elabel_data_file:s0
 /data/misc/seemp(/.*)?          u:object_r:seemp_data_file:s0
 
+####### device files ##############
+/dev/smcinvoke                                  u:object_r:smcinvoke_device:s0
+
+####### system file ###############
 /system/etc/init\.qcom\.testscripts\.sh         u:object_r:qti-testscripts_exec:s0
+/system/bin/smcinvoked                          u:object_r:smcinvoke_daemon_exec:s0
