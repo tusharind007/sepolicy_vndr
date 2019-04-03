@@ -53,6 +53,7 @@ type persist_hvdcp_file, file_type, data_file_type;
 
 #file type for restricting proc read by audiod
 type proc_audiod, fs_type;
+type vendor_audio_data_file, file_type, data_file_type;
 
 #file type for irqbalance socket
 type msm_irqbalance_socket, file_type;

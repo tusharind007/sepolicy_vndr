@@ -194,7 +194,7 @@
 /(vendor|system/vendor)/bin/mmid                u:object_r:mmi_exec:s0
 /(vendor|system/vendor)/bin/qdcmss              u:object_r:qdcm-ss_exec:s0
 /(vendor|system/vendor)/bin/ftmdaemon           u:object_r:mmi_exec:s0
-/(vendor|system/vendor)/bin/mm-audio-ftm        u:object_r:mmi_exec:s0
+/(vendor|system/vendor)/bin/mm-audio-ftm        u:object_r:vendor_audioftm_exec:s0
 /(vendor|system/vendor)/bin/mpdecision          u:object_r:mpdecision_exec:s0
 /(vendor|system/vendor)/bin/gamed               u:object_r:gamed_exec:s0
 /(vendor|system/vendor)/bin/msm_irqbalance  u:object_r:msm_irqbalanced_exec:s0
@@ -588,6 +588,7 @@
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
 /sys/kernel/debug/dsi_dual_samsung_cmd(/.*)?                        u:object_r:qti_debugfs:s0
 /data/vendor/tzstorage(/.*)?                                        u:object_r:data_tzstorage_file:s0
+/data/vendor/audio(/.*)?                                            u:object_r:vendor_audio_data_file:s0
 
 ###################################
 # persist files
