@@ -343,6 +343,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.seccam@1\.0-service-qti u:object_r:hal_seccam_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service u:object_r:vendor_cvp_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service          u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/init.qti.charger.sh     u:object_r:qti_init_shell_exec:s0
 
 ###################################
 # sysfs files
@@ -438,6 +439,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_persist_mode        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/config                     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/rotator/mdss_rotator/caps                      u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-f0-9]+.qfprom/qfprom0/nvmem            u:object_r:sysfs_qfprom:s0
 
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/modes        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/vfb.([0-3])+/graphics/fb([0-3])+/mode         u:object_r:sysfs_graphics:s0
@@ -582,8 +584,6 @@
 /data/vendor/ramdump(/.*)?                                          u:object_r:vendor_ramdump_data_file:s0
 /data/vendor/mdmhelperdata(/.*)?                                    u:object_r:vendor_mdmhelperdata_data_file:s0
 /sys/kernel/debug/ipc_logging(/.*)?                                 u:object_r:qti_debugfs:s0
-/sys/kernel/debug/clk(/.*)?                                         u:object_r:qti_debugfs:s0
-/sys/kernel/debug/regulator(/.*)?                                   u:object_r:qti_debugfs:s0
 /data/vendor/misc/qsee(/.*)?                                        u:object_r:data_qsee_file:s0
 /data/vendor/tui(/.*)?                                              u:object_r:vendor_tui_data_file:s0
 /data/vendor/nnhal(/.*)?                                            u:object_r:hal_neuralnetworks_data_file:s0
