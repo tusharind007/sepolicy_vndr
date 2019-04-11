@@ -153,3 +153,4 @@
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:hal_audiocontrol_qti_exec:s0
 
 /(vendor|system/vendor)/bin/audiod                                  u:object_r:audiod_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service     u:object_r:hal_ais_qti_exec:s0
