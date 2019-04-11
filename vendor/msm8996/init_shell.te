@@ -35,6 +35,4 @@ allow qti_init_shell self:netlink_route_socket { create bind read write nlmsg_wr
 allow qti_init_shell self:udp_socket { create bind read ioctl };
 allow qti_init_shell ctl_start_prop:property_service set;
 allow qti_init_shell ctl_stop_prop:property_service set;
-allow qti_init_shell system_prop:property_service set;
-allow qti_init_shell system_radio_prop:property_service set;
 allow qti_init_shell proc_asound:dir search;
