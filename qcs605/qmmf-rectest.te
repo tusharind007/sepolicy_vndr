@@ -1,4 +1,4 @@
-#Copyright (c) 2018, The Linux Foundation. All rights reserved.
+#Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 #Redistribution and use in source and binary forms, with or without
 #modification, are permitted provided that the following conditions are
@@ -42,6 +42,7 @@ allow qmmf-rectest { qmmf_system_service
                      qmmf_display_service
                    }:service_manager find;
 allow qmmf-rectest ion_device:chr_file r_file_perms;
+r_dir_file(qmmf-rectest,  qmmf_config_file)
 allow qmmf-rectest qmmf_data_file:dir rw_dir_perms;
 allow qmmf-rectest qmmf_data_file:file create_file_perms;
 set_prop(qmmf-rectest, qmmf_prop)
