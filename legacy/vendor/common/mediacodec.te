@@ -38,7 +38,7 @@ allow mediacodec xdsp_device:chr_file r_file_perms;
 
 #Allow mediacodec to access service manager wfdnativemm_service
 allow mediacodec wfdnativemm_service:service_manager find;
-hal_client_domain(mediacodec, wifidisplayhalservice)
+binder_call(mediacodec, wifidisplayhalservice_qti);
 
 #Allow mediacodec to access vendor_media_data_file files
 allow mediacodec vendor_media_data_file:dir create_dir_perms;
