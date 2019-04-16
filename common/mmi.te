@@ -45,10 +45,6 @@ allow mmi kernel:system module_request;
 allow mmi vendor_toolbox_exec:file rx_file_perms;
 allow mmi system_file:system module_load;
 
-#audio case
-allow mmi audio_device:dir r_dir_perms;
-allow mmi audio_device:chr_file rw_file_perms;
-
 #FM case
 allow mmi fm_radio_device:chr_file r_file_perms;
 allow mmi fm_data_file:file r_file_perms;
@@ -135,7 +131,6 @@ unix_socket_connect(mmi, cnd, cnd);
 unix_socket_connect(mmi, netmgrd, netmgrd);
 net_domain(mmi);
 
-#mmi to start:mmid/ftmdaemon/mm-audio-ftm application
 allow mmi mmi_exec:file execute_no_trans;
 allow mmi proc:file r_file_perms;
 allow mmi sysfs_battery_supply:dir search;
