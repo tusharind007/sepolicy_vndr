@@ -37,6 +37,7 @@ type sysfs_usb_c, sysfs_type, fs_type;
 type sysfs_usb_device, sysfs_type, fs_type;
 type sysfs_usb_supply, sysfs_type, fs_type;
 type sysfs_usbpd_device, sysfs_type, fs_type;
+type sysfs_usb_mode, sysfs_type, fs_type;
 type sysfs_vadc_dev, sysfs_type, fs_type;
 type sysfs_lcd, sysfs_type, fs_type;
 type sysfs_oled, sysfs_type, fs_type;

@@ -104,3 +104,6 @@ persist.vendor.delta_time.enable    u:object_r:vendor_time_service_prop:s0
 vendor.debug.time_services.enable   u:object_r:vendor_time_service_prop:s0
 
 ro.radio.noril          u:object_r:radio_noril_prop:s0
+
+# Car service
+persist.car.         u:object_r:car_service_prop:s0
