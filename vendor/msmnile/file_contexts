@@ -155,6 +155,10 @@
 /(vendor|system/vendor)/bin/audiod                                  u:object_r:audiod_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service     u:object_r:hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.0-ais     u:object_r:hal_evs_driver_exec:s0
+/(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
 
 # Car power daemon
 /(vendor|system/vendor)/bin/car_power_daemon                        u:object_r:carpowerd_exec:s0
+
+# Dev socket nodes
+/dev/socket/camera(/.*)?                                            u:object_r:camera_socket_device:s0
