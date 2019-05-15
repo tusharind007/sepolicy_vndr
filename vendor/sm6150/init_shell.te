@@ -26,3 +26,6 @@
 #IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow qti_init_shell sysfs_ssusb:file w_file_perms;
+
+# WLAN dynamic detect
+set_prop(qti_init_shell, qcom_wlan_prop);
