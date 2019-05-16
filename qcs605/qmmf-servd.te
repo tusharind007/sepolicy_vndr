@@ -94,3 +94,6 @@ allow qmmf-servd graphics_device:chr_file rw_file_perms;
 
 #Allow access to video4linux name files
 r_dir_file(qmmf-servd, sysfs_graphics)
+
+#allow access to read overlay file
+allow qmmf-servd qmmf_data_file:file r_file_perms;
