@@ -207,6 +207,6 @@ allow system_server zygote:process getpgid;
 #kgsl
 r_dir_file(system_server, kgsl_debugfs);
 
-# allow read ro.radio.noril peop
+# allow read ro.radio.noril property
 allow system_server radio_noril_prop:file { open read getattr };
 
