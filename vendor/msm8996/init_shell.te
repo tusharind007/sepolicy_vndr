@@ -36,3 +36,30 @@ allow qti_init_shell self:udp_socket { create bind read ioctl };
 allow qti_init_shell ctl_start_prop:property_service set;
 allow qti_init_shell ctl_stop_prop:property_service set;
 allow qti_init_shell proc_asound:dir search;
+
+# early eavb
+allow qti_init_shell ptpclk_node:chr_file { rw_file_perms };
+allow qti_init_shell device:dir { rw_dir_perms };
+allow qti_init_shell device:file { create_file_perms };
+allow qti_init_shell device:sock_file { create_file_perms };
+allow qti_init_shell ptpshm_node:file rw_file_perms;
+allow qti_init_shell self:capability sys_nice;
+allow qti_init_shell self:capability sys_time;
+allow qti_init_shell self:socket create;
+allow qti_init_shell gptp_exec:file execute_no_trans;
+allow qti_init_shell openavb_harness_exec:file execute_no_trans;
+allow qti_init_shell toolbox_exec:file getattr;
+allow qti_init_shell self:packet_socket { create_socket_perms };
+allowxperm qti_init_shell self:packet_socket ioctl { priv_sock_ioctls unpriv_sock_ioctls ethavb_ptp_ioctls };
+allow qti_init_shell self:socket ioctl;
+allowxperm qti_init_shell self:socket ioctl { priv_sock_ioctls unpriv_sock_ioctls ethavb_ptp_ioctls };
+allow qti_init_shell self:tcp_socket ioctl;
+allow qti_init_shell self:tcp_socket create;
+allowxperm qti_init_shell self:tcp_socket ioctl { priv_sock_ioctls unpriv_sock_ioctls };
+allow qti_init_shell self:unix_dgram_socket { read write };
+allow qti_init_shell self:unix_dgram_socket ioctl;
+allowxperm qti_init_shell self:unix_dgram_socket ioctl { priv_sock_ioctls unpriv_sock_ioctls ethavb_ptp_ioctls };
+allow qti_init_shell vendor_data_file:dir { rw_dir_perms };
+allow qti_init_shell ethavb_vendor_data_file:file { create_file_perms };
+allow qti_init_shell ethavb_vendor_data_file:dir { rw_dir_perms };
+get_prop(qti_init_shell, automotive_ethavb_prop)
