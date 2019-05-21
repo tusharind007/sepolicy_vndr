@@ -5,6 +5,18 @@ userdebug_or_eng(`
   allow hal_audio_default debugfs:dir r_dir_perms;
 ')
 
+allow hal_audio_default vendor_data_file:dir add_name;
+
+allow hal_audio_default vendor_data_file:file create;
+
+allow hal_audio_default vendor_data_file:file open;
+
+allow hal_audio_default vendor_data_file:file getattr;
+
+allow hal_audio_default vendor_data_file:file { append read };
+
+allow hal_audio_default vendor_data_file:dir write;
+
 hal_client_domain(hal_audio_default, hal_perf)
 hal_client_domain(hal_audio_default, hal_power)
 
@@ -34,3 +46,4 @@ allow hal_audio sysfs_audio:dir r_dir_perms ;
 
 # audio properties
 get_prop(hal_audio, vendor_audio_prop)
+
