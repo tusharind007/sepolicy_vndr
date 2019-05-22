@@ -97,3 +97,7 @@ r_dir_file(qmmf-servd, sysfs_graphics)
 
 #allow access to read overlay file
 allow qmmf-servd qmmf_data_file:file r_file_perms;
+
+#allow access for ioctl calls
+allow qmmf-servd self:socket  create_socket_perms;
+allowxperm qmmf-servd self:socket ioctl msm_sock_ipc_ioctls;
