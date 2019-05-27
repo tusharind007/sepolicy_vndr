@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -32,6 +32,7 @@ init_daemon_domain(ipc-webserverd)
 net_domain(ipc-webserverd)
 allow ipc-webserverd proc_net:file r_file_perms;
 
+r_dir_file(ipc-webserverd,  qmmf_config_file)
 allow ipc-webserverd qmmf_data_file:dir rw_dir_perms;
 allow ipc-webserverd qmmf_data_file:file create_file_perms;
 set_prop(ipc-webserverd, qmmf_prop)
