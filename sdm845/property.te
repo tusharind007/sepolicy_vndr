@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,22 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type ipc-webserverd, domain;
-type ipc-webserverd_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(ipc-webserverd)
-
-net_domain(ipc-webserverd)
-allow ipc-webserverd proc_net:file r_file_perms;
-
-r_dir_file(ipc-webserverd,  qmmf_config_file)
-allow ipc-webserverd qmmf_data_file:dir rw_dir_perms;
-allow ipc-webserverd qmmf_data_file:file create_file_perms;
-set_prop(ipc-webserverd, qmmf_prop)
-
-allow ipc-webserverd vendor_shell_exec:file rx_file_perms;
-allow ipc-webserverd vendor_toolbox_exec:file execute_no_trans;
-
-allowxperm ipc-webserverd self:udp_socket ioctl { SIOCSIFADDR };
-
-#Read /sys/firmware/devicetree/base/model
-r_dir_file(ipc-webserverd, sysfs_devices_base_model);
+#lld property
+type vendor_lld_prop, property_type;

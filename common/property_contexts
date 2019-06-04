@@ -33,6 +33,7 @@ sys.usf.                   u:object_r:usf_prop:s0
 ro.qc.sdk.us.                 u:object_r:usf_prop:s0
 radio.atfwd.               u:object_r:radio_prop:s0
 persist.radio.atfwd.       u:object_r:radio_prop:s0
+ctl.atfwd                  u:object_r:ctl_atfwd_prop:s0
 ctl.qmuxd                  u:object_r:ctl_qmuxd_prop:s0
 ctl.netmgrd                u:object_r:ctl_netmgrd_prop:s0
 ctl.port-bridge            u:object_r:ctl_port-bridge_prop:s0
@@ -139,3 +140,7 @@ ro.radio.noril          u:object_r:radio_noril_prop:s0
 
 #qvr properties
 vendor.qvr                 u:object_r:qvr_prop:s0
+
+#seccam hal service
+vendor.seccam_hal_service  u:object_r:vendor_seccam_prop:s0
+vendor.hyp_core_ctl        u:object_r:vendor_core_ctl_prop:s0

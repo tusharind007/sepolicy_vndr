@@ -167,6 +167,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.bt\.sh          u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.early_boot\.sh  u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.class_main\.sh        u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.class_late\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.post_boot\.sh   u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.sensors\.sh     u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.usb\.sh         u:object_r:qti_init_shell_exec:s0
@@ -321,6 +322,7 @@
 /(vendor|system/vendor)/bin/tloc_daemon         u:object_r:tlocd_exec:s0
 /(vendor|system/vendor)/bin/power_off_alarm      u:object_r:power_off_alarm_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service      u:object_r:hal_factory_qti_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.seccam@1\.0-service-qti u:object_r:hal_seccam_qti_exec:s0
 
 ###################################
 # sysfs files
@@ -362,6 +364,7 @@
 /sys/kernel/irq_helper/irq_blacklist_on                             u:object_r:sysfs_irqbalance:s0
 /sys/devices/virtual/graphics/fb([0-3])+/idle_time                  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/dynamic_fps                u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/dynamic_bitclk             u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/product_description        u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/vendor_name                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/hdcp/tp                    u:object_r:sysfs_graphics:s0
@@ -381,6 +384,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/res_info                   u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/s3d_mode                   u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_panel_info          u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/supported_bitclk           u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_type                u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/msm_fb_split               u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/show_blank_event           u:object_r:sysfs_graphics:s0
@@ -500,9 +504,12 @@
 /sys/devices/virtual/input/input[0-9]+/enable_ps_sensor           u:object_r:sysfs_laser:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/fst_link_loss            u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/thermal_throttling       u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/vr_profile               u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/wil6210/snr_thresh               u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/queues/rx-0/rps_cpus  u:object_r:sysfs_wigig:s0
 /sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/gro_flush_timeout     u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/tx_queue_len          u:object_r:sysfs_wigig:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+\.qcom,pcie/pci[0-9:]+/[0-9:\.]+/[0-9:\.]+/net/wigig0/mtu                   u:object_r:sysfs_wigig:s0
 /sys/module/msm_core(/.*)?                                          u:object_r:sysfs_ea:s0
 /sys/module/lpm_stats(/.*)?                                         u:object_r:sysfs_msm_stats:s0
 /sys/module/lpm_levels(/.*)?                                        u:object_r:sysfs_msm_power:s0
@@ -560,6 +567,7 @@
 /data/misc/radio(/.*)?                                              u:object_r:radio_data_file:s0
 /data/vendor/radio(/.*)?                                            u:object_r:vendor_radio_data_file:s0
 /data/vendor/qti(/.*)?                                              u:object_r:qti_data_file:s0
+/data/vendor/modem_config(/.*)?                                     u:object_r:vendor_mbn_data_file:s0
 /data/vendor/netmgr(/.*)?                                           u:object_r:netmgrd_data_file:s0
 /data/vendor/port_bridge(/.*)?                                      u:object_r:port_bridge_data_file:s0
 /data/misc/fm(/.*)?                                                 u:object_r:fm_data_file:s0
@@ -644,6 +652,7 @@
 /vendor/lib(64)?/libgsl\.so                u:object_r:same_process_hal_file:s0
 
 /vendor/lib(64)?/hw/vulkan\.msm8998\.so    u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.adreno\.so     u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libEGL_adreno\.so         u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libGLESv1_CM_adreno\.so   u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libGLESv2_adreno\.so      u:object_r:same_process_hal_file:s0
