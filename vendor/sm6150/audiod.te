@@ -35,3 +35,5 @@ hal_client_domain(audiod, hal_audio)
 
 allow audiod proc_audiod:file r_file_perms;
 allow audiod audio_device:chr_file rw_file_perms;
+
+wakelock_use(audiod);
