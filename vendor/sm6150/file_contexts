@@ -148,6 +148,8 @@
 /(vendor|system/vendor)/bin/qrtr-cfg                                u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/qrtr-ns                                 u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.automotive\.qcarcam@1\.0-service     u:object_r:hal_ais_qti_exec:s0
+/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.0-ais     u:object_r:hal_evs_driver_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:qti_init_shell_exec:s0
