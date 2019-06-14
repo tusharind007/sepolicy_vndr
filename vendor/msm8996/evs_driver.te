@@ -42,3 +42,7 @@ allow hal_evs_driver hal_graphics_composer_default:fd use;
 allow hal_evs_driver hal_graphics_allocator_default_tmpfs:file { read write };
 
 allow hal_evs_driver ion_device:chr_file { ioctl open read };
+
+allow hal_evs_driver ais_server:unix_stream_socket connectto;
+allow hal_evs_driver camera_socket_device:sock_file write;
+add_hwservice(hal_evs_driver, hal_evs_hwservice);
