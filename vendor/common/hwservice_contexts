@@ -29,3 +29,5 @@ hardware.google.media.c2::IConfigurable                         u:object_r:hal_c
 hardware.google.media.c2::IComponentStore                       u:object_r:hal_codec2_hwservice:s0
 vendor.qti.gnss::ILocHidlGnss                                u:object_r:hal_gnss_hwservice:s0
 vendor.qti.automotive.qcarcam::IQcarCamera			u:object_r:hal_ais_hwservice:s0
+vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qteeconnector_hwservice:s0
+vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0

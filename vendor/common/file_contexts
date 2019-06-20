@@ -141,7 +141,7 @@
 /vendor/bin/hw/vendor\.display\.color@1\.0-service            u:object_r:hal_display_color_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.media\.c2@1\.0-service               u:object_r:mediacodec_exec:s0
 /vendor/bin/hw/hardware\.google\.media\.c2@1\.0-service-software u:object_r:mediacodec_exec:s0
-
+/vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:hal_qteeconnector_qti_exec:s0
 ###############################################
 # same-process HAL files and their dependencies
 #
@@ -221,6 +221,7 @@
 
 /data/vendor/mdmhelperdata(/.*)?       u:object_r:vendor_mdmhelperdata_data_file:s0
 /data/vendor/bluetooth(/.*)?           u:object_r:vendor_bt_data_file:s0
+/data/vendor/qtee(/.*)?                u:object_r:data_qtee_file:s0
 # audio_data_file
 /data/vendor/audio(/.*)? u:object_r:vendor_audio_data_file:s0
 /data/vendor/time(/.*)?                u:object_r:vendor_time_data_file:s0
