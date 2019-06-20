@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,35 +25,38 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-attribute hal_hbtp;
-attribute hal_hbtp_client;
-attribute hal_hbtp_server;
+#define the type
+type hal_qteeconnector_qti, domain;
 
-attribute hal_perf;
-attribute hal_perf_client;
-attribute hal_perf_server;
+#mark the type as hal_server_domain
+hal_server_domain(hal_qteeconnector_qti, hal_qteeconnector)
 
-attribute hal_qdutils_disp;
-attribute hal_qdutils_disp_client;
-attribute hal_qdutils_disp_server;
+#allow the service to be started by init
+type hal_qteeconnector_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(hal_qteeconnector_qti)
 
-attribute hal_tui_comm;
-attribute hal_tui_comm_client;
-attribute hal_tui_comm_server;
+#allow the service to be added to hwservice list
+add_hwservice(hal_qteeconnector_qti, hal_qteeconnector_hwservice)
 
-attribute hal_display_color;
-attribute hal_display_color_client;
-attribute hal_display_color_server;
+#allow access to hal_allocator
+hal_client_domain(hal_qteeconnector_qti, hal_allocator)
 
-attribute hal_display_postproc;
-attribute hal_display_postproc_client;
-attribute hal_display_postproc_server;
-attribute hal_ais;
-attribute hal_ais_server;
+#allow access to ion device
+allow hal_qteeconnector ion_device:chr_file rw_file_perms;
 
-attribute hal_qteeconnector;
-attribute hal_qteeconnector_client;
-attribute hal_qteeconnector_server;
+#allow access to and use of graphics allocator
+hal_client_domain(hal_qteeconnector_qti, hal_graphics_allocator)
 
-# All types in /mnt/vendor/persist
-attribute vendor_persist_type;
+#Allow access to tee device
+allow hal_qteeconnector_qti tee_device:chr_file rw_file_perms;
+
+#Allow access to firmware
+r_dir_file(hal_qteeconnector, firmware_file);
+
+#Allow access to the gp_reqcancel socket
+allow hal_qteeconnector_qti tee:unix_dgram_socket sendto;
+
+#Allow hal_qteeconnector client domain apps to find hwservice
+binder_call(hal_qteeconnector_client, hal_qteeconnector_server)
+binder_call(hal_qteeconnector_server, hal_qteeconnector_client)
+allow hal_qteeconnector_client hal_qteeconnector_hwservice:hwservice_manager find;

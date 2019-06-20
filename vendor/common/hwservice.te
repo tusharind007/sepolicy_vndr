@@ -12,3 +12,5 @@ type hal_tui_comm_hwservice, hwservice_manager_type;
 type hal_qdutils_disp_hwservice, hwservice_manager_type;
 type hal_display_color_hwservice, hwservice_manager_type;
 type hal_display_postproc_hwservice, hwservice_manager_type;
+type hal_ais_hwservice, hwservice_manager_type;
+type hal_qteeconnector_hwservice, hwservice_manager_type;
