@@ -160,5 +160,8 @@
 # Car power daemon
 /(vendor|system/vendor)/bin/car_power_daemon                        u:object_r:carpowerd_exec:s0
 
+# amfs service
+/(vendor|system/vendor)/bin/amfsservice                             u:object_r:amfsservice_exec:s0
+
 # Dev socket nodes
 /dev/socket/camera(/.*)?                                            u:object_r:camera_socket_device:s0
