@@ -5,9 +5,14 @@ BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \
        $(LOCAL_PATH) \
        $(LOCAL_PATH)/vendor/common \
-       $(LOCAL_PATH)/vendor/$(TARGET_BOARD_PLATFORM) \
        $(LOCAL_PATH)/vendor/common/sysmonapp \
        $(LOCAL_PATH)/vendor/common/ssg
+
+ifeq ($(TARGET_SEPOLICY_DIR),)
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/vendor/$(TARGET_BOARD_PLATFORM)
+else
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/vendor/$(TARGET_SEPOLICY_DIR)
+endif
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
