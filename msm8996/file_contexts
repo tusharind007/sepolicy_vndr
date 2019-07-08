@@ -172,6 +172,19 @@
 # Block devices for the drive that holds the xbl_a and xbl_b partitions.
 /dev/block/platform/soc/624000.ufshc/sd[bc]                 u:object_r:xbl_block_device:s0
 
+#Virtual Devices
+/dev/block/vda                                                      u:object_r:system_block_device:s0
+/dev/block/vdb                                                      u:object_r:userdata_block_device:s0
+/dev/block/vdc                                                      u:object_r:system_block_device:s0
+/dev/block/vdd                                                      u:object_r:persist_block_device:s0
+/dev/block/vde                                                      u:object_r:cache_block_device:s0
+/dev/block/vdg                                                      u:object_r:modem_block_device:s0
+/dev/block/vdh                                                      u:object_r:modem_block_device:s0
+/dev/block/vdi                                                      u:object_r:misc_block_device:s0
+
+#Console
+/dev/ttyAMA0                                                        u:object_r:tty_device:s0
+
 # device node for external anc
 /dev/msm_audio_anc                              u:object_r:msm_audio_anc_device:s0
 
