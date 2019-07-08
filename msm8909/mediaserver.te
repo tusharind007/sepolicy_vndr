@@ -27,3 +27,12 @@
 
 allow mediaserver media_settings_xml_prop:file r_file_perms;
 allow mediaserver media_msm8905_version_prop:file r_file_perms;
+
+#Rule to enable read/write capability for device latency nodes
+allow mediaserver device_latency: chr_file  rw_file_perms;
+
+#Rule to enable sys_nice capability to run FFV thread with real time priority
+allow mediaserver self:capability{
+    sys_nice
+};
+
