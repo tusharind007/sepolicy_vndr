@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,22 +25,28 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type ipc-webserverd, domain;
-type ipc-webserverd_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(ipc-webserverd)
+typeattribute lldd coredomain;
+typeattribute lldd mlstrustedsubject;
+type lldd_exec, exec_type, file_type;
+init_daemon_domain(lldd)
 
-net_domain(ipc-webserverd)
-allow ipc-webserverd proc_net:file r_file_perms;
+#
+# General
+#
 
-r_dir_file(ipc-webserverd,  qmmf_config_file)
-allow ipc-webserverd qmmf_data_file:dir rw_dir_perms;
-allow ipc-webserverd qmmf_data_file:file create_file_perms;
-set_prop(ipc-webserverd, qmmf_prop)
+# Allow interracting with lldd directory
+allow lldd lldd_data_file:dir create_dir_perms;
+allow lldd lldd_data_file:file create_file_perms;
 
-allow ipc-webserverd vendor_shell_exec:file rx_file_perms;
-allow ipc-webserverd vendor_toolbox_exec:file execute_no_trans;
+# Allow access to our socket
+allow lldd lldd_socket:sock_file rw_file_perms;
 
-allowxperm ipc-webserverd self:udp_socket ioctl { SIOCSIFADDR };
+#Allow access to ion device
+allow lldd ion_device:chr_file r_file_perms;
 
-#Read /sys/firmware/devicetree/base/model
-r_dir_file(ipc-webserverd, sysfs_devices_base_model);
+#
+# Graphics
+#
+
+#Allow hal graphics allocator permissions
+hal_client_domain(lldd, hal_graphics_allocator);
