@@ -101,3 +101,5 @@ type sysfs_qvr_external_sensor, sysfs_type, fs_type;
 
 #camera file
 type camera_socket_device, file_type;
+
+type sysfs_usb_mode, sysfs_type, fs_type;

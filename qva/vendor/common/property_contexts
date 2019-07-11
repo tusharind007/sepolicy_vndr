@@ -98,3 +98,6 @@ vendor.qvr                       u:object_r:vendor_qvr_prop:s0
 
 #qmuxd property
 ctl.start$vendor.qmuxd                       u:object_r:ctl_qmuxd_prop:s0
+
+# Car service property
+persist.vendor.car.                          u:object_r:vendor_car_service_prop:s0
