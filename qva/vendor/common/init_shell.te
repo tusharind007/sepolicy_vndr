@@ -47,3 +47,5 @@ userdebug_or_eng(`
 # Needed for starting console in userdebug mode
 set_prop(qti_init_shell, vendor_audio_debug_prop)
 ')
+
+allow qti_init_shell sysfs_usb_mode:file rw_file_perms;
