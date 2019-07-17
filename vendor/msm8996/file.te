@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type wifi_vendor_data_file, file_type, data_file_type;
+type video_vendor_data_file, file_type, data_file_type;
