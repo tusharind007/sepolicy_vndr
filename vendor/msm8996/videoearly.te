@@ -38,3 +38,10 @@ allow videoearly hwservicemanager_prop:file r_file_perms;
 allow videoearly vendor_data_file:file r_file_perms;
 allow videoearly video_vendor_data_file:file r_file_perms;
 allow videoearly video_vendor_data_file:dir r_dir_perms;
+
+hal_client_domain(videoearly, hal_graphics_allocator)
+userdebug_or_eng(`
+            allow videoearly su:unix_dgram_socket sendto;
+            ')
+allow videoearly camera_socket_device:dir w_dir_perms;
+allow videoearly camera_socket_device:sock_file create_file_perms;
