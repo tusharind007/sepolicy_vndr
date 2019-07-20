@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,15 +25,23 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type car_power_daemon, domain;
+type carpowerd, domain;
 
-type car_power_daemon_exec, exec_type, file_type, vendor_file_type;
-init_daemon_domain(car_power_daemon)
+type carpowerd_exec, exec_type, file_type, vendor_file_type;
 
-allow car_power_daemon kernel:system syslog_read;
-allow car_power_daemon kmsg_device:chr_file { open read write };
-allow car_power_daemon node:tcp_socket node_bind;
-allow car_power_daemon port:tcp_socket name_bind;
-allow car_power_daemon self:capability net_raw;
-allow car_power_daemon self:tcp_socket { accept bind create listen setopt };
-allow car_power_daemon sysfs:file { open read write };
+init_daemon_domain(carpowerd)
+
+hal_client_domain(carpowerd, hal_vehicle)
+binder_call(carpowerd, hal_automotive_vehicle_qti)
+
+allow carpowerd hal_automotive_vehicle_hwservice:hwservice_manager find;
+
+net_domain(carpowerd)
+unix_socket_connect(carpowerd, fwmarkd, netd)
+
+allow carpowerd self:tcp_socket { accept bind create listen read write };
+
+allow carpowerd sysfs_usb_mode:file rw_file_perms;
+allow carpowerd sysfs_hsusb_mode:file rw_file_perms;
+
+get_prop(carpowerd, car_service_prop)

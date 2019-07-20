@@ -93,7 +93,7 @@
 /(vendor|system/vendor)/bin/seccamd                                             u:object_r:seccamd_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 /(vendor|system/vendor)/bin/gvmlpmsvc         					u:object_r:gvmlpmsvc_exec:s0
-/(vendor|system/vendor)/bin/car_power_daemon                                    u:object_r:car_power_daemon_exec:s0
+/(vendor|system/vendor)/bin/car_power_daemon                                    u:object_r:carpowerd_exec:s0
 /(vendor|system/vendor)/bin/hyp_dvr_be          u:object_r:hyp_dvr_be_exec:s0
 /system/bin/hw/vendor\.qti\.dvr@1\.0-service      u:object_r:hal_dvr_qti_exec:s0
 
@@ -110,6 +110,10 @@
 
 #rawdump partition
 /dev/block/platform/soc/7464900.sdhci/by-name/rawdump                           u:object_r:rawdump_block_device:s0
+
+# USB
+/sys/devices/soc/6a00000.ssusb/mode                                             u:object_r:sysfs_usb_mode:s0
+/sys/devices/soc/7600000.hsusb/mode                                             u:object_r:sysfs_hsusb_mode:s0
 
 ############################################################################################
 #Same hal process libs

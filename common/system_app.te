@@ -248,3 +248,4 @@ allow system_app hal_automotive_vehicle_hwservice:hwservice_manager find;
 binder_call(system_app, hal_automotive_vehicle_qti);
 set_prop(system_app, car_prop);
 set_prop(system_app , ppd_prop);
+get_prop(system_app, car_service_prop)
