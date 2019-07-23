@@ -26,3 +26,5 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #allow bluetooth to access btconfigstore hal
 hal_client_domain(bluetooth, hal_btconfigstore);
+
+get_prop(bluetooth, vendor_bluetooth_prop)
