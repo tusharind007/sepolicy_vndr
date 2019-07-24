@@ -33,8 +33,18 @@ allowxperm hal_gnss_qti self:socket ioctl msm_sock_ipc_ioctls;
 unix_socket_connect(hal_gnss_qti, netmgrd, netmgrd)
 allow hal_gnss_qti netmgrd_socket:dir search;
 
+get_prop(hal_gnss_qti, vendor_pd_locater_dbg_prop)
 allow hal_gnss_qti self:netlink_generic_socket { bind create read };
 allow hal_gnss_qti self:netlink_route_socket { bind create nlmsg_read read write };
+
+allow hal_gnss_qti self:qipcrtr_socket { create getattr write read setopt };
+
+allow hal_gnss_qti hal_health_hwservice:hwservice_manager find;
+
+allow hal_gnss_qti hal_health_default:binder call;
+allow hal_gnss_qti healthd:binder call;
+
+allow hal_gnss_qti system_app:binder transfer;
 
 # Most HALs are not allowed to use network sockets. Qcom library
 # libqdi is used across multiple processes which are clients of
