@@ -32,3 +32,6 @@ allow qti_init_shell {
     vendor_media_sdmmagpie_version_prop
     vendor_chre_enabled_prop
 }:property_service set;
+
+# WLAN dynamic detect
+set_prop(qti_init_shell, qti_wlan_prop);
