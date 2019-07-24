@@ -72,6 +72,10 @@ allow vendor_init {
     vendor_tui_data_file
 }:dir create_dir_perms;
 
+userdebug_or_eng(`
+  allow vendor_init debugfs_kpi:file write;
+')
+
 #Access persist.sys.usb.config
 set_prop(vendor_init, system_prop)
 set_prop(vendor_init, vendor_usb_prop)
