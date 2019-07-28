@@ -8,3 +8,5 @@ get_prop(audioserver, vendor_audio_prop)
 userdebug_or_eng(`
     diag_use(audioserver)
 ')
+
+get_prop(audioserver, vendor_default_prop)
