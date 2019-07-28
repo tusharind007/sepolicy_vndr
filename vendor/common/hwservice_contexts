@@ -10,6 +10,7 @@ com.quicinc.cne.server::IServer                                 u:object_r:hal_c
 vendor.display.config::IDisplayConfig                           u:object_r:hal_display_config_hwservice:s0
 vendor.display.color::IDisplayColor                             u:object_r:hal_display_color_hwservice:s0
 vendor.display.postproc::IDisplayPostproc                       u:object_r:hal_display_postproc_hwservice:s0
+vendor.qti.data.factory::IFactory                               u:object_r:hal_data_factory_hwservice:s0
 vendor.qti.hardware.improvetouch.touchcompanion::ITouchCompanion       u:object_r:hal_hbtp_hwservice:s0
 vendor.qti.hardware.improvetouch.gesturemanager::IGestureManager       u:object_r:hal_hbtp_hwservice:s0
 vendor.qti.hardware.improvetouch.blobmanager::IBlobManager             u:object_r:hal_hbtp_hwservice:s0

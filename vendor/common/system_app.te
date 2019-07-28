@@ -2,6 +2,8 @@
 allow system_app elabel_data_file:dir r_dir_perms;
 allow system_app elabel_data_file:file r_file_perms;
 
+allow system_app hal_data_factory_hwservice:hwservice_manager find;
+
 # Allow hbtp hal Service to be found
 hal_client_domain(system_app, hal_hbtp)
 
