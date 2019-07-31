@@ -117,6 +117,8 @@ allow hal-server input_device:dir r_dir_perms;
 allow hal-server input_device:chr_file r_file_perms;
 allow hal-server persist_file:dir search;
 allow hal-server self:socket create_socket_perms;
+allow hal-server sensors_persist_file:dir create_dir_perms;
+allow hal-server sensors_persist_file:file create_file_perms;
 r_dir_file(hal-server, sensors_persist_file)
 wakelock_use(hal-server)
 # ioctlcmd=c304
