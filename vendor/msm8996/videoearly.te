@@ -37,3 +37,4 @@ allow videoearly video_device:chr_file rw_file_perms;
 allow videoearly hwservicemanager_prop:file r_file_perms;
 allow videoearly vendor_data_file:file r_file_perms;
 allow videoearly video_vendor_data_file:file r_file_perms;
+allow videoearly video_vendor_data_file:dir r_dir_perms;
