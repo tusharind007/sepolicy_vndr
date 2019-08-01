@@ -159,9 +159,5 @@
 # Dev socket nodes
 /dev/socket/camera(/.*)?                                            u:object_r:camera_socket_device:s0
 
-# Early services
-/init_early                                                         u:object_r:init_exec:s0
-/early_services                                                     u:object_r:rootfs:s0
-
 # Car power daemon
 /(vendor|system/vendor)/bin/car_power_daemon                        u:object_r:carpowerd_exec:s0
