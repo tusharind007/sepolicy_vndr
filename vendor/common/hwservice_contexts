@@ -33,3 +33,5 @@ vendor.qti.gnss::ILocHidlGnss                                u:object_r:hal_gnss
 vendor.qti.automotive.qcarcam::IQcarCamera			u:object_r:hal_ais_hwservice:s0
 vendor.qti.hardware.qteeconnector::IAppConnector             u:object_r:hal_qteeconnector_hwservice:s0
 vendor.qti.hardware.qteeconnector::IGPAppConnector           u:object_r:hal_qteeconnector_hwservice:s0
+vendor.qti.hardware.wifi.supplicant::ISupplicantVendor          u:object_r:hal_wifi_supplicant_hwservice:s0
+vendor.qti.hardware.wifi.hostapd::IHostapdVendor                u:object_r:hal_wifi_hostapd_hwservice:s0

@@ -32,6 +32,9 @@ allow hal_wifi_supplicant_default self:socket create_socket_perms;
 # ioctlcmd=c304, c302
 allowxperm hal_wifi_supplicant_default self:socket ioctl msm_sock_ipc_ioctls;
 
+# Allow wpa_supplicant to access /data/vendor/wifi folder
+allow hal_wifi_supplicant_default wifi_vendor_data_file:dir create_dir_perms;
+allow hal_wifi_supplicant_default wifi_vendor_data_file:file create_file_perms;
 allow hal_wifi_supplicant_default wpa_data_file:dir create_dir_perms;
 allow hal_wifi_supplicant_default wpa_data_file:dir w_dir_perms;
 allow hal_wifi_supplicant_default wpa_data_file:file create_file_perms;
