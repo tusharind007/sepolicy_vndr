@@ -107,6 +107,8 @@
 /vendor/bin/pd-mapper           u:object_r:vendor_pd_mapper_exec:s0
 /vendor/bin/imsqmidaemon        u:object_r:ims_exec:s0
 /vendor/bin/imsdatadaemon       u:object_r:ims_exec:s0
+/vendor/bin/audio_chime         u:object_r:audio_chime_exec:s0
+/vendor/bin/audio-nxp-auto      u:object_r:audio-nxp-auto_exec:s0
 /vendor/bin/ims_rtp_daemon      u:object_r:hal_imsrtp_exec:s0
 /vendor/bin/ipacm               u:object_r:hal_tetheroffload_default_exec:s0
 /vendor/bin/ipacm-diag          u:object_r:hal_tetheroffload_default_exec:s0
