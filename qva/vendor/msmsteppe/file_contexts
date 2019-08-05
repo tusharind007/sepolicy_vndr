@@ -213,6 +213,9 @@
 # Car power daemon
 /(vendor|system/vendor)/bin/car_power_daemon            u:object_r:carpowerd_exec:s0
 
+# Dynamic splash
+/(vendor|system/vendor)/bin/esplash                                 u:object_r:esplash_exec:s0
+
 # EVS and Qcarcam HAL
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.0-ais     u:object_r:hal_evs_driver_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.automotive\.qcarcam@1\.0-service     u:object_r:hal_ais_qti_exec:s0
