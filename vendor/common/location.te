@@ -64,7 +64,7 @@ binder_call(location, cnd)
 
 get_prop(location, vendor_wifi_prop)
 
-allow location self:qipcrtr_socket { create getattr write read };
+allow location self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 allow location vendor_file:file execute_no_trans;
 
