@@ -30,3 +30,14 @@ hal_server_domain(hal_ais_qti, hal_ais)
 
 type hal_ais_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_ais_qti)
+
+allow hal_ais_qti camera_socket_device:dir search;
+allow hal_ais_qti camera_socket_device:sock_file write;
+allow hal_ais_qti hal_graphics_allocator_default:fd use;
+allow hal_ais_qti ais_server:unix_stream_socket connectto;
+
+add_hwservice(hal_ais_qti, hal_ais_hwservice)
+
+userdebug_or_eng(`
+  allow hal_ais_qti debugfs_kpi:file rw_file_perms;
+')

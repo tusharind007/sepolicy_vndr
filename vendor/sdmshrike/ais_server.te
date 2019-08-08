@@ -33,6 +33,7 @@ init_daemon_domain(ais_server)
 
 userdebug_or_eng(`
 allow ais_server su:unix_dgram_socket sendto;
+allow ais_server debugfs_kpi:file rw_file_perms;
 ')
 hal_client_domain(ais_server, hal_graphics_allocator)
 allow ais_server camera_socket_device:dir w_dir_perms;
