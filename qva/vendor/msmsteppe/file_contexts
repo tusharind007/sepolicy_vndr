@@ -166,6 +166,8 @@
 /sys/devices/platform/soc/a600000.ssusb/mode            u:object_r:sysfs_usb_mode:s0
 /sys/devices/platform/soc/a800000.ssusb/mode            u:object_r:sysfs_usb_mode:s0
 
+/sys/devices/platform/soc/a800000.hsusb/mode            u:object_r:sysfs_hsusb_mode:s0
+
 ##################################
 # same process HAL libs
 /vendor/lib(64)?/hw/gralloc\.sm6150\.so   u:object_r:same_process_hal_file:s0
@@ -187,3 +189,6 @@
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qti\.wlan\.sh        u:object_r:qti_init_shell_exec:s0
+
+# Car power daemon
+/(vendor|system/vendor)/bin/car_power_daemon            u:object_r:carpowerd_exec:s0
