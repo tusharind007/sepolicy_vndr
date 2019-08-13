@@ -27,3 +27,6 @@
 
 #for oemfs
 allow platform_app oemfs:lnk_file { read getattr };
+
+#for system_prop
+set_prop(platform_app, system_prop)

@@ -71,3 +71,6 @@ allow bluetooth wbc_service:service_manager find;
 allow bluetooth mmi:unix_stream_socket connectto;
 #connect to wcnss_filter
 allow bluetooth wcnss_filter:unix_stream_socket connectto;
+
+#storage_stub_file
+allow bluetooth storage_stub_file:dir getattr;

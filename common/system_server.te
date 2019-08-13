@@ -170,3 +170,7 @@ allow system_server sysfs_graphics:file rw_file_perms;
 # allow access to QDMA
 allow system_server { qdma_app_data_file } :file rw_file_perms;
 allow system_server { qdma_app_data_file } :dir r_dir_perms;
+
+# llow access to init prop
+allow system_server lmkd_prop:file { read open getattr };
+allow system_server qti_init_shell__prop:file { read open getattr };

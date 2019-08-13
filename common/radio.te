@@ -23,3 +23,6 @@ binder_call(radio, imscm)
 userdebug_or_eng(`
     diag_use(radio)
 ')
+
+#system_app_data_file
+allow radio system_app_data_file:dir getattr;

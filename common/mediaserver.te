@@ -70,3 +70,6 @@ r_dir_file(mediaserver, adsprpcd_file);
 binder_call(mediaserver, bootanim);
 
 allow mediaserver surfaceflinger:unix_stream_socket rw_socket_perms;
+
+#allow mediaserver to communicate with seempdw
+unix_socket_send(mediaserver, seempdw, seempd)

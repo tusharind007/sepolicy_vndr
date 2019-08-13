@@ -40,3 +40,6 @@ dontaudit init sysfs:dir write;
 
 #rawdump
 allow init rawdump_block_device:blk_file setattr;
+
+#property
+allow init property_socket:sock_file write;

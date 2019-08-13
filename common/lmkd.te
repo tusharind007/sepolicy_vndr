@@ -28,3 +28,4 @@
 # setprop permission for lmkd
 set_prop(lmkd, bservice_prop);
 set_prop(lmkd, reschedule_service_prop);
+set_prop(lmkd, lmkd_prop);
