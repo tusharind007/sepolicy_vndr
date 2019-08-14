@@ -117,6 +117,8 @@ allow hal-server input_device:dir r_dir_perms;
 allow hal-server input_device:chr_file r_file_perms;
 allow hal-server persist_file:dir search;
 allow hal-server self:socket create_socket_perms;
+allow hal-server sensors_persist_file:dir create_dir_perms;
+allow hal-server sensors_persist_file:file create_file_perms;
 r_dir_file(hal-server, sensors_persist_file)
 wakelock_use(hal-server)
 # ioctlcmd=c304
@@ -167,3 +169,6 @@ allow hal-server hal_sensors_hwservice:hwservice_manager find;
 allow hal-server hal_audio_hwservice:hwservice_manager find;
 allow hal-server hal_drm_hwservice:hwservice_manager find;
 allow hal_sensors_default  hidl_base_hwservice:hwservice_manager add;
+
+# Allow access to sys_nice for real time priority
+allow hal-server self:capability sys_nice;
