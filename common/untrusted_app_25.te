@@ -32,3 +32,4 @@ hal_client_domain(untrusted_app_25, hal_perf);
 hal_client_domain(untrusted_app_25, hal_iop);
 
 allow untrusted_app_25 hab_audio_device:chr_file rw_file_perms;
+allow untrusted_app_25 sw_sync_device:chr_file rw_file_perms;
