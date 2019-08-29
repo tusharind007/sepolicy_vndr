@@ -168,3 +168,6 @@
 
 # Car power daemon
 /(vendor|system/vendor)/bin/car_power_daemon                        u:object_r:carpowerd_exec:s0
+
+# Qcomsysd
+/vendor/bin/qcom-system-daemon   u:object_r:qcomsysd_exec:s0
