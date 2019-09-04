@@ -33,6 +33,11 @@
 
 /dev/spidev2.0                                                                  u:object_r:audio_device:s0
 
+#GNSS device
+/dev/ttyHS1                                                                     u:object_r:location_device:s0
+/dev/gnss_sirf                                                                  u:object_r:location_device:s0
+
+
 # UFS Devices
 /dev/block/platform/soc/1d84000.ufshc/by-name/system                            u:object_r:system_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/metadata                            u:object_r:metadata_block_device:s0
