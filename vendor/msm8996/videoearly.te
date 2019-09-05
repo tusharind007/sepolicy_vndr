@@ -45,3 +45,6 @@ userdebug_or_eng(`
             ')
 allow videoearly camera_socket_device:dir w_dir_perms;
 allow videoearly camera_socket_device:sock_file create_file_perms;
+allow videoearly ais_server:unix_stream_socket connectto;
+allow videoearly sysfs:file read;
+allow videoearly sysfs:file open;
