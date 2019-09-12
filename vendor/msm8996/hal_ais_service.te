@@ -34,3 +34,4 @@ init_daemon_domain(hal_ais_qti)
 allow hal_ais_qti ais_server:unix_stream_socket connectto;
 allow hal_ais_qti camera_socket_device:sock_file write;
 add_hwservice(hal_ais_qti, hal_ais_hwservice);
+allow hal_ais_qti camera_socket_device:dir search;

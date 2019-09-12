@@ -42,3 +42,6 @@ allow ais_v4l2_proxy ion_device:chr_file r_file_perms;
 allow ais_v4l2_proxy ais_server:unix_stream_socket connectto;
 allow ais_v4l2_proxy hal_tv_input_default:unix_dgram_socket sendto;
 allow ais_v4l2_proxy audio_device:chr_file { rw_file_perms };
+allow ais_v4l2_proxy camera_socket_device:dir w_dir_perms;
+allow ais_v4l2_proxy camera_socket_device:sock_file create_file_perms;
+allow ais_v4l2_proxy camera_socket_device:sock_file write;
