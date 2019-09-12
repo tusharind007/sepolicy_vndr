@@ -35,3 +35,4 @@ allow hal_ais_qti ais_server:unix_stream_socket connectto;
 allow hal_ais_qti camera_socket_device:sock_file write;
 allow hal_ais_qti hal_ais_hwservice:hwservice_manager add;
 allow hal_ais_qti hidl_base_hwservice:hwservice_manager add;
+allow hal_ais_qti camera_socket_device:dir search;
