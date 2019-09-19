@@ -39,3 +39,6 @@ hal_client_domain(untrusted_app, hal_perf);
 
 # allow untrusted apps to access hal_iop
 hal_client_domain(untrusted_app, hal_iop);
+
+# allow untrusted apps to read ro.radio.noril property
+get_prop(untrusted_app, radio_noril_prop)
