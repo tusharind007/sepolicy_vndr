@@ -100,3 +100,7 @@ attribute hal_btconfigstore_server;
 attribute hal_wifilearner;
 attribute hal_wifilearner_client;
 attribute hal_wifilearner_server;
+
+attribute hal_ais;
+attribute hal_ais_client;
+attribute hal_ais_server;
