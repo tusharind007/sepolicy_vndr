@@ -102,6 +102,7 @@
 /dev/at_.*                                      u:object_r:at_device:s0
 /dev/sg.*                                       u:object_r:sg_device:s0
 /dev/dri/card0                                  u:object_r:graphics_device:s0
+/dev/dri/card1                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 /dev/wlan                                       u:object_r:wlan_device:s0
