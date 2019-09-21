@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -36,6 +36,8 @@ userdebug_or_eng(`
   allow qmmf-servd qti_debugfs:dir r_dir_perms;
   allow qmmf-servd qti_debugfs:file rw_file_perms;
   binder_call(qmmf-servd, qmmf-rectest)
+  # /dev/diag access
+  diag_use(qmmf-servd)
 ')
 
 # Allow access to video devices
@@ -64,6 +66,9 @@ allow qmmf-servd { qmmf_system_service
                    qmmf_display_service
                  }:service_manager { add find };
 
+r_dir_file(qmmf-servd, system_file)
+
+r_dir_file(qmmf-servd,  qmmf_config_file)
 allow qmmf-servd qmmf_data_file:dir rw_dir_perms;
 
 allow qmmf-servd audio_device:dir search;
@@ -89,3 +94,10 @@ allow qmmf-servd graphics_device:chr_file rw_file_perms;
 
 #Allow access to video4linux name files
 r_dir_file(qmmf-servd, sysfs_graphics)
+
+#allow access to read overlay file
+allow qmmf-servd qmmf_data_file:file r_file_perms;
+
+#allow access for ioctl calls
+allow qmmf-servd self:socket  create_socket_perms;
+allowxperm qmmf-servd self:socket ioctl msm_sock_ipc_ioctls;

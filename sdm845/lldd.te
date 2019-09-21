@@ -25,22 +25,29 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type ipc-webserverd, domain;
-type ipc-webserverd_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(ipc-webserverd)
+#
+# General
+#
 
-net_domain(ipc-webserverd)
-allow ipc-webserverd proc_net:file r_file_perms;
+userdebug_or_eng(`
+allow lldd diag_device:chr_file rw_file_perms;
+allow lldd debugfs:dir r_dir_perms;
+allow lldd qti_debugfs:dir r_dir_perms;
+allow lldd qti_debugfs:file rw_file_perms;
+');
 
-r_dir_file(ipc-webserverd,  qmmf_config_file)
-allow ipc-webserverd qmmf_data_file:dir rw_dir_perms;
-allow ipc-webserverd qmmf_data_file:file create_file_perms;
-set_prop(ipc-webserverd, qmmf_prop)
+r_dir_file(lldd, vendor_file)
 
-allow ipc-webserverd vendor_shell_exec:file rx_file_perms;
-allow ipc-webserverd vendor_toolbox_exec:file execute_no_trans;
+# Allow access to ion device
+allow lldd ion_device :chr_file r_file_perms;
 
-allowxperm ipc-webserverd self:udp_socket ioctl { SIOCSIFADDR };
+# Allow access to video and gpu devices
+allow lldd device:dir r_dir_perms;
+allow lldd { gpu_device video_device }:chr_file rw_file_perms;
 
-#Read /sys/firmware/devicetree/base/model
-r_dir_file(ipc-webserverd, sysfs_devices_base_model);
+hal_client_domain(lldd, hal_perf)
+
+# LLDD
+# lld properties
+set_prop(lldd, vendor_lld_prop)
+get_prop(lldd, vendor_lld_prop)

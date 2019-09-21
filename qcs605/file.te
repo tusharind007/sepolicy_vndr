@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -27,6 +27,9 @@
 
 # qmmf data file
 type qmmf_data_file, file_type, data_file_type;
+
+# qmmf config file
+type qmmf_config_file, file_type, data_file_type;
 
 # vam data file
 type qmmf_vam_data_file, file_type, data_file_type;
@@ -375,3 +378,4 @@ type kgsl_debugfs, debugfs_type, fs_type;
 
 #sysfs emmc dload type
 type sysfs_emmc_dload, sysfs_type, fs_type;
+type sysfs_android_usb_cfg, fs_type, sysfs_type;

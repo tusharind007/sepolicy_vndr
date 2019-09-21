@@ -23,3 +23,18 @@ genfscon sysfs /kernel/wcd_cpe0 u:object_r:sysfs_audio:s0
 genfscon sysfs /devices/virtual/thermal u:object_r:sysfs_thermal:s0
 genfscon sysfs /devices/virtual/kgsl/kgsl/proc u:object_r:sysfs_kgsl_proc:s0
 genfscon debugfs /kgsl/proc     u:object_r:kgsl_debugfs:s0
+genfscon sysfs /kernel/qvr_external_sensor u:object_r:sysfs_qvr_external_sensor:s0
+
+# AOSP also defines this
+#genfscon sysfs /class/android_usb u:object_r:sysfs_android_usb_cfg:s0
+#genfscon sysfs /devices/virtual/android_usb u:object_r:sysfs_android_usb_cfg:s0
+
+# led files
+genfscon sysfs /devices/soc/soc:gpio-leds/leds/blue    u:object_r:sysfs_led_device:s0
+genfscon sysfs /devices/soc/soc:gpio-leds/leds/green    u:object_r:sysfs_led_device:s0
+genfscon sysfs /devices/soc/soc:gpio-leds/leds/button-backlight        u:object_r:sysfs_led_device:s0
+genfscon sysfs /devices/soc/soc:gpio-leds/leds-qpnp-7/leds/front-backlight     u:object_r:sysfs_led_device:s0
+genfscon sysfs /devices/soc/7824900.sdhci/leds/mmc0:: u:object_r:sysfs_led_device:s0
+genfscon sysfs /devices/soc/7864900.sdhci/leds/mmc1:: u:object_r:sysfs_led_device:s0
+genfscon sysfs /devices/soc/qpnp-linear-charger-8/leds/red u:object_r:sysfs_led_device:s0
+genfscon sysfs /devices/soc/1a00000.qcom,mdss_mdp/1a00000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight u:object_r:sysfs_led_device:s0

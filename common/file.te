@@ -93,6 +93,9 @@ type sysfs_usb_mtp_device, sysfs_type, fs_type;
 # sysfs module for usb_f_mtp/parameters
 type sysfs_spmi_device, sysfs_type, fs_type;
 
+# leds, backlight file type for sysfs access
+type sysfs_led_device, sysfs_type, fs_type;
+
 # sysfs vadc device for hvdcp/quickcharge
 type sysfs_vadc_dev, sysfs_type, fs_type;
 # sysfs spmi device for hvdcp/quickcharge
@@ -283,6 +286,9 @@ type qti_debugfs, fs_type, debugfs_type;
 # vendor radio files
 type vendor_radio_data_file, file_type, data_file_type;
 
+#vendor MBN files
+type vendor_mbn_data_file, file_type, data_file_type;
+
 #uio sysfs
 type sysfs_uio_file, fs_type, sysfs_type;
 
@@ -343,3 +349,8 @@ type sysfs_emmc_dload, sysfs_type, fs_type;
 
 # vservices sysfs files
 type sysfs_vservices, sysfs_type, fs_type;
+
+#qvrservice sysfs files
+type sysfs_qvr_external_sensor, sysfs_type, fs_type;
+
+type sysfs_android_usb_cfg, fs_type, sysfs_type;

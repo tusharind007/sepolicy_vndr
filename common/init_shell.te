@@ -79,6 +79,7 @@ set_prop(qti_init_shell, ipacm_prop)
 set_prop(qti_init_shell, ipacm-diag_prop)
 set_prop(qti_init_shell, qti_prop)
 set_prop(qti_init_shell, ctl_rildaemon_prop)
+set_prop(qti_init_shell, ctl_atfwd_prop)
 set_prop(qti_init_shell, uicc_prop)
 set_prop(qti_init_shell, ctl_qmuxd_prop)
 set_prop(qti_init_shell, ctl_netmgrd_prop)
@@ -227,8 +228,8 @@ allow qti_init_shell sysfs_devfreq:file w_file_perms;
 r_dir_file(qti_init_shell, sysfs_devfreq_l3cdsp)
 allow qti_init_shell sysfs_devfreq_l3cdsp:file setattr;
 
-allow qti_init_shell vendor_radio_data_file:dir create_dir_perms;
-allow qti_init_shell vendor_radio_data_file:file create_file_perms;
+allow qti_init_shell vendor_mbn_data_file:dir create_dir_perms;
+allow qti_init_shell vendor_mbn_data_file:file create_file_perms;
 
 set_prop(qti_init_shell, vendor_rild_libpath_prop);
 set_prop(qti_init_shell, system_radio_prop)
@@ -285,5 +286,5 @@ neverallow qti_init_shell sysfs_type:dir no_w_dir_perms;
 neverallow qti_init_shell proc:dir no_w_dir_perms;
 
 # For USB RNDIS configuration
-allow qti_init_shell sysfs_android_usb:dir r_dir_perms;
-allow qti_init_shell sysfs_android_usb:file rw_file_perms;
+allow qti_init_shell sysfs_android_usb_cfg:dir r_dir_perms;
+allow qti_init_shell sysfs_android_usb_cfg:file rw_file_perms;
