@@ -1,4 +1,4 @@
-# Copyright (c) 2017, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,21 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# diag device node access is restricted to untrusted_app
-neverallow untrusted_app diag_device:chr_file rw_file_perms;
-
-# for finding wbc_service
-allow untrusted_app wbc_service:service_manager find;
-
-# for finding gba_auth_service
-allow untrusted_app gba_auth_service:service_manager find;
-
-# allow untrusted apps to access hal_perf
-hal_client_domain(untrusted_app, hal_perf);
-
-# allow untrusted apps to access hal_iop
-hal_client_domain(untrusted_app, hal_iop);
-# allow untrusted app like CTS apps to access hab_audio_device
-allow untrusted_app hab_audio_device:chr_file rw_file_perms;
-#allow untrusted app to access camera properties
-get_prop(untrusted_app, camera_prop);
+vndbinder_use(hal_camera_default);
+allow hal_camera_default device:dir { open read };
