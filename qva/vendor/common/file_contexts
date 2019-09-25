@@ -139,6 +139,10 @@
 /(vendor|system/vendor)/bin/garden_app                                             u:object_r:vendor_location_exec:s0
 /(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:vendor_location_exec:s0
 /(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:vendor_location_exec:s0
+#GNSS SiRFStarV device
+/dev/ttyHS1                                                                        u:object_r:vendor_location_device:s0
+/dev/gnss_sirf                                                                     u:object_r:vendor_location_device:s0
+
 
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:vendor_hal_bluetooth_dun_qti_exec:s0
