@@ -69,6 +69,10 @@ attribute hal_mirrorlink;
 attribute hal_mirrorlink_client;
 attribute hal_mirrorlink_server;
 
+attribute agmservice;
+attribute agmservice_client;
+attribute agmservice_server;
+
 attribute hal_vpp;
 attribute hal_vpp_client;
 attribute hal_vpp_server;
