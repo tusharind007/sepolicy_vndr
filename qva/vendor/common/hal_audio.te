@@ -27,7 +27,7 @@
 
 userdebug_or_eng(`
   diag_use(hal_audio)
-  #Allow access to debug fs
+  # Allow access to debug fs
   allow hal_audio_default qti_debugfs:dir r_dir_perms;
   allow hal_audio_default qti_debugfs:file rw_file_perms;
 ')
@@ -50,3 +50,4 @@ allow hal_audio_default acdb_loader_service_service:service_manager find;
 binder_call(hal_audio_default,acdb_loader_service)
 binder_call(hal_audio_default,audio_hal_plugin_service)
 
+hal_client_domain(hal_audio_default, agmservice)
