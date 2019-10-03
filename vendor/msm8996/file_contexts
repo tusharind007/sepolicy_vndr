@@ -86,11 +86,13 @@
 # Dev socket nodes
 #
 /dev/socket/camera(/.*)?                                                        u:object_r:camera_socket_device:s0
-
+/dev/ptpshm                                                                     u:object_r:ptpshm_node:s0
+/dev/ptp([0-2])+                                                                u:object_r:ptpclk_node:s0
 ###################################
 # System files
 #
 /(vendor|system/vendor)/bin/init\.qti\.can\.sh              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.eavb\.sh              u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1\.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.automotive\.audiocontrol@1\.0-service     u:object_r:hal_audiocontrol_qti_exec:s0
 /(vendor|system/vendor)/bin/ais_server          u:object_r:ais_server_exec:s0
@@ -98,6 +100,8 @@
 /(vendor|system/vendor)/bin/videoearly                  u:object_r:videoearly_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.automotive\.qcarcam@1\.0-service     u:object_r:hal_ais_qti_exec:s0
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.0-ais     u:object_r:hal_evs_driver_exec:s0
+/(vendor|system/vendor)/bin/gptp          u:object_r:gptp_exec:s0
+/(vendor|system/vendor)/bin/openavb_harness          u:object_r:openavb_harness_exec:s0
 
 ###################################
 # sysfs files
@@ -187,3 +191,6 @@
 
 # earlyvideo
 /data/vendor/advertisement(/.*)?          u:object_r:video_vendor_data_file:s0
+
+#ethavb
+/data/vendor/avb(/.*)?                     u:object_r:ethavb_vendor_data_file:s0

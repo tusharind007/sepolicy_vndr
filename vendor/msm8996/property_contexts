@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 vendor.qcom.bluetooth.soc     u:object_r:vendor_bluetooth_prop:s0
+automotive.ethavb.early_enable    u:object_r:automotive_ethavb_prop:s0
