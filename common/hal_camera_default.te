@@ -27,3 +27,6 @@
 
 vndbinder_use(hal_camera_default);
 allow hal_camera_default device:dir { open read };
+allow hal_camera_default hab_audio_device:chr_file open;
+allow hal_camera_default hab_audio_device:chr_file { read write };
+allow hal_camera_default hab_audio_device:chr_file ioctl;

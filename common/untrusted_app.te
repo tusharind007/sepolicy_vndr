@@ -43,3 +43,7 @@ hal_client_domain(untrusted_app, hal_iop);
 allow untrusted_app hab_audio_device:chr_file rw_file_perms;
 #allow untrusted app to access camera properties
 get_prop(untrusted_app, camera_prop);
+#allow untrusted app to read write on sw_sync_device
+allow untrusted_app sw_sync_device:chr_file open;
+allow untrusted_app sw_sync_device:chr_file { read write };
+allow untrusted_app sw_sync_device:chr_file ioctl;
