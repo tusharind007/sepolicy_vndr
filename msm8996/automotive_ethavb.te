@@ -1,0 +1,65 @@
+#Copyright (c) 2019, The Linux Foundation. All rights reserved.
+#
+#Redistribution and use in source and binary forms, with or without
+#modification, are permitted provided that the following conditions are
+#met:
+#   * Redistributions of source code must retain the above copyright
+#	 notice, this list of conditions and the following disclaimer.
+#   * Redistributions in binary form must reproduce the above
+#	 copyright notice, this list of conditions and the following
+#	 disclaimer in the documentation and/or other materials provided
+#	 with the distribution.
+#   * Neither the name of The Linux Foundation nor the names of its
+#	 contributors may be used to endorse or promote products derived
+#	 from this software without specific prior written permission.
+#
+#THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+#WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+#ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+#BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+#CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+#SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+#BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+#OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+#IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+#early ethavb
+type automotive_ethavb, domain;
+
+domain_auto_trans(qti_init_shell, gptp_exec, automotive_ethavb)
+domain_auto_trans(qti_init_shell, openavb_harness_exec, automotive_ethavb)
+
+allow automotive_ethavb ptpclk_node:chr_file { rw_file_perms };
+allow automotive_ethavb ptpshm_node:file rw_file_perms;
+allow automotive_ethavb device:dir { rw_dir_perms };
+allow automotive_ethavb device:file { create_file_perms };
+allow automotive_ethavb device:sock_file { create_file_perms };
+allow automotive_ethavb self:capability sys_nice;
+allow automotive_ethavb self:capability sys_time;
+allow automotive_ethavb self:socket create;
+allow automotive_ethavb toolbox_exec:file getattr;
+allow automotive_ethavb self:packet_socket { create_socket_perms };
+allowxperm automotive_ethavb self:packet_socket ioctl { priv_sock_ioctls unpriv_sock_ioctls ethavb_ptp_ioctls };
+allow automotive_ethavb self:socket ioctl;
+allowxperm automotive_ethavb self:socket ioctl { priv_sock_ioctls unpriv_sock_ioctls ethavb_ptp_ioctls };
+allow automotive_ethavb self:tcp_socket ioctl;
+allow automotive_ethavb self:tcp_socket create;
+allowxperm automotive_ethavb self:tcp_socket ioctl { priv_sock_ioctls unpriv_sock_ioctls };
+allow automotive_ethavb self:unix_dgram_socket { read write };
+allow automotive_ethavb self:unix_dgram_socket ioctl;
+allowxperm automotive_ethavb self:unix_dgram_socket ioctl { priv_sock_ioctls unpriv_sock_ioctls ethavb_ptp_ioctls };
+allow automotive_ethavb self:netlink_route_socket nlmsg_read;
+allow automotive_ethavb ethavb_vendor_data_file:dir { rw_dir_perms };
+allow automotive_ethavb ethavb_vendor_data_file:file { create_file_perms rw_file_perms };
+allow automotive_ethavb automotive_ethavb_prop:property_service set;
+get_prop(automotive_ethavb, automotive_ethavb_prop)
+allow automotive_ethavb qti_init_shell:fd use;
+allow automotive_ethavb self:capability { net_raw };
+allow automotive_ethavb self:capability { net_admin net_raw setgid setpcap setuid };
+allow automotive_ethavb self:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_write };
+allow automotive_ethavb self:netlink_generic_socket create_socket_perms_no_ioctl;
+allow automotive_ethavb self:netlink_route_socket { create_socket_perms_no_ioctl nlmsg_write };
+allow automotive_ethavb self:netlink_socket create_socket_perms_no_ioctl;
+allow automotive_ethavb proc_net:file { read rw_file_perms};

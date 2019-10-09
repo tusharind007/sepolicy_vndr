@@ -85,6 +85,8 @@
 ###################################
 # Dev socket nodes
 #
+/dev/ptpshm                                                                     u:object_r:ptpshm_node:s0
+/dev/ptp([0-2])+                                                                u:object_r:ptpclk_node:s0
 
 ###################################
 # System files
@@ -94,6 +96,8 @@
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 /(vendor|system/vendor)/bin/gvmlpmsvc         					u:object_r:gvmlpmsvc_exec:s0
 /(vendor|system/vendor)/bin/car_power_daemon                                    u:object_r:car_power_daemon_exec:s0
+/(vendor|system/vendor)/bin/gptp                                                u:object_r:gptp_exec:s0
+/(vendor|system/vendor)/bin/openavb_harness                                     u:object_r:openavb_harness_exec:s0
 
 ###################################
 # sysfs files
@@ -182,3 +186,6 @@
 
 #GPS service
 /(vendor|system/vendor)/bin/engine-service      u:object_r:location_exec:s0
+
+#early ethavb
+/data/vendor/avb(/.*)?                     u:object_r:ethavb_vendor_data_file:s0
