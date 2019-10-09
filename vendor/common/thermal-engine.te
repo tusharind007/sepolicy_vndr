@@ -45,3 +45,4 @@ set_prop(thermal-engine, powerctl_prop)
 
 # netlink access
 allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow thermal-engine sysfs_uio:dir { read open search };

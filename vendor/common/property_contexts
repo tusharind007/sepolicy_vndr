@@ -107,3 +107,6 @@ ro.radio.noril          u:object_r:radio_noril_prop:s0
 
 # Car service
 persist.car.         u:object_r:car_service_prop:s0
+
+media.aac_51_output_enabled  u:object_r:vendor_default_prop:s0
+

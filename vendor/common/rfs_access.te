@@ -26,4 +26,3 @@ allow rfs_access self:{ socket qipcrtr_socket } create_socket_perms_no_ioctl;
 
 allow rfs_access vendor_tombstone_data_file:dir create_dir_perms;
 allow rfs_access vendor_tombstone_data_file:file create_file_perms;
-

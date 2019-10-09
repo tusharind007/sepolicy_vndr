@@ -28,3 +28,4 @@ allow hal_bluetooth_default vendor_bt_data_file:file create_file_perms;
 ')
 
 r_dir_file(hal_bluetooth_default, mnt_vendor_file)
+allow hal_bluetooth_default hal_bluetooth_default:socket create;

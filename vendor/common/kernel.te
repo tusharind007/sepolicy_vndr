@@ -15,3 +15,8 @@ r_dir_file(kernel, vendor_firmware_file)
 dontaudit kernel kernel:system module_request;
 
 allow kernel persist_file:dir search;
+allow kernel device:dir write;
+dontaudit kernel self:capability { dac_override dac_read_search };
+allow kernel self:capability mknod;
+allow kernel device:dir add_name;
+allow kernel device:chr_file { create setattr };
