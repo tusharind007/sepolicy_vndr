@@ -176,3 +176,8 @@
 
 # Qcomsysd
 /vendor/bin/qcom-system-daemon   u:object_r:qcomsysd_exec:s0
+# Early services
+/earlyrootfs/init_early                                             u:object_r:init_exec:s0
+/earlyrootfs/system/bin/init_early_test                             u:object_r:earlyinit_test_exec:s0
+/earlyrootfs(/.*)?                                                  u:object_r:earlyrootfs_file:s0
+/early_services                                                     u:object_r:earlyrootfs_file:s0
