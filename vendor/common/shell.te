@@ -1,1 +1,3 @@
 allow shell radio_noril_prop:file { open read getattr };
+
+allow shell debugfs_kpi:file r_file_perms;
