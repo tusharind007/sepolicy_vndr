@@ -9,6 +9,9 @@ BOARD_SEPOLICY_DIRS := \
        $(LOCAL_PATH)/vendor/common/sysmonapp \
        $(LOCAL_PATH)/vendor/common/ssg
 
+BOARD_EARLY_EXTRA_SEPOLICY_DIRS := \
+       $(LOCAL_PATH)/vendor/early_services
+
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
     $(LOCAL_PATH)/public

@@ -25,21 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-userdebug_or_eng(`
-  allow kernel self:qipcrtr_socket create;
-')
+#Allow early init to read early_service directory
+#To be removed once early_init is moved to its context
+allow init earlyrootfs_file:dir r_dir_perms;
+allow init earlyrootfs_file:file r_file_perms;
 
-#Since early_init first stage is enforcing and in kernel domain,
-#we need to allow kernel access to earlyrootfs directory to
-#re-exec early init.
-allow kernel earlyrootfs_file:dir r_dir_perms;
+#Allow earlyinit to access early_services/bin
+allow init earlyrootfs_file:lnk_file r_file_perms;
 
-#Allow early init first stage to log to kmesg
-#To be removed once restorecon is up
-allow kernel tmpfs:chr_file rw_file_perms;
-allow kernel tmpfs:dir r_dir_perms;
+#Required by second stage of early-init
+allow init kernel:process share;
+allow init proc:dir mounton;
 
-#Allow earlyinit to read the commandline and update selinux mode
-allow kernel proc_cmdline:file r_file_perms;
-
-allow kernel sepolicy_file:file r_file_perms;
+#Execute test app through early_init
+allow init earlyinit_test_exec:file {r_file_perms execute};
+domain_auto_trans(init, earlyinit_test_exec, earlyinit_test)
