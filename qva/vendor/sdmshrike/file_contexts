@@ -29,11 +29,6 @@
 #
 /dev/spidev2.0                                                                             u:object_r:audio_device:s0
 
-#GNSS device
-/dev/ttyHS1                                                                                u:object_r:location_device:s0
-/dev/gnss_sirf                                                                             u:object_r:location_device:s0
-
-
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.audiocontrol@1.0-service     u:object_r:hal_audiocontrol_qti_exec:s0
@@ -47,6 +42,3 @@
 /(vendor|system/vendor)/bin/audiod                      u:object_r:audiod_exec:s0
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:init-qcom-wifi-sh_exec:s0
-
-# amfs service
-/(vendor|system/vendor)/bin/amfsservice                             u:object_r:amfsservice_exec:s0
