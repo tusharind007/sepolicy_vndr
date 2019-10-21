@@ -46,3 +46,4 @@ r_dir_file(wcnss_service, storage_file)
 r_dir_file(wcnss_service, mnt_user_file)
 ')
 
+allow wcnss_service self:capability net_admin;

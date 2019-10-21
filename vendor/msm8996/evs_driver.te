@@ -47,3 +47,4 @@ allow hal_evs_driver ais_server:unix_stream_socket connectto;
 allow hal_evs_driver camera_socket_device:sock_file write;
 allow hal_evs_driver hal_evs_hwservice:hwservice_manager add;
 allow hal_evs_driver hidl_base_hwservice:hwservice_manager add;
+allow hal_evs_driver camera_socket_device:dir search;
