@@ -172,3 +172,8 @@ allow hal_sensors_default  hidl_base_hwservice:hwservice_manager add;
 
 # Allow access to sys_nice for real time priority
 allow hal-server self:capability sys_nice;
+
+allow hal-server bluetooth_prop:file { read getattr open };
+allow hal-server sysfs:dir { read open };
+allow hal-server vendor_audio_data_file:dir { write search add_name };
+allow hal-server vendor_audio_data_file:file { read create open getattr append };
