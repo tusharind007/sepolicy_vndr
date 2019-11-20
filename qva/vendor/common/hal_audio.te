@@ -40,3 +40,13 @@ get_prop(hal_audio, vendor_bluetooth_prop)
 
 # Allow audio HAL to get updates from health hal
 hal_client_domain(hal_audio_default, hal_health)
+
+# Allow audio HAL to communicate with Audio HAL Plugin Service
+allow hal_audio_default audio_hal_plugin_service_service:service_manager find;
+
+# Allow audio HAL to communicate with ACDB Loader Service
+allow hal_audio_default acdb_loader_service_service:service_manager find;
+
+binder_call(hal_audio_default,acdb_loader_service)
+binder_call(hal_audio_default,audio_hal_plugin_service)
+

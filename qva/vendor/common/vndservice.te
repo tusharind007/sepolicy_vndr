@@ -28,3 +28,6 @@
 type esepmdaemon_service, vndservice_manager_type;
 type wfdnativemm_service, vndservice_manager_type;
 type wfdhdcpvndservice_service, vndservice_manager_type;
+
+type audio_hal_plugin_service_service, vndservice_manager_type;
+type acdb_loader_service_service, vndservice_manager_type;
