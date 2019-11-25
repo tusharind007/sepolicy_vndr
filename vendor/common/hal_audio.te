@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2017-2019, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -82,3 +82,10 @@ allow hal_audio_default device_latency: chr_file  rw_file_perms;
 
 #Rule to allow Audio HAL to access qseecom device
 allow hal_audio_default tee_device:chr_file rw_file_perms;
+
+#Rule to enable peripheral manager
+use_vendor_per_mgr(hal_audio_default);
+
+#allow to access boot_adsp
+allow hal_audio_default sysfs_adsp:dir search;
+allow hal_audio_default sysfs_boot_adsp:file w_file_perms;
