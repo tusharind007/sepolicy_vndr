@@ -162,3 +162,6 @@
 
 # Dev socket nodes
 /dev/socket/camera(/.*)?                                            u:object_r:camera_socket_device:s0
+
+# Qcomsysd
+/vendor/bin/qcom-system-daemon   u:object_r:qcomsysd_exec:s0
