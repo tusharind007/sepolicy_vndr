@@ -27,3 +27,6 @@
 
 #properties for qvrd
 type ctl_qvrd_prop, property_type;
+
+#QSEE DRM property
+type vendor_drm_ta_prop, property_type;
