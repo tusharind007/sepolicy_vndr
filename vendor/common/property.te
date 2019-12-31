@@ -69,3 +69,6 @@ type car_service_prop, property_type;
 
 # ethavb
 type automotive_ethavb_prop, property_type;
+
+# Vulkan feature
+type vulkan_disable_prop, property_type;

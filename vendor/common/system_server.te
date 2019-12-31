@@ -22,3 +22,4 @@ userdebug_or_eng(`
 allow system_server radio_noril_prop:file { open read getattr };
 get_prop(system_server, vendor_default_prop)
 allow system_server proc_cmdline:file r_file_perms;
+get_prop(system_server, vulkan_disable_prop)
