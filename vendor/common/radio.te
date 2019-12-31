@@ -27,3 +27,4 @@ userdebug_or_eng(`
 
 get_prop(radio, vendor_radio_prop)
 allow radio proc_cmdline:file r_file_perms;
+get_prop(radio, vulkan_disable_prop)
