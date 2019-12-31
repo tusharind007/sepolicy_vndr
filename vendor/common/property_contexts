@@ -148,3 +148,44 @@ persist.car.         u:object_r:car_service_prop:s0
 
 media.aac_51_output_enabled  u:object_r:vendor_default_prop:s0
 
+qemu.hw.mainkeys                 u:object_r:vendor_default_prop:s0
+ro.build.shutdown_timeout        u:object_r:vendor_default_prop:s0
+fmas.spkr_6ch                    u:object_r:vendor_default_prop:s0
+fmas.spkr_2ch                    u:object_r:vendor_default_prop:s0
+fmas.spkr_angles                 u:object_r:vendor_default_prop:s0
+fmas.spkr_sgain                  u:object_r:vendor_default_prop:s0
+ro.qcom.bsp.version              u:object_r:vendor_default_prop:s0
+audio_hal.period_size            u:object_r:vendor_default_prop:s0
+ro.qc.sdk.audio.fluencetype      u:object_r:vendor_default_prop:s0
+tunnel.audio.encode              u:object_r:vendor_default_prop:s0
+audio.offload.buffer.size.kb     u:object_r:vendor_default_prop:s0
+audio.offload.video              u:object_r:vendor_default_prop:s0
+audio.offload.pcm.16bit.enable   u:object_r:vendor_default_prop:s0
+audio.offload.pcm.24bit.enable   u:object_r:vendor_default_prop:s0
+audio.offload.track.enable       u:object_r:vendor_default_prop:s0
+audio.deep_buffer.media          u:object_r:vendor_default_prop:s0
+audio.heap.size.multiplier       u:object_r:vendor_default_prop:s0
+use.voice.path.for.pcm.voip      u:object_r:vendor_default_prop:s0
+audio.offload.multiaac.enable    u:object_r:vendor_default_prop:s0
+audio.dolby.ds2.enabled          u:object_r:vendor_default_prop:s0
+audio.dolby.ds2.hardbypass       u:object_r:vendor_default_prop:s0
+audio.offload.multiple.enabled   u:object_r:vendor_default_prop:s0
+audio.offload.passthrough        u:object_r:vendor_default_prop:s0
+ro.qc.sdk.audio.ssr              u:object_r:vendor_default_prop:s0
+audio.offload.gapless.enabled    u:object_r:vendor_default_prop:s0
+audio.safx.pbe.enabled           u:object_r:vendor_default_prop:s0
+audio.parser.ip.buffer.size      u:object_r:vendor_default_prop:s0
+qcom.hw.aac.encoder              u:object_r:vendor_default_prop:s0
+use.qti.sw.alac.decoder          u:object_r:vendor_default_prop:s0
+use.qti.sw.ape.decoder           u:object_r:vendor_default_prop:s0
+flac.sw.decoder.24bit.support    u:object_r:vendor_default_prop:s0
+audio.automotive.offload.support u:object_r:vendor_default_prop:s0
+android.car.drawer.unlimited     u:object_r:vendor_default_prop:s0
+com.android.car.radio.demo       u:object_r:vendor_default_prop:s0
+com.android.car.radio.demo.dual  u:object_r:vendor_default_prop:s0
+rild.libpath                     u:object_r:vendor_default_prop:s0
+qcom.bluetooth.soc               u:object_r:vendor_default_prop:s0
+ro.bluetooth.emb_wp_mode         u:object_r:vendor_default_prop:s0
+ro.bluetooth.wipower             u:object_r:vendor_default_prop:s0
+
+persist.graphics.vulkan.disable         u:object_r:vulkan_disable_prop:s0
