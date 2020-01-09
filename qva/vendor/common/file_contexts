@@ -109,6 +109,9 @@
 /(vendor|system/vendor)/bin/wigighalsvc                                            u:object_r:wigighalsvc_exec:s0
 /(vendor|system/vendor)/bin/wigignpt                                               u:object_r:wigignpt_exec:s0
 /vendor/bin/hw/android\.hardware\.usb\@1\.[0-2]-service-qti                        u:object_r:hal_usb_qti_exec:s0
+/(vendor|system/vendor)/bin/audio_hal_plugin_service                               u:object_r:audio_hal_plugin_service_exec:s0
+/(vendor|system/vendor)/bin/acdb_loader_service                                    u:object_r:acdb_loader_service_exec:s0
+/(vendor|system/vendor)/bin/audio_chime                                            u:object_r:audio_chime_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
@@ -186,3 +189,4 @@
 # ais camera
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
 /dev/socket/camera(/.*)?                                            u:object_r:camera_socket_device:s0
+/(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:qcarcam_edrm_rvc_exec:s0

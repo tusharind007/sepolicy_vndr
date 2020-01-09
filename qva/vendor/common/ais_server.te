@@ -39,3 +39,4 @@ allow ais_server camera_socket_device:dir w_dir_perms;
 allow ais_server camera_socket_device:sock_file create_file_perms;
 allow ais_server video_device:chr_file rw_file_perms;
 allow ais_server hal_tv_input_default:unix_dgram_socket sendto;
+allow ais_server qcarcam_edrm_rvc:fd use;
