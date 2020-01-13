@@ -188,4 +188,5 @@
 
 # ais camera
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
+/(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:ais_v4l2_proxy_exec:s0
 /dev/socket/camera(/.*)?                                            u:object_r:camera_socket_device:s0
