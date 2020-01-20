@@ -13,3 +13,5 @@ allowxperm vendor_pd_mapper self:socket ioctl IPC_ROUTER_IOCTL_BIND_CONTROL_PORT
 
 allow vendor_pd_mapper sysfs_data:file r_file_perms;
 get_prop(vendor_pd_mapper, vendor_pd_locater_dbg_prop)
+allow vendor_pd_mapper self:qipcrtr_socket create_socket_perms_no_ioctl;
+
