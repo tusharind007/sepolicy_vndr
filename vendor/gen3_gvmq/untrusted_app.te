@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow untrusted_app hab_device:chr_file rw_file_perms;
+allow untrusted_app sw_sync_file:chr_file rw_file_perms;
