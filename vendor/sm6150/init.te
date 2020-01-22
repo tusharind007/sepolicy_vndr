@@ -40,3 +40,18 @@ allow init proc:dir mounton;
 #Execute test app through early_init
 allow init earlyinit_test_exec:file {r_file_perms execute};
 domain_auto_trans(init, earlyinit_test_exec, earlyinit_test)
+
+#Execute test app through early_init
+allow init esplash_exec:file {r_file_perms execute};
+domain_auto_trans(init, esplash_exec, esplash)
+
+#Relabing SE labels permission
+allow init device:chr_file relabelfrom;
+allow init graphics_device:chr_file relabelto;
+allow graphics_device device:filesystem associate;
+allow init kmsg_device:chr_file relabelto;
+allow kmsg_device device:filesystem associate;
+allow init random_device:chr_file relabelto;
+allow random_device device:filesystem associate;
+allow init null_device:chr_file relabelto;
+allow null_device device:filesystem associate;

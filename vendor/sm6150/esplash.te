@@ -32,6 +32,7 @@ type esplash_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(esplash)
 
 allow esplash debugfs_kpi:file rw_file_perms;
-allow esplash graphics_device:chr_file { ioctl open read write };
+allow esplash graphics_device:chr_file rw_file_perms;
+allow esplash earlyrootfs_file:dir r_dir_perms;
 allow esplash gpu_device:chr_file { ioctl open read write };
 allow esplash ion_device:chr_file { ioctl open read write };
