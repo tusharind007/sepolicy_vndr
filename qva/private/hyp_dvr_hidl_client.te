@@ -1,4 +1,4 @@
-# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,7 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Allow surfaceflinger to interact with mirrorlinkserver
-binder_call(surfaceflinger, mirrorlink);
-binder_call(surfaceflinger, wfdservice);
-binder_call(surfaceflinger, hyp_dvr_hidl_client);
+# Hypervisor HIDL DVR Client
+typeattribute hyp_dvr_hidl_client coredomain;
+type hyp_dvr_hidl_client_exec, system_file_type , exec_type, file_type;
+
+# Started by init
+init_daemon_domain(hyp_dvr_hidl_client)
+
+binder_use(hyp_dvr_hidl_client);
+
+hal_client_domain(hyp_dvr_hidl_client, hal_graphics_allocator)
+hal_client_domain(hyp_dvr_hidl_client, hal_graphics_composer)
+allow hyp_dvr_hidl_client ion_device:chr_file r_file_perms;
+binder_call(hyp_dvr_hidl_client, surfaceflinger)
+allow hyp_dvr_hidl_client surfaceflinger_service:service_manager find;

@@ -1,4 +1,4 @@
-# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,7 +25,26 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#Allow surfaceflinger to interact with mirrorlinkserver
-binder_call(surfaceflinger, mirrorlink);
-binder_call(surfaceflinger, wfdservice);
-binder_call(surfaceflinger, hyp_dvr_hidl_client);
+# Hypervisor DVR mux backend daemon
+type hyp_dvr_mux_be, domain;
+type hyp_dvr_mux_be_exec, exec_type, vendor_file_type, file_type;
+
+# Started by init
+init_daemon_domain(hyp_dvr_mux_be)
+
+hal_client_domain(hyp_dvr_mux_be, hal_graphics_allocator)
+allow hyp_dvr_mux_be ion_device:chr_file r_file_perms;
+allow hyp_dvr_mux_be dvr_mux_file:dir rw_dir_perms;
+allow hyp_dvr_mux_be dvr_mux_file:file create_file_perms;
+allow hyp_dvr_mux_be dvr_pipe_file:dir rw_dir_perms;
+allow hyp_dvr_mux_be dvr_pipe_file:fifo_file create_file_perms;
+allow hyp_dvr_mux_be hab_device:chr_file rw_file_perms;
+#allow hyp_dvr_mux_be self:capability { dac_override dac_read_search };
+#allow hyp_dvr_mux_be device:chr_file { ioctl map read write };
+allow hyp_dvr_mux_be mnt_vendor_file:dir search;
+allow hyp_dvr_mux_be mnt_vendor_file:dir r_dir_perms;
+
+userdebug_or_eng(`
+  diag_use(hyp_dvr_mux_be)
+')
+
