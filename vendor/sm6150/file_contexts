@@ -163,6 +163,8 @@
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
 /(vendor|system/vendor)/bin/esplash                                 u:object_r:esplash_exec:s0
 /earlyrootfs/system/bin/esplash                                     u:object_r:esplash_exec:s0
+/earlyrootfs/system/bin/ais_server                                  u:object_r:ais_server_exec:s0
+/earlyrootfs/system/bin/qcarcam_edrm_rvc                            u:object_r:qcarcam_edrm_rvc_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:qti_init_shell_exec:s0
