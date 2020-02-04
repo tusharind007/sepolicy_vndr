@@ -33,7 +33,7 @@ init_daemon_domain(qcarcam_edrm_rvc)
 
 allow qcarcam_edrm_rvc camera_socket_device:dir r_dir_perms;
 allow qcarcam_edrm_rvc camera_socket_device:sock_file rw_file_perms;
-allow qcarcam_edrm_rvc earlyrootfs_file:dir r_dir_perms;
+allow qcarcam_edrm_rvc early_services:dir r_dir_perms;
 allow qcarcam_edrm_rvc ais_server:unix_stream_socket connectto;
 allow qcarcam_edrm_rvc self:capability sys_admin;
 allow qcarcam_edrm_rvc graphics_device:chr_file rw_file_perms;
