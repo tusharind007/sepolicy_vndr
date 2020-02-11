@@ -85,3 +85,9 @@ type ctl_qmuxd_prop, property_type;
 
 # Car service property
 type vendor_car_service_prop, property_type;
+
+# Boot Completed property
+type vendor_sysboot_completed_prop, property_type;
+
+#Boot Animation property
+type vendor_initsvc_bootanim_prop, property_type;
