@@ -169,9 +169,7 @@
 
 
 /sys/devices/platform/soc/a600000.ssusb/mode            u:object_r:sysfs_usb_mode:s0
-/sys/devices/platform/soc/a800000.ssusb/mode            u:object_r:sysfs_usb_mode:s0
-
-/sys/devices/platform/soc/a800000.hsusb/mode            u:object_r:sysfs_hsusb_mode:s0
+/sys/devices/platform/soc/a800000.hsusb/mode            u:object_r:sysfs_usb_mode:s0
 
 ##################################
 # same process HAL libs
