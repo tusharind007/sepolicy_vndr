@@ -169,9 +169,7 @@
 
 
 /sys/devices/platform/soc/a600000.ssusb/mode            u:object_r:sysfs_usb_mode:s0
-/sys/devices/platform/soc/a800000.ssusb/mode            u:object_r:sysfs_usb_mode:s0
-
-/sys/devices/platform/soc/a800000.hsusb/mode            u:object_r:sysfs_hsusb_mode:s0
+/sys/devices/platform/soc/a800000.hsusb/mode            u:object_r:sysfs_usb_mode:s0
 
 /sys/devices/platform/soc/8300000.qcom,turing/subsys[0-9]+/name                          u:object_r:sysfs_ssr:s0
 /sys/devices/platform/soc/62400000.qcom,lpass/subsys[0-9]+/name                          u:object_r:sysfs_ssr:s0
