@@ -407,6 +407,7 @@
 /(vendor|system/vendor)/bin/init\.qcom\.wifi\.sh        u:object_r:qti_init_shell_exec:s0
 /(vendor|system/vendor)/bin/init\.qti\.ims\.sh          u:object_r:init-qti-ims-sh_exec:s0
 /(vendor|system/vendor)/bin/qca6234-service.sh          u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.audio_ko\.sh    u:object_r:vendor_audioko_exec:s0
 
 /(vendor|system/vendor)/bin/grep                        u:object_r:vendor_toolbox_exec:s0
 #################################

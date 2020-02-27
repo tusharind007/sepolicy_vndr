@@ -150,3 +150,6 @@ allow qti_init_shell proc_meminfo:file r_file_perms;
 allow qti_init_shell sysfs_npu:file rw_file_perms;
 
 allow qti_init_shell sysfs_usb_mode:file rw_file_perms;
+
+allow qti_init_shell vendor_audioko_exec:file { rx_file_perms entrypoint };
+get_prop(qti_init_shell, vendor_audioko_prop);
