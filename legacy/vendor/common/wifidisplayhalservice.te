@@ -97,3 +97,6 @@ userdebug_or_eng(`
   get_prop(wifidisplayhalservice_qti,wfd_vendor_debug_prop)
 ')
 
+
+#Allow access to uhid driver for HID event injection
+allow wifidisplayhalservice_qti uhid_device:chr_file rw_file_perms;

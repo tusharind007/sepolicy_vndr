@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -28,3 +28,4 @@
 #Allow surfaceflinger to interact with mirrorlinkserver
 binder_call(surfaceflinger, mirrorlink);
 binder_call(surfaceflinger, wfdservice);
+binder_call(surfaceflinger, hyp_dvr_hidl_client);

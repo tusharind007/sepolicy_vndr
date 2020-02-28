@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,26 +25,26 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# evs_mock mock hardware driver service
-type hal_evs_driver, domain;
-hal_server_domain(hal_evs_driver, hal_evs)
+# Hypervisor DVR mux backend daemon
+type hyp_dvr_mux_be, domain;
+type hyp_dvr_mux_be_exec, exec_type, vendor_file_type, file_type;
 
-# allow init to launch processes in this context
-type hal_evs_driver_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_evs_driver)
+# Started by init
+init_daemon_domain(hyp_dvr_mux_be)
 
-# Allow use of gralloc buffers, and surface flinger
-allow hal_evs_driver video_device:chr_file { ioctl open read write };
-hal_client_domain(hal_evs_driver, hal_graphics_allocator);
+hal_client_domain(hyp_dvr_mux_be, hal_graphics_allocator)
+allow hyp_dvr_mux_be ion_device:chr_file r_file_perms;
+allow hyp_dvr_mux_be dvr_mux_file:dir rw_dir_perms;
+allow hyp_dvr_mux_be dvr_mux_file:file create_file_perms;
+allow hyp_dvr_mux_be dvr_pipe_file:dir rw_dir_perms;
+allow hyp_dvr_mux_be dvr_pipe_file:fifo_file create_file_perms;
+allow hyp_dvr_mux_be hab_device:chr_file rw_file_perms;
+#allow hyp_dvr_mux_be self:capability { dac_override dac_read_search };
+#allow hyp_dvr_mux_be device:chr_file { ioctl map read write };
+allow hyp_dvr_mux_be mnt_vendor_file:dir search;
+allow hyp_dvr_mux_be mnt_vendor_file:dir r_dir_perms;
 
-allow hal_evs_driver gpu_device:chr_file { getattr ioctl open read write };
-allow hal_evs_driver hal_graphics_composer_default:fd use;
-allow hal_evs_driver hal_graphics_allocator_default_tmpfs:file { read write };
+userdebug_or_eng(`
+  diag_use(hyp_dvr_mux_be)
+')
 
-typeattribute hal_evs_driver binder_in_vendor_violators;
-allow hal_evs_driver ion_device:chr_file { ioctl open read };
-allow hal_evs_driver binder_device:chr_file { read write };
-add_hwservice(hal_evs_driver, hal_evs_hwservice)
-allow hal_evs_driver camera_socket_device:dir search;
-allow hal_evs_driver camera_socket_device:sock_file write;
-allow hal_evs_driver ais_server:unix_stream_socket connectto;
