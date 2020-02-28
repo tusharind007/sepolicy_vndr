@@ -26,3 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow init sysfs_graphics:file setattr;
+recovery_only(`
+allow init sysfs_usb_mode:file rw_file_perms;
+')

@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,8 +25,22 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-type sw_sync_file, fs_type, debugfs_type, mlstrustedobject;
+type hal_dvr_qti, domain;
+type hal_dvr_qti_exec, exec_type, vendor_file_type, file_type;
+hal_server_domain(hal_dvr_qti, hal_dvr)
+init_daemon_domain(hal_dvr_qti)
 
-# DVR
-type dvr_pipe_file, file_type;
-type dvr_mux_file, file_type;
+binder_call(hal_dvr_client, hal_dvr_server)
+binder_call(hal_dvr_server, hal_dvr_client)
+add_hwservice(hal_dvr_server, hal_dvr_hwservice)
+
+#binder_use(hal_dvr_qti);
+
+#allow hal_dvr_qti hal_graphics_mapper_hwservice:hwservice_manager find;
+allow hal_dvr_qti hab_device:chr_file rw_file_perms;
+hal_client_domain(hal_dvr_qti, hal_graphics_allocator)
+#allow hal_dvr_qti device:chr_file { ioctl map open read write };
+allow hal_dvr_qti dvr_pipe_file:dir create_dir_perms;
+allow hal_dvr_qti dvr_pipe_file:fifo_file create_file_perms;
+allow hal_dvr_qti mnt_vendor_file:dir search;
+allow hal_dvr_qti mnt_vendor_file:dir r_dir_perms;

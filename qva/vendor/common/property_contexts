@@ -102,3 +102,9 @@ ctl.start$vendor.qmuxd                       u:object_r:ctl_qmuxd_prop:s0
 
 # Car service property
 persist.vendor.car.                          u:object_r:vendor_car_service_prop:s0
+
+# Boot Completed
+vendor.sys.boot_completed                        u:object_r:vendor_sysboot_completed_prop:s0
+
+# Boot Animation start
+vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_bootanim_prop:s0

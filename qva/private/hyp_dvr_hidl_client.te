@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,26 +25,17 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# evs_mock mock hardware driver service
-type hal_evs_driver, domain;
-hal_server_domain(hal_evs_driver, hal_evs)
+# Hypervisor HIDL DVR Client
+typeattribute hyp_dvr_hidl_client coredomain;
+type hyp_dvr_hidl_client_exec, system_file_type , exec_type, file_type;
 
-# allow init to launch processes in this context
-type hal_evs_driver_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(hal_evs_driver)
+# Started by init
+init_daemon_domain(hyp_dvr_hidl_client)
 
-# Allow use of gralloc buffers, and surface flinger
-allow hal_evs_driver video_device:chr_file { ioctl open read write };
-hal_client_domain(hal_evs_driver, hal_graphics_allocator);
+binder_use(hyp_dvr_hidl_client);
 
-allow hal_evs_driver gpu_device:chr_file { getattr ioctl open read write };
-allow hal_evs_driver hal_graphics_composer_default:fd use;
-allow hal_evs_driver hal_graphics_allocator_default_tmpfs:file { read write };
-
-typeattribute hal_evs_driver binder_in_vendor_violators;
-allow hal_evs_driver ion_device:chr_file { ioctl open read };
-allow hal_evs_driver binder_device:chr_file { read write };
-add_hwservice(hal_evs_driver, hal_evs_hwservice)
-allow hal_evs_driver camera_socket_device:dir search;
-allow hal_evs_driver camera_socket_device:sock_file write;
-allow hal_evs_driver ais_server:unix_stream_socket connectto;
+hal_client_domain(hyp_dvr_hidl_client, hal_graphics_allocator)
+hal_client_domain(hyp_dvr_hidl_client, hal_graphics_composer)
+allow hyp_dvr_hidl_client ion_device:chr_file r_file_perms;
+binder_call(hyp_dvr_hidl_client, surfaceflinger)
+allow hyp_dvr_hidl_client surfaceflinger_service:service_manager find;
