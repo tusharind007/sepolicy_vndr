@@ -130,7 +130,7 @@ userdebug_or_eng(`
 allow system_server sysfs_graphics:file rw_file_perms;
 
 # timerslack_ns
-allow system_server { location_app system_app } :file write;
+allow system_server { vendor_location_app system_app } :file write;
 
 #OpenGLES version
 get_prop(system_server, vendor_opengles_prop)
@@ -173,9 +173,6 @@ get_prop(system_server, vendor_scroll_prop)
 # allow system_server to access vendor display property.
 get_prop(system_server, vendor_display_prop)
 get_prop(system_server, vendor_iop_prop)
-
-# allow system server to get mirrorlink connection status prop
-get_prop(system_server, vendor_mirrorlink_prop)
 
 # allow system server to get vendor_audio_prop
 get_prop(system_server, vendor_audio_prop)

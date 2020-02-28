@@ -32,13 +32,10 @@ user=system seinfo=platform name=com.qualcomm.location.XT isPrivApp=true domain=
 user=system seinfo=platform name=com.qualcomm.qti.auth.fidocryptoservice domain=qsee_svc_app type=system_app_data_file
 
 # AtFwd app
-user=_app seinfo=platform name=com.qualcomm.telephony domain=qtelephony type=app_data_file levelFrom=all
+user=_app seinfo=platform name=com.qualcomm.telephony domain=vendor_qtelephony type=app_data_file levelFrom=all
 
 #Add new domain for QDMA
 user=system seinfo=platform name=com.qualcomm.qti.qdma domain=qdma_app type=system_app_data_file
-
-# Add time service app
-user=_app seinfo=platform name=com.qualcomm.timeservice domain=timeservice_app type=app_data_file levelFrom=all
 
 #Add new domain for logkit services
 user=system seinfo=platform name=com.qualcomm.qti.logkit domain=qti_logkit_app type=system_app_data_file
@@ -53,4 +50,4 @@ user=system seinfo=platform name=com.qualcomm.qti.perfdump domain=perfdump_app t
 user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=poweroffalarm_app type=system_app_data_file
 
 #add new domain for qtidataservices
-user=radio seinfo=platform name=.qtidataservices domain=qtidataservices_app type=radio_data_file
+user=_app seinfo=platform name=.qtidataservices domain=qtidataservices_app type=app_data_file levelFrom=all

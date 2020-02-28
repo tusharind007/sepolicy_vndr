@@ -24,17 +24,4 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-# Allow update_engine and update_engine_sideload (recovery) read/write on the
-# device-specific partitions it should update.
-allow update_engine_common {
-	custom_ab_block_device
-	xbl_block_device
-	uefi_block_device
-	ssd_block_device
-	modem_block_device
-	recovery_block_device
-}:blk_file rw_file_perms;
-
-allow update_engine_common tmpfs:lnk_file r_file_perms;
-
+type vendor_usta_app_service,        app_api_service, system_api_service, service_manager_type;
