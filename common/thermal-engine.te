@@ -19,6 +19,7 @@ allow thermal-engine self:capability {
 };
 
 allow thermal-engine self:socket create_socket_perms;
+allow thermal-engine self:netlink_kobject_uevent_socket create_socket_perms;
 
 # This is required to access thermal sockets
 allow thermal-engine thermal_socket:dir w_dir_perms;
