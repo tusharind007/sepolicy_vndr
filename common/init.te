@@ -87,3 +87,7 @@ allow init sysfs_boot_adsp:file write;
 allow init configfs:dir r_dir_perms;
 allow init configfs:file { rw_file_perms link };
 allow init configfs:lnk_file create_file_perms;
+
+#load /system/lib/modules/qca_cld3/qca_cld3_wlan.ko
+#load /system/lib/modules/wil6210.ko
+allow init self:system module_load;
