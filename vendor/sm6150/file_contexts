@@ -182,3 +182,4 @@
 /early_services/system/bin/init_early_test                             u:object_r:earlyinit_test_exec:s0
 /early_services(/.*)?                                                  u:object_r:early_services:s0
 /early_services                                                     u:object_r:early_services:s0
+/(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:ais_v4l2_proxy_exec:s0
