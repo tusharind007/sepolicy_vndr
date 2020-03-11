@@ -34,3 +34,6 @@ ro.vendor.wlan.chip u:object_r:qti_wlan_prop:s0
 
 # Wifi Softap
 persist.vendor.wifi.softap.        u:object_r:wifi_prop:s0
+
+# SKU identified property
+vendor.sku_identified    u:object_r:vendor_sku_identified_prop:s0
