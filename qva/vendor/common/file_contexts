@@ -190,3 +190,6 @@
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
 /dev/socket/camera(/.*)?                                            u:object_r:camera_socket_device:s0
 /(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:qcarcam_edrm_rvc_exec:s0
+
+# allocstall_threshold
+/sys/module/vmpressure/parameters/allocstall_threshold u:object_r:sysfs_allocstall_threshold:s0
