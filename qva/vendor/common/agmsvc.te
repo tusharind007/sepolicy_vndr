@@ -63,9 +63,16 @@ r_dir_file(agmservice_qti, proc_asound)
 #Allow ion device access
 allow agmservice_qti ion_device:chr_file r_file_perms;
 
+#Allow qipc socket access for servreg communication
+allow agmservice_qti self:qipcrtr_socket create_socket_perms_no_ioctl;
+allow agmservice_qti self:{ socket qipcrtr_socket } ioctl;
+allowxperm agmservice_qti self:{ socket qipcrtr_socket } ioctl msm_sock_ipc_ioctls;
+
 userdebug_or_eng(`
 #Allow for property access
   get_prop(agmservice_qti,vendor_audio_debug_prop)
+#Allow for pd_locater service access
+  get_prop(agmservice_qti, vendor_pd_locater_dbg_prop)
 #Allow to dump in /data/vendor/audio/
   allow agmservice_qti vendor_audio_data_file:dir w_dir_perms;
   allow agmservice_qti vendor_audio_data_file:file create_file_perms;
