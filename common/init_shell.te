@@ -177,3 +177,6 @@ allow qti_init_shell vfat:dir create_dir_perms;
 
 #============= qti_init_shell ==============
 allow qti_init_shell block_device:dir getattr;
+
+#For configfs permission
+allow qti_init_shell configfs:dir r_dir_perms;
