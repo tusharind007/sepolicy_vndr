@@ -170,3 +170,4 @@
 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/modalias u:object_r:vendor_sysfs_fps_attr:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-fpc u:object_r:vendor_hal_fingerprint_fpc_exec:s0
 
+/(vendor|system/vendor)/bin/audiod                                              u:object_r:vendor_audiod_exec:s0
