@@ -26,6 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 vendor.qcom.bluetooth.     u:object_r:vendor_bluetooth_prop:s0
-
+vendor.sku_name                         u:object_r:vendor_sku_prop:s0
 # WLAN dynamic detect
 ro.vendor.wlan.chip u:object_r:qcom_wlan_prop:s0
