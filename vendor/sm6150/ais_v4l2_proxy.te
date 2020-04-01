@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,20 +25,28 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# ais_server service
-type ais_server, domain;
-type ais_server_exec, exec_type, file_type, vendor_file_type;
+# ais_v4l2_proxy service
+type ais_v4l2_proxy, domain;
+type ais_v4l2_proxy_exec, exec_type, file_type, vendor_file_type;
 
-init_daemon_domain(ais_server)
+init_daemon_domain(ais_v4l2_proxy)
 
 userdebug_or_eng(`
-allow ais_server su:unix_dgram_socket sendto;
+allow ais_v4l2_proxy su:unix_dgram_socket sendto;
 ')
-hal_client_domain(ais_server, hal_graphics_allocator)
-allow ais_server camera_socket_device:dir w_dir_perms;
-allow ais_server camera_socket_device:sock_file create_file_perms;
-allow ais_server video_device:chr_file rw_file_perms;
-allow ais_server hal_tv_input_default:unix_dgram_socket sendto;
-allow ais_server device:chr_file ioctl;
-allow ais_server early_services:dir r_dir_perms;
-allow ais_server qcarcam_edrm_rvc:fd use;
+hal_client_domain(ais_v4l2_proxy, hal_graphics_allocator)
+allow ais_v4l2_proxy vendor_camera_data_file:dir w_dir_perms;
+allow ais_v4l2_proxy vendor_camera_data_file:sock_file create_file_perms;
+allow ais_v4l2_proxy video_device:chr_file rw_file_perms;
+allow ais_v4l2_proxy ion_device:chr_file r_file_perms;
+allow ais_v4l2_proxy ais_server:unix_stream_socket connectto;
+allow ais_v4l2_proxy hal_tv_input_default:unix_dgram_socket sendto;
+allow ais_v4l2_proxy audio_device:chr_file { rw_file_perms };
+
+# add socket allow for android only
+#allow ais_v4l2_proxy device:sock_file write;
+allow ais_v4l2_proxy init:unix_stream_socket connectto;
+
+allow ais_v4l2_proxy early_services:dir search;
+allow ais_v4l2_proxy camera_socket_device:dir w_dir_perms;
+allow ais_v4l2_proxy camera_socket_device:sock_file create_file_perms;
