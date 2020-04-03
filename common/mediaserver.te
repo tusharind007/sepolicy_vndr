@@ -88,3 +88,5 @@ allow mediaserver b2g:binder call;
 allow mediaserver b2g:fd use;
 allow mediaserver audiod:binder call;
 
+# Rule to allow media server to wite on boot_adsp
+allow mediaserver sysfs_boot_adsp:file w_file_perms;
