@@ -33,6 +33,5 @@ type sysfs_hsusb_mode, sysfs_type, fs_type;
 #for qdss
 type sysfs_qdss_dev, sysfs_type, fs_type;
 # Default type for anything under /system.
-type early_services_file, file_type;
-type earlyrootfs_file, file_type;
+type early_services, file_type;
 type earlyinit_test_exec, exec_type, file_type, vendor_file_type;

@@ -27,11 +27,11 @@
 
 #Allow early init to read early_service directory
 #To be removed once early_init is moved to its context
-allow init earlyrootfs_file:dir r_dir_perms;
-allow init earlyrootfs_file:file r_file_perms;
+allow init early_services:dir r_dir_perms;
+allow init early_services:file r_file_perms;
 
 #Allow earlyinit to access early_services/bin
-allow init earlyrootfs_file:lnk_file r_file_perms;
+allow init early_services:lnk_file r_file_perms;
 
 #Required by second stage of early-init
 allow init kernel:process share;
@@ -45,6 +45,12 @@ domain_auto_trans(init, earlyinit_test_exec, earlyinit_test)
 allow init esplash_exec:file {r_file_perms execute};
 domain_auto_trans(init, esplash_exec, esplash)
 
+#Execute ais_server and test app through early_init
+allow init ais_server_exec:file {r_file_perms execute};
+domain_auto_trans(init, ais_server_exec, ais_server)
+allow init qcarcam_edrm_rvc_exec:file {r_file_perms execute};
+domain_auto_trans(init, qcarcam_edrm_rvc_exec, qcarcam_edrm_rvc)
+
 #Relabing SE labels permission
 allow init device:chr_file relabelfrom;
 allow init graphics_device:chr_file relabelto;
@@ -55,3 +61,14 @@ allow init random_device:chr_file relabelto;
 allow random_device device:filesystem associate;
 allow init null_device:chr_file relabelto;
 allow null_device device:filesystem associate;
+
+#Relabing SE labels permission for camera
+allow init video_device:chr_file relabelto;
+allow video_device device:filesystem associate;
+allow init device:dir relabelfrom;
+allow init camera_socket_device:dir relabelto;
+allow camera_socket_device device:filesystem associate;
+allow init ion_device:chr_file relabelto;
+allow ion_device device:filesystem associate;
+allow init gpu_device:chr_file relabelto;
+allow gpu_device device:filesystem associate;

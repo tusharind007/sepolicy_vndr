@@ -30,9 +30,9 @@ userdebug_or_eng(`
 ')
 
 #Since early_init first stage is enforcing and in kernel domain,
-#we need to allow kernel access to earlyrootfs directory to
+#we need to allow kernel access to early services directory to
 #re-exec early init.
-allow kernel earlyrootfs_file:dir r_dir_perms;
+allow kernel early_services:dir r_dir_perms;
 
 #Allow early init first stage to log to kmesg
 #To be removed once restorecon is up

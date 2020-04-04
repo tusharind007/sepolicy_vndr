@@ -48,3 +48,7 @@ recovery_only(`
 allow init sysfs_graphics:file w_file_perms;
 allow init sysfs_graphics:dir search;
 ')
+# file rw_file_perms for sysfs_usb_mode in recovery
+recovery_only(`
+allow init sysfs_usb_mode:file rw_file_perms;
+')

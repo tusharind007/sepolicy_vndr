@@ -162,7 +162,7 @@
 /(vendor|system/vendor)/bin/qrtr-ns                                 u:object_r:qrtr_exec:s0
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
 /(vendor|system/vendor)/bin/esplash                                 u:object_r:esplash_exec:s0
-/earlyrootfs/system/bin/esplash                                     u:object_r:esplash_exec:s0
+/early_services/system/bin/esplash                                     u:object_r:esplash_exec:s0
 
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:qti_init_shell_exec:s0
@@ -178,7 +178,8 @@
 # Qcomsysd
 /vendor/bin/qcom-system-daemon   u:object_r:qcomsysd_exec:s0
 # Early services
-/earlyrootfs/init_early                                             u:object_r:init_exec:s0
-/earlyrootfs/system/bin/init_early_test                             u:object_r:earlyinit_test_exec:s0
-/earlyrootfs(/.*)?                                                  u:object_r:earlyrootfs_file:s0
-/early_services                                                     u:object_r:earlyrootfs_file:s0
+/early_services/init_early                                             u:object_r:init_exec:s0
+/early_services/system/bin/init_early_test                             u:object_r:earlyinit_test_exec:s0
+/early_services(/.*)?                                                  u:object_r:early_services:s0
+/early_services                                                     u:object_r:early_services:s0
+/(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:ais_v4l2_proxy_exec:s0
