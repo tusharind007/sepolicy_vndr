@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -28,3 +28,4 @@
 # for system_server to access /sys/kernel/debug/binder/state
 /sys/kernel/debug/binder/state                                      u:object_r:vendor_binder_state:s0
 /vendor/bin/Loopback_native 	                                    u:object_r:vendor_qtiloopback_native_exec:s0
+/vendor/bin/qttestservice                                           u:object_r:vendor_qttestservice_exec:s0

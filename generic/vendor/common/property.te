@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -67,6 +67,11 @@ vendor_internal_prop(vendor_time_service_prop);
 # Audio props
 vendor_restricted_prop(vendor_audio_prop);
 
+# shsusrd props
+vendor_restricted_prop(vendor_data_shsusr_prop);
+
+vendor_restricted_prop(vendor_data_qmipriod_prop);
+
 #ss-restart
 vendor_internal_prop(vendor_ssr_prop);
 
@@ -79,7 +84,7 @@ vendor_internal_prop(vendor_cap_configstore_dbg_prop);
 #rmt_storage
 vendor_internal_prop(vendor_ctl_vendor_rmt_storage_prop);
 
-vendor_internal_prop(vendor_gpu_prop);
+vendor_restricted_prop(vendor_gpu_prop);
 
 vendor_restricted_prop(vendor_public_vendor_default_prop);
 
@@ -98,5 +103,9 @@ vendor_restricted_prop(vendor_adsprpc_prop);
 # Wifi version recorder
 vendor_internal_prop(vendor_wifi_version);
 
-# Property for storing soc_id
-vendor_internal_prop(vendor_soc_prop)
+# QCV properties for storing soc_id and soc_name
+vendor_internal_prop(vendor_soc_prop);
+vendor_internal_prop(vendor_soc_name_prop);
+
+#kernel console log level
+vendor_internal_prop(vendor_console_log_level_prop)

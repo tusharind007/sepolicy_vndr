@@ -29,6 +29,7 @@ allow init {
     cache_file
     mnt_vendor_file
     storage_file
+    vendor_vm_system_file
 }:dir mounton;
 
 # symlink /sdcard to backing block
@@ -62,6 +63,7 @@ allow init {
     vendor_ssd_block_device
     vendor_modem_block_device
     vendor_mdtp_device
+    vendor_vm_data_block_device
 }:{ blk_file lnk_file } relabelto;
 
 #Allow /sys access to write zram disksize
@@ -69,8 +71,11 @@ allow init sysfs_zram:dir r_dir_perms;
 allow init sysfs_zram:file r_file_perms;
 
 allow init vendor_sysfs_boot_adsp:file w_file_perms;
-# Search and write access for vendor_sysfs_graphics for backlight in recovery
+
+# Search and write access for vendor_sysfs_graphics for backlight
+# and vendor_sysfs_usb_device in recovery
 recovery_only(`
 allow init vendor_sysfs_graphics:file w_file_perms;
 allow init vendor_sysfs_graphics:dir search;
+allow init vendor_sysfs_usb_device:file w_file_perms;
 ')

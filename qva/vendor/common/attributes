@@ -49,6 +49,10 @@ attribute vendor_hal_pasrmanager;
 attribute vendor_hal_pasrmanager_client;
 attribute vendor_hal_pasrmanager_server;
 
+attribute vendor_hal_qseecom;
+attribute vendor_hal_qseecom_client;
+attribute vendor_hal_qseecom_server;
+
 attribute vendor_hal_qteeconnector;
 attribute vendor_hal_qteeconnector_client;
 attribute vendor_hal_qteeconnector_server;
@@ -81,10 +85,6 @@ attribute vendor_hal_cvp;
 attribute vendor_hal_cvp_client;
 attribute vendor_hal_cvp_server;
 
-attribute vendor_hal_fm;
-attribute vendor_hal_fm_client;
-attribute vendor_hal_fm_server;
-
 attribute vendor_hal_wigig;
 attribute vendor_hal_wigig_client;
 attribute vendor_hal_wigig_server;
@@ -97,10 +97,6 @@ attribute vendor_hal_fstman;
 attribute vendor_hal_fstman_client;
 attribute vendor_hal_fstman_server;
 
-attribute vendor_hal_btconfigstore;
-attribute vendor_hal_btconfigstore_client;
-attribute vendor_hal_btconfigstore_server;
-
 attribute vendor_hal_wifilearner;
 attribute vendor_hal_wifilearner_client;
 attribute vendor_hal_wifilearner_server;
@@ -109,10 +105,14 @@ attribute vendor_hal_srvctracker;
 attribute vendor_hal_srvctracker_client;
 attribute vendor_hal_srvctracker_server;
 
-attribute vendor_hal_qspmhal;
-attribute vendor_hal_qspmhal_client;
-attribute vendor_hal_qspmhal_server;
-
 attribute vendor_hal_bluetooth_dun;
 attribute vendor_hal_bluetooth_dun_client;
 attribute vendor_hal_bluetooth_dun_server;
+
+attribute vendor_hal_embmssl;
+attribute vendor_hal_embmssl_client;
+attribute vendor_hal_embmssl_server;
+
+attribute vendor_hal_qccvndhal;
+attribute vendor_hal_qccvndhal_client;
+attribute vendor_hal_qccvndhal_server;

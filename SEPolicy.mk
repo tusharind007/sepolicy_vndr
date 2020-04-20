@@ -21,11 +21,13 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
 # sepolicy rules for product images
 PRODUCT_PUBLIC_SEPOLICY_DIRS := \
     $(PRODUCT_PUBLIC_SEPOLICY_DIRS) \
-    $(SEPOLICY_PATH)/product/public
+    $(SEPOLICY_PATH)/generic/product/public \
+    $(SEPOLICY_PATH)/qva/product/public 
 
 PRODUCT_PRIVATE_SEPOLICY_DIRS := \
     $(PRODUCT_PRIVATE_SEPOLICY_DIRS) \
-    $(SEPOLICY_PATH)/product/private
+    $(SEPOLICY_PATH)/generic/product/private \
+    $(SEPOLICY_PATH)/qva/product/private
 
 ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS := \
@@ -34,7 +36,6 @@ ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
        $(SEPOLICY_PATH)/generic/vendor/common \
        $(SEPOLICY_PATH)/qva/vendor/common/sysmonapp \
        $(SEPOLICY_PATH)/qva/vendor/ssg \
-       $(SEPOLICY_PATH)/timeservice \
        $(SEPOLICY_PATH)/qva/vendor/common
 
     ifeq ($(TARGET_SEPOLICY_DIR),)
@@ -57,7 +58,6 @@ ifneq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
                  $(SEPOLICY_PATH) \
                  $(SEPOLICY_PATH)/legacy/vendor/common/sysmonapp \
                  $(SEPOLICY_PATH)/legacy/vendor/ssg \
-                 $(SEPOLICY_PATH)/timeservice \
                  $(SEPOLICY_PATH)/legacy/vendor/common
 
     ifeq ($(TARGET_SEPOLICY_DIR),)

@@ -36,8 +36,8 @@ vendor.spcom.                                u:object_r:vendor_spcomlib_prop:s0
 persist.vendor.bt.soc.scram_freqs            u:object_r:vendor_bluetooth_prop:s0
 ctl.vendor.mdm_helper                        u:object_r:vendor_mdm_helper_prop:s0
 
-# qdma property
-vendor.qti.qdma.                             u:object_r:vendor_qdma_prop:s0
+# qcc property
+vendor.qti.qdma.                             u:object_r:vendor_qcc_prop:s0
 
 #perf
 vendor.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0
@@ -70,6 +70,7 @@ vendor.sys.boot_mode                         u:object_r:vendor_boot_mode_prop:s0
 #mm-video
 vendor.media.target.version                  u:object_r:vendor_video_prop:s0
 vendor.video.disable.ubwc                    u:object_r:vendor_video_prop:s0
+vendor.media.target_variant                  u:object_r:vendor_video_prop:s0
 
 # factory properties
 ctl.vendor.mmid                              u:object_r:vendor_ctl_vendor_mmid_prop:s0

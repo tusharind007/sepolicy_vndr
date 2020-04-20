@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -33,6 +33,9 @@ type vendor_persist_secnvm_file, file_type , vendor_persist_type;
 #mink-lowi-interface-daemon (mlid) socket
 type vendor_mlid_socket, file_type, mlstrustedobject;
 
+#Wireless Edge Service (QWES) socket and files
+type vendor_qwesd_socket, file_type, mlstrustedobject;
+type vendor_qwes_data_file, file_type, data_file_type;
 #ssg qmi gateway daemon socket
 type vendor_ssgqmig_socket, file_type, mlstrustedobject;
 
@@ -46,9 +49,8 @@ type vendor_sysfs_touch_aoi, fs_type, sysfs_type;
 #sysfs jpeg
 type vendor_sysfs_jpeg, fs_type, sysfs_type;
 
-# QDMA data files
-type vendor_qdma_data_file, file_type, data_file_type;
-type vendor_qdma_socket, file_type, mlstrustedobject;
+# qcc-trd data files
+type vendor_qcc_trd_data_file, file_type, data_file_type;
 
 type vendor_sysfs_npu, fs_type, sysfs_type;
 
@@ -65,6 +67,7 @@ type vendor_dataadpl_socket, file_type;
 type vendor_sysfs_lib, fs_type, sysfs_type;
 type vendor_sysfs_memory, fs_type, sysfs_type;
 type vendor_sysfs_process_reclaim, fs_type, sysfs_type;
+type vendor_sysfs_vmpressure, fs_type, sysfs_type;
 
 # secure element file type for data vendor access
 type vendor_secure_element_vendor_data_file, file_type, data_file_type;
@@ -108,6 +111,9 @@ type vendor_sysfs_rmnet, fs_type, sysfs_type;
 #qvrservice sysfs files
 type vendor_sysfs_qvr_external_sensor, sysfs_type, fs_type;
 
+#GuestVM PIL files
+type vendor_sysfs_bootguestvm, fs_type, sysfs_type;
+
 #qspm-hal
 type vendor_qspmhal_data_file, file_type, data_file_type;
 
@@ -115,3 +121,7 @@ type vendor_qspmhal_data_file, file_type, data_file_type;
 type vendor_sysfs_memory_offline, sysfs_type, fs_type;
 
 type vendor_sysfs_qfprom, fs_type, sysfs_type;
+
+#slub-debug
+type vendor_sysfs_slab_zshandle_storeuser, fs_type, sysfs_type;
+type vendor_sysfs_slab_zspage_storeuser, fs_type, sysfs_type;
