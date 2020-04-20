@@ -28,3 +28,6 @@
 #Allow data partition access
 allow hal_drm_default mediadrm_vendor_data_file:dir create_dir_perms;
 allow hal_drm_default mediadrm_vendor_data_file:file create_file_perms;
+
+#Allow property_service access
+set_prop(hal_drm_default, vendor_drm_ta_prop);
