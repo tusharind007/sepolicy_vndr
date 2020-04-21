@@ -27,3 +27,9 @@
 
 allow mediaextractor sdcard_type:file { getattr read };
 get_prop(mediaextractor,  vendor_audio_prop)
+
+allow mediaextractor vendor_default_prop:file getattr;
+
+allow mediaextractor vendor_default_prop:file open;
+
+allow mediaextractor vendor_default_prop:file read;

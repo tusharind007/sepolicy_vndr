@@ -66,3 +66,6 @@ type radio_noril_prop, property_type;
 
 # Car service
 type car_service_prop, property_type;
+
+# ethavb
+type automotive_ethavb_prop, property_type;
