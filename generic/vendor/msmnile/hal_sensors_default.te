@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,4 +24,8 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-type vendor_sysfs_sensors_default, sysfs_type, fs_type;
+
+allow hal_sensors_default vendor_sysfs_sensors_default:lnk_file read;
+allow hal_sensors_default vendor_sysfs_sensors_default:dir r_dir_perms;
+allow hal_sensors_default vendor_sysfs_sensors_default:file rw_file_perms;
+allow hal_sensors_default iio_device:chr_file rw_file_perms;
