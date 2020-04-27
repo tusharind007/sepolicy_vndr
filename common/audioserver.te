@@ -78,3 +78,7 @@ userdebug_or_eng(`
 allow audioserver activity_service:service_manager find;
 set_prop(audioserver, dolby_prop)
 # DOLBY_END
+
+# Allow audioserver to access bluetooth property
+# for runtime switch between normal bt and split bt
+allow audioserver bluetooth_prop:file { read getattr open };
