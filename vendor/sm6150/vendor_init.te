@@ -30,3 +30,8 @@ allow vendor_init ipa_dev:file create_file_perms;
 
 # WLAN dynamic detect
 get_prop(vendor_init, qcom_wlan_prop)
+get_prop(vendor_init, default_prop)
+set_prop(vendor_init, vendor_sysboot_completed_prop)
+set_prop(vendor_init, vendor_initsvc_bootanim_prop)
+get_prop(vendor_init, vendor_sysboot_completed_prop)
+get_prop(vendor_init, vendor_initsvc_bootanim_prop)

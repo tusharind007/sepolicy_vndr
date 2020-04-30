@@ -107,3 +107,9 @@ ro.radio.noril          u:object_r:radio_noril_prop:s0
 
 # Car service
 persist.car.         u:object_r:car_service_prop:s0
+
+# Boot Completed
+vendor.sys.boot_completed                        u:object_r:vendor_sysboot_completed_prop:s0
+
+# Boot Animation start
+vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_bootanim_prop:s0
