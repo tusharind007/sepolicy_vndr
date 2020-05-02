@@ -29,3 +29,6 @@ genfscon sysfs /devices/soc/18800000.qcom,icnss/net                     u:object
 
 # spdaemon sysfs
 genfscon sysfs /devices/platform/soc/soc:qcom,spss_utils/firmware_name u:object_r:sysfs_spdaemon:s0
+
+#debugfs node
+genfscon debugfs /aop_send_message  u:object_r:debugfs_aop:s0

@@ -49,3 +49,5 @@ set_prop(qti_init_shell, vendor_audio_debug_prop)
 ')
 
 allow qti_init_shell sysfs_usb_mode:file rw_file_perms;
+
+allow qti_init_shell sysfs_allocstall_threshold:file w_file_perms;
