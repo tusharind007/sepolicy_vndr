@@ -33,6 +33,8 @@ init_daemon_domain(acdb_loader_service)
 allow acdb_loader_service audio_device:dir search;
 allow acdb_loader_service audio_device:chr_file rw_file_perms;
 allow acdb_loader_service ion_device:chr_file r_file_perms;
+allow acdb_loader_service vendor_audio_data_file:dir rw_dir_perms;
+allow acdb_loader_service vendor_audio_data_file:file create_file_perms;
 vndbinder_use(acdb_loader_service)
 get_prop(acdb_loader_service, vendor_audio_prop)
 add_service(acdb_loader_service, acdb_loader_service_service)

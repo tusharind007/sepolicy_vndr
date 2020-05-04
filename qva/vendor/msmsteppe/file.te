@@ -31,3 +31,5 @@ type sysfs_hsusb_mode, sysfs_type, fs_type;
 
 # secure element file type for data vendor access
 type secure_element_vendor_data_file, file_type, data_file_type;
+
+type debugfs_aop, fs_type, debugfs_type;

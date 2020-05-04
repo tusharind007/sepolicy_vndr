@@ -28,6 +28,7 @@
 # Dev nodes
 #
 /dev/spidev2.0                                                                             u:object_r:audio_device:s0
+/dev/i2c-7                                                                                 u:object_r:audio_device:s0
 
 /(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service          u:object_r:hal_automotive_vehicle_qti_exec:s0
 
@@ -59,6 +60,9 @@
 /(vendor|system/vendor)/bin/audiod                      u:object_r:audiod_exec:s0
 # WLAN dynamic detect
 /(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:init-qcom-wifi-sh_exec:s0
+
+# Dynamic splash
+/(vendor|system/vendor)/bin/esplash                                 u:object_r:esplash_exec:s0
 
 # EVS and Qcarcam HAL
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.0-ais     u:object_r:hal_evs_driver_exec:s0
