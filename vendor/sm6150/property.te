@@ -27,3 +27,4 @@
 
 # WLAN dynamic detect
 type qcom_wlan_prop, property_type;
+type vendor_sku_prop, property_type;

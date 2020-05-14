@@ -36,3 +36,5 @@ allow esplash graphics_device:chr_file rw_file_perms;
 allow esplash early_services:dir r_dir_perms;
 allow esplash gpu_device:chr_file { ioctl open read write };
 allow esplash ion_device:chr_file { ioctl open read write };
+get_prop(esplash, vendor_initsvc_bootanim_prop)
+get_prop(esplash, vendor_sysboot_completed_prop)

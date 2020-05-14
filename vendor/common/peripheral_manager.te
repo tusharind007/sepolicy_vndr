@@ -30,3 +30,6 @@ allow vendor_per_mgr sysfs_data:file r_file_perms;
 
 # Set the peripheral state property
 set_prop(vendor_per_mgr, vendor_per_mgr_state_prop);
+
+allow vendor_per_mgr self:qipcrtr_socket create_socket_perms;
+allowxperm vendor_per_mgr self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;

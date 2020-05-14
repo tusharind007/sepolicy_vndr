@@ -66,3 +66,9 @@ type radio_noril_prop, property_type;
 
 # Car service
 type car_service_prop, property_type;
+
+# Boot Completed property
+type vendor_sysboot_completed_prop, property_type;
+
+#Boot Animation property
+type vendor_initsvc_bootanim_prop, property_type;
