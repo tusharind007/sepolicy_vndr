@@ -26,3 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 dontaudit domain vendor_persist_dpm_prop:file r_file_perms;
+
+userdebug_or_eng(`
+  allow {domain -appdomain} vendor_debugfs_kpi:file rw_file_perms;
+')

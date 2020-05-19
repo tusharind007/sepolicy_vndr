@@ -104,5 +104,4 @@
 /vendor/lib(64)?/hw/gralloc\.msmnile\.so                            u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/hw/vulkan\.msmnile\.so                             u:object_r:same_process_hal_file:s0
 
-/sys/bus/iio(/.*)?                                                                      u:object_r:vendor_sysfs_sensors_default:s0
-/sys/devices/platform/soc/a88000.i2c/i2c-8/8-006a/iio:device[0-9](/.*)?                 u:object_r:vendor_sysfs_sensors_default:s0
+/sys/devices/platform/soc/a88000.i2c/i2c-8/8-006a/iio:device[0-9](/.*)?                 u:object_r:vendor_sysfs_sensors:s0

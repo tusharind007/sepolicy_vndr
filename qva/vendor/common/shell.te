@@ -25,7 +25,6 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow hal_sensors_default vendor_sysfs_sensors_default:lnk_file read;
-allow hal_sensors_default vendor_sysfs_sensors_default:dir r_dir_perms;
-allow hal_sensors_default vendor_sysfs_sensors_default:file rw_file_perms;
-allow hal_sensors_default iio_device:chr_file rw_file_perms;
+userdebug_or_eng(`
+  allow shell vendor_debugfs_kpi:file r_file_perms;
+')
