@@ -194,3 +194,6 @@
 
 # allocstall_threshold
 /sys/module/vmpressure/parameters/allocstall_threshold u:object_r:sysfs_allocstall_threshold:s0
+
+#/sys/kernel/debug/bootkpi/bootloader_log
+/sys/kernel/debug/bootkpi/bootloader_log                            u:object_r:debugfs_bootloader_log:s0
