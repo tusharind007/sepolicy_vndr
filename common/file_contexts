@@ -354,3 +354,4 @@
 # usbmsc files
 #
 file_contexts:/data/usbmsc_mnt(/.*)?               		    u:object_r:usbmsc_data_file:s0
+/sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0

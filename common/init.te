@@ -91,3 +91,8 @@ allow init configfs:lnk_file create_file_perms;
 #load /system/lib/modules/qca_cld3/qca_cld3_wlan.ko
 #load /system/lib/modules/wil6210.ko
 allow init self:system module_load;
+
+allow init {
+    sysfs_lowmemorykiller
+    sysfs_process_reclaim
+}:file getattr;
