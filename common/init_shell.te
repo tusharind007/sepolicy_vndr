@@ -172,8 +172,8 @@ allow qti_init_shell self:packet_socket create_stream_socket_perms;
 allow qti_init_shell storage_file:dir rw_dir_perms;
 allow qti_init_shell storage_file:lnk_file rw_file_perms;
 allow qti_init_shell vfat:dir create_dir_perms;
-+allow qti_init_shell vfat:file create_file_perms;
-+allow qti_init_shell kernel:system syslog_mod;
+allow qti_init_shell vfat:file create_file_perms;
+allow qti_init_shell kernel:system syslog_mod;
 
 #============= qti_init_shell ==============
 allow qti_init_shell block_device:dir getattr;
@@ -182,3 +182,28 @@ allow qti_init_shell block_device:dir getattr;
 allow qti_init_shell configfs:dir r_dir_perms;
 allow qti_init_shell configfs:file rw_file_perms;
 
+allow qti_init_shell {
+    sysfs_lowmemorykiller
+    sysfs_process_reclaim
+    sysfs_devices_system_cpu
+}:file w_file_perms;
+
+allow qti_init_shell {
+   sysfs_vmpressure
+   sysfs_lowmemorykiller
+   sysfs_process_reclaim
+   sysfs_devices_system_cpu
+}:file create_file_perms;
+
+allow qti_init_shell {
+   sysfs_vmpressure
+   sysfs_lowmemorykiller
+   sysfs_process_reclaim
+   sysfs_devices_system_cpu
+}:dir w_dir_perms;
+
+r_dir_file(qti_init_shell, sysfs_type)
+allow qti_init_shell sysfs_vmpressure:file write;
+allow qti_init_shell sysfs_lowmemorykiller:file read;
+allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
+allow qti_init_shell sysfs_devices_system_cpu:file rw_file_perms;
