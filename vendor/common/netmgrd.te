@@ -45,6 +45,7 @@ allow netmgrd netmgr_data_file:file create_file_perms;
 allow netmgrd system_file:file execute_no_trans;
 allow netmgrd netmgr_recovery_data_file:file create_file_perms;
 allow netmgrd netmgr_recovery_data_file:dir rw_dir_perms;
+allow netmgrd self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 get_prop(netmgrd, hwservicemanager_prop)
 hwbinder_use(netmgrd)
