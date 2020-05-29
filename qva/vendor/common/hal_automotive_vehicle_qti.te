@@ -31,7 +31,6 @@ type vendor_hal_automotive_vehicle_qti_exec, exec_type, file_type, vendor_file_t
 init_daemon_domain(vendor_hal_automotive_vehicle_qti)
 
 hal_server_domain(vendor_hal_automotive_vehicle_qti, hal_vehicle);
-allow vendor_hal_automotive_vehicle_qti vendor_hal_automotive_vehicle_hwservice:hwservice_manager { find };
 
 allow vendor_hal_automotive_vehicle_qti self:can_socket create_socket_perms;
 allowxperm vendor_hal_automotive_vehicle_qti self:can_socket ioctl { unpriv_sock_ioctls priv_sock_ioctls };
