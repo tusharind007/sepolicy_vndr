@@ -151,5 +151,7 @@ allow qti_init_shell sysfs_npu:file rw_file_perms;
 
 allow qti_init_shell sysfs_usb_mode:file rw_file_perms;
 
+allow qti_init_shell mpctl_data_file:dir w_dir_perms;
+allow qti_init_shell mpctl_data_file:file { write getattr unlink };
 allow qti_init_shell vendor_audioko_exec:file { rx_file_perms entrypoint };
 get_prop(qti_init_shell, vendor_audioko_prop);

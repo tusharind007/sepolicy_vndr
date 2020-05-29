@@ -46,6 +46,8 @@ allow hal_gnss_qti healthd:binder call;
 
 allow hal_gnss_qti system_app:binder transfer;
 
+hal_client_domain(hal_gnss_qti, hal_health)
+
 # Most HALs are not allowed to use network sockets. Qcom library
 # libqdi is used across multiple processes which are clients of
 # netmgrd including the GNSS HAL. libqdi first attempts to get the network
