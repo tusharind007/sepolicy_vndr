@@ -149,6 +149,7 @@
 /vendor/bin/imsqmidaemon        u:object_r:vendor_ims_exec:s0
 /vendor/bin/imsdatadaemon       u:object_r:vendor_ims_exec:s0
 /vendor/bin/ims_rtp_daemon      u:object_r:vendor_hal_imsrtp_exec:s0
+/vendor/bin/imsdaemon           u:object_r:vendor_ims_service_exec:s0
 /vendor/bin/ipacm               u:object_r:hal_tetheroffload_default_exec:s0
 /vendor/bin/ipacm-diag          u:object_r:hal_tetheroffload_default_exec:s0
 /vendor/bin/cnd                 u:object_r:vendor_cnd_exec:s0
@@ -307,6 +308,7 @@
 /data/vendor/tzstorage(/.*)?           u:object_r:vendor_data_tzstorage_file:s0
 /data/vendor/tombstones(/.*)?       u:object_r:vendor_tombstone_data_file:s0
 /data/vendor/time(/.*)?                u:object_r:vendor_time_data_file:s0
+/data/vendor/firmware(/.*)?                u:object_r:vendor_firmware_data_file:s0
 
 /data/vendor/mdmhelperdata(/.*)?       u:object_r:vendor_mdmhelperdata_data_file:s0
 /data/vendor/bluetooth(/.*)?           u:object_r:vendor_bt_data_file:s0
