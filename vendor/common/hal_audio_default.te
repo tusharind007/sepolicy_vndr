@@ -19,6 +19,9 @@ allow hal_audio_default vendor_data_file:file { append read };
 
 allow hal_audio_default vendor_data_file:dir write;
 
+#Allow access to hab device
+allow hal_audio_default hab_device:chr_file rw_file_perms;
+
 hal_client_domain(hal_audio_default, hal_perf)
 hal_client_domain(hal_audio_default, hal_power)
 
