@@ -27,3 +27,5 @@
 
 #allow apps like CTSapps to access hab_device
 allow untrusted_app_27 hab_device:chr_file rw_file_perms;
+allow untrusted_app_27 sw_sync_file:chr_file rw_file_perms;
+allow untrusted_app_27 sw_sync_file:file rw_file_perms;
