@@ -16,6 +16,7 @@ allow thermal-engine self:capability {
     dac_override
     fsetid
     sys_boot
+    net_admin
 };
 
 allow thermal-engine self:socket create_socket_perms;

@@ -353,3 +353,11 @@
 #
 file_contexts:/data/usbmsc_mnt(/.*)?               		    u:object_r:usbmsc_data_file:s0
 /sys/module/vmpressure(/.*)?                                        u:object_r:sysfs_vmpressure:s0
+
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk0rpmb/bdi/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc0:[0-9]+/block/mmcblk[0-9]/mmcblk0rpmb/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices/virtual/bdi/[0-9]+:[0-9]+/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/devices/virtual/block/dm-[0-9]+/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+/sys/kernel/boot_adsp(/.*)? u:object_r:sysfs_boot_adsp:s0
