@@ -188,5 +188,6 @@ type usbmsc_data_file, file_type;
 
 # for adsp to load /sys/kernel/boot_adsp/boot
 type sysfs_boot_adsp, sysfs_type, fs_type;
-type sysfs_vmpressure, sysfs_type, fs_type;
 type sysfs_poweron_alarm, sysfs_type, fs_type;
+type sysfs_vmpressure, fs_type, sysfs_type;
+type sysfs_mmc_host, fs_type, sysfs_type;

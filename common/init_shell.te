@@ -207,3 +207,4 @@ allow qti_init_shell sysfs_vmpressure:file write;
 allow qti_init_shell sysfs_lowmemorykiller:file read;
 allow qti_init_shell sysfs_devices_system_cpu: { dir file lnk_file } relabelto;
 allow qti_init_shell sysfs_devices_system_cpu:file rw_file_perms;
+allow qti_init_shell sysfs_mmc_host:file write;
