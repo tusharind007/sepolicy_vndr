@@ -191,7 +191,7 @@
 /vendor/lib(64)?/libllvm-glnext\.so         u:object_r:same_process_hal_file:s0
 
 # Hexagon DSP host runtime and DSP-side executable needed for Halide operation
-/vendor/lib(64)?/libadsprpc\.so             u:object_r:hexagon_halide_file:s0
+/vendor/lib(64)?/libadsprpc\.so             u:object_r:same_process_hal_file:s0
 /vendor/lib/dsp/fastrpc_shell_0             u:object_r:hexagon_halide_file:s0
 
 /sys/module/process_reclaim(/.*)?           u:object_r:sysfs_process_reclaim:s0
@@ -423,3 +423,34 @@
 # ais camera
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
 /(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:ais_v4l2_proxy_exec:s0
+
+
+# NPU files
+/vendor/lib(64)?/libnpu\.so                           u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libhta_hexagon_runtime\.so           u:object_r:same_process_hal_file:s0
+
+# libOpenCL and its dependencies
+/vendor/lib(64)?/libOpenCL\.so              u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libq3dtools_adreno\.so     u:object_r:same_process_hal_file:s0
+
+# Loaded by native loader (zygote) for all processes
+/vendor/lib(64)?/libcdsprpc\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libsdsprpc\.so             u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libmdsprpc\.so             u:object_r:same_process_hal_file:s0
+
+
+# SVA files
+/vendor/lib(64)?/liblistenjni\.so          u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/liblistensoundmodel2\.so  u:object_r:same_process_hal_file:s0
+
+
+
+# Fastcv libs
+/vendor/lib(64)?/libfastcvdsp_stub\.so      u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/libfastcvopt\.so           u:object_r:same_process_hal_file:s0
+
+# perf-hal client lib (included by libqti-perfd-client.so)
+/vendor/lib(64)?/vendor\.qti\.hardware\.perf@1\.0\.so    u:object_r:same_process_hal_file:s0
+
+
+
