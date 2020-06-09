@@ -12,3 +12,6 @@ hal_client_domain(system_app, hal_qdutils_disp);
 hal_client_domain(system_app, hal_tui_comm);
 
 get_prop(system_app, vendor_radio_prop)
+
+#allow system app to interact with hal_qti_gnss
+binder_call(system_app, hal_gnss_qti)
