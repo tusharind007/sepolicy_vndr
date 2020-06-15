@@ -46,3 +46,6 @@ allow vendor_hal_evs_driver binder_device:chr_file { read write };
 allow vendor_hal_evs_driver vendor_camera_socket:sock_file write;
 allow vendor_hal_evs_driver vendor_ais_server:unix_stream_socket connectto;
 allow vendor_hal_evs_driver ion_device:chr_file { ioctl open read };
+
+# to access automotive proxy display
+allow vendor_hal_evs_driver fwk_automotive_display_hwservice:hwservice_manager find;
