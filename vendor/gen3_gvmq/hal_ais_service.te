@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2018, 2020 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -31,4 +31,8 @@ hal_server_domain(hal_ais_qti, hal_ais)
 type hal_ais_qti_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_ais_qti)
 allow hal_ais_qti hab_device:chr_file  rw_file_perms;
-allow hal_ais_qti hal_ais_hwservice:hwservice_manager add;
+
+add_hwservice(hal_ais_qti, hal_ais_hwservice);
+userdebug_or_eng(`
+  allow hal_ais_qti debugfs_kpi:file rw_file_perms;
+')
