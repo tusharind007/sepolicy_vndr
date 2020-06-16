@@ -121,7 +121,7 @@ ctl.start$vendor.qmuxd                       u:object_r:vendor_ctl_qmuxd_prop:s0
 ro.vendor.bt.enablelazyhal                   u:object_r:vendor_bluetooth_prop:s0 exact bool
 
 # WLAN dynamic detect
-ro.vendor.wlan.chip                          u:object_r:vendor_qcom_wlan_prop:s0
+ro.vendor.wlan.                         u:object_r:vendor_qcom_wlan_prop:s0
 
 # WLAN vendor softap
 persist.vendor.wifi.softap.                  u:object_r:wifi_prop:s0
