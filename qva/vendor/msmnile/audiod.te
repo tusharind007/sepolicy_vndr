@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,5 +25,19 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# WLAN dynamic detect
-ro.vendor.wlan.chip        u:object_r:vendor_qcom_wlan_prop:s0
+# audio daemon
+type vendor_audiod, domain;
+type vendor_audiod_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_audiod)
+
+hal_client_domain(vendor_audiod, hal_audio)
+hal_client_domain(vendor_audiod, hal_vehicle)
+
+allow vendor_audiod proc_asound:dir search;
+allow vendor_audiod proc_asound:file read;
+allow vendor_audiod vendor_proc_audiod:file r_file_perms;
+allow vendor_audiod audio_device:dir r_dir_perms;
+allow vendor_audiod audio_device:chr_file rw_file_perms;
+
+wakelock_use(vendor_audiod);

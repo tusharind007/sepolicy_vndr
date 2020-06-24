@@ -92,6 +92,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.0-service            u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.2-service            u:object_r:hal_secure_element_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.perf@2\.0-service            u:object_r:vendor_hal_perf_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service  u:object_r:vendor_hal_automotive_vehicle_qti_exec:s0
 /(vendor|system/vendor)/bin/mm-audio-ftm                                           u:object_r:vendor_audioftm_exec:s0
 /(vendor|system/vendor)/bin/qrtr-ns                                                u:object_r:vendor_qrtr_exec:s0
 /(vendor|system/vendor)/bin/spdaemon                                               u:object_r:vendor_spdaemon_exec:s0
@@ -129,8 +130,8 @@
 /vendor/bin/hw/android\.hardware\.usb\.gadget\@1\.[0-2]-service-qti                u:object_r:vendor_hal_usb_qti_exec:s0
 /vendor/bin/vendor\.qti\.qspmhal@1\.0-service                                      u:object_r:vendor_hal_qspmhal_default_exec:s0
 /(vendor|system/vendor)/bin/mutualex                                               u:object_r:vendor_mutualex_exec:s0
-
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qccvndhal@1\.0-service       u:object_r:vendor_hal_qccvndhal_qti_exec:s0
+/vendor/bin/hw/android\.hardware\.thermal@2\.0-service.mock                        u:object_r:hal_thermal_default_exec:s0
 
 #### Context for location features
 ## location daemons and binaries
@@ -141,6 +142,10 @@
 /(vendor|system/vendor)/bin/garden_app                                             u:object_r:vendor_location_exec:s0
 /(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:vendor_location_exec:s0
 /(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:vendor_location_exec:s0
+#GNSS SiRFStarV device
+/dev/ttyHS1                                                                        u:object_r:vendor_location_device:s0
+/dev/gnss_sirf                                                                     u:object_r:vendor_location_device:s0
+
 
 #bluetooth
 /vendor/bin/hw/vendor\.qti\.hardware\.bluetooth_dun@1\.0-service                   u:object_r:vendor_hal_bluetooth_dun_qti_exec:s0
@@ -222,3 +227,14 @@
 
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:vendor_wifilearnersvc_exec:s0
+
+# ais camera
+/(vendor|system/vendor)/bin/ais_server                              u:object_r:vendor_ais_server_exec:s0
+/dev/socket/camera(/.*)?                                            u:object_r:vendor_camera_socket:s0
+/(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
+# EVS and Qcarcam HAL
+/(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais     u:object_r:vendor_hal_evs_driver_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service    u:object_r:vendor_hal_ais_qti_exec:s0
+
+# WLAN dynamic detect
+/(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:vendor_init-qcom-wifi-sh_exec:s0

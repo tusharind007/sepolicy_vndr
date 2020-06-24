@@ -75,3 +75,5 @@ vendor.qti.hardware.embmssl::IEmbms                          u:object_r:vendor_h
 vendor.qti.hardware.qseecom::IQSEECom                        u:object_r:vendor_hal_qseecom_hwservice:s0
 vendor.qti.hardware.qccvndhal::IQccvndhal                     u:object_r:vendor_hal_qccvndhal_hwservice:s0
 vendor.qti.spu::ISPUManager                                  u:object_r:vendor_hal_spu_hwservice:s0
+vendor.qti.automotive.qcarcam::IQcarCamera                   u:object_r:vendor_hal_ais_hwservice:s0
+vendor.qti.hardware.automotive.vehicle::IQtiVehicle          u:object_r:hal_vehicle_hwservice:s0
