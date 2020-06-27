@@ -69,6 +69,7 @@
 /vendor/bin/hw/vendor\.qti\.hardware\.alarm@1\.0-service                           u:object_r:hal_alarm_qti_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.iop@2\.0-service                             u:object_r:hal_iop_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.mlshal@1\.0-service                          u:object_r:hal_mirrorlink_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.qseecom@1\.0-service         u:object_r:hal_qseecom_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.qteeconnector@1\.0-service                   u:object_r:hal_qteeconnector_qti_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.scve\.objecttracker@1\.0-service             u:object_r:vendor_scve_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.scve\.panorama@1\.0-service  u:object_r:vendor_scve_exec:s0
@@ -188,8 +189,12 @@
 
 # ais camera
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
+/(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:ais_v4l2_proxy_exec:s0
 /dev/socket/camera(/.*)?                                            u:object_r:camera_socket_device:s0
 /(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:qcarcam_edrm_rvc_exec:s0
 
 # allocstall_threshold
 /sys/module/vmpressure/parameters/allocstall_threshold u:object_r:sysfs_allocstall_threshold:s0
+
+#/sys/kernel/debug/bootkpi/bootloader_log
+/sys/kernel/debug/bootkpi/bootloader_log                            u:object_r:debugfs_bootloader_log:s0

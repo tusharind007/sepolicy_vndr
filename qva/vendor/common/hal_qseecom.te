@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -24,37 +24,29 @@
 # WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-# for diag over socket
-userdebug_or_eng(`
-  allow kernel self:socket create;
-  allow kernel self:qipcrtr_socket create;
-  allow kernel debugfs_wlan:dir search;
-  allow kernel debugfs_ipc:dir search;
-')
 
-# Access firmware_file
-r_dir_file(kernel, firmware_file)
+#define the domain
+type hal_qseecom_default, domain;
+hal_server_domain(hal_qseecom_default, hal_qseecom)
+type hal_qseecom_default_exec, exec_type, file_type, vendor_file_type;
 
+init_daemon_domain(hal_qseecom_default)
 
-# access vendor_firmware_file
-r_dir_file(kernel, vendor_firmware_file)
+#Allow hal_qseecom client domain apps to find hwservice
+binder_call(hal_qseecom_client, hal_qseecom_server)
+binder_call(hal_qseecom_server, hal_qseecom_client)
 
-dontaudit kernel kernel:system module_request;
+#allow the service to be added to hwservice list
+hal_attribute_hwservice(hal_qseecom, hal_qseecom_hwservice)
 
-allow kernel persist_file:dir search;
+#allow access to hal_allocator
+hal_client_domain(hal_qseecom_default, hal_allocator)
 
-#Since early_init first stage is enforcing and in kernel domain,
-#we need to allow kernel access to early services directory to
-#re-exec early init.
-allow kernel early_services:dir r_dir_perms;
+#allow access to ion device
+allow hal_qseecom_default ion_device:chr_file rw_file_perms;
 
-#Allow early init first stage to log to kmesg
-#To be removed once restorecon is up
-allow kernel tmpfs:chr_file rw_file_perms;
-allow kernel tmpfs:dir r_dir_perms;
+#Allow access to firmware
+r_dir_file(hal_qseecom_default, firmware_file);
 
-#Allow earlyinit to read the commandline and update selinux mode
-allow kernel proc_cmdline:file r_file_perms;
-
-allow kernel sepolicy_file:file r_file_perms;
-
+#Allow access to tee device
+allow hal_qseecom_default tee_device:chr_file rw_file_perms;
