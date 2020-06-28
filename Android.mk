@@ -17,6 +17,9 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
     $(LOCAL_PATH)/qva/private
 
+BOARD_EARLY_EXTRA_SEPOLICY_DIRS := \
+    $(LOCAL_PATH)/generic/vendor/common/early_services
+
 ifeq (,$(filter sdm845 sdm710, $(TARGET_BOARD_PLATFORM)))
     BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \

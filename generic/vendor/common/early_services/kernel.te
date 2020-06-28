@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,36 +25,5 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # for diag over socket
-userdebug_or_eng(`
-  allow kernel self:socket create;
-  allow kernel self:qipcrtr_socket create;
-  allow kernel debugfs_wlan:dir search;
-  allow kernel debugfs_ipc:dir search;
-')
 
-# Access firmware_file
-r_dir_file(kernel, firmware_file)
-
-
-# access vendor_firmware_file
-r_dir_file(kernel, vendor_firmware_file)
-
-dontaudit kernel kernel:system module_request;
-
-allow kernel persist_file:dir search;
-
-#Since early_init first stage is enforcing and in kernel domain,
-#we need to allow kernel access to early services directory to
-#re-exec early init.
-allow kernel early_services:dir r_dir_perms;
-
-#Allow early init first stage to log to kmesg
-#To be removed once restorecon is up
-allow kernel tmpfs:chr_file rw_file_perms;
-allow kernel tmpfs:dir r_dir_perms;
-
-#Allow earlyinit to read the commandline and update selinux mode
-allow kernel proc_cmdline:file r_file_perms;
-
-allow kernel sepolicy_file:file r_file_perms;
-
+permissive kernel;
