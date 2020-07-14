@@ -67,3 +67,6 @@ type radio_noril_prop, property_type;
 
 # Car service
 type car_service_prop, property_type;
+
+# Camera provider
+type hal_camera_default_prop, property_type;
