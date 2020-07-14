@@ -111,3 +111,7 @@ persist.car.         u:object_r:car_service_prop:s0
 
 persist.vendor.debug.av.logs.lvl    u:object_r:debug_prop:s0
 persist.vendor.debug.en.drpcrpt     u:object_r:debug_prop:s0
+
+#Camera provider
+ro.camera.req.fmq.size u:object_r:hal_camera_default_prop:s0
+ro.camera.res.fmq.size u:object_r:hal_camera_default_prop:s0
