@@ -30,6 +30,8 @@ type audio_chime_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(audio_chime)
 
+allow audio_chime proc_asound:dir search;
+allow audio_chime proc_audiod:file r_file_perms;
 allow audio_chime audio_device:dir search;
 allow audio_chime audio_device:chr_file rw_file_perms;
 
@@ -38,3 +40,4 @@ allow audio_chime acdb_loader_service_service:service_manager find;
 allow audio_chime audio_hal_plugin_service:binder call;
 allow audio_chime audio_hal_plugin_service_service:service_manager find;
 vndbinder_use(audio_chime)
+get_prop(audio_chime, vendor_audio_prop)
