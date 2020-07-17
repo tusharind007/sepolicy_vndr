@@ -33,6 +33,7 @@ type amfsservice_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(amfsservice)
 
 # For reading files under /vendor
+allow amfsservice hab_device:chr_file rw_file_perms;
 allow amfsservice vendor_file:dir r_dir_perms;
 allow amfsservice vendor_configs_file:dir r_dir_perms;
 allow amfsservice audio_device:chr_file rw_file_perms;
