@@ -27,3 +27,4 @@
 
 # For wifi Softap
 set_prop(system_server, wifi_prop)
+get_prop(system_server, qcom_wlan_prop)

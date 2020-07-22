@@ -28,3 +28,7 @@
 allow system_server hab_device:chr_file rw_file_perms;
 allow system_server sw_sync_file:file rw_file_perms;
 allowxperm system_server sw_sync_file:file ioctl { SW_SYNC_IOC_CREATE_FENCE SW_SYNC_IOC_INC };
+
+# For wifi Softap
+set_prop(system_server, wifi_prop)
+get_prop(system_server, qcom_wlan_prop)
