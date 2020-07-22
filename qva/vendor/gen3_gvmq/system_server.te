@@ -31,3 +31,4 @@ allowxperm system_server sw_sync_file:file ioctl { SW_SYNC_IOC_CREATE_FENCE SW_S
 
 # For wifi Softap
 set_prop(system_server, wifi_prop)
+get_prop(system_server, qcom_wlan_prop)

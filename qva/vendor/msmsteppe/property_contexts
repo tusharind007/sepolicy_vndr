@@ -30,7 +30,7 @@ vendor.media.sdmmagpie.version      u:object_r:vendor_media_sdmmagpie_version_pr
 vendor.chre.enabled              u:object_r:vendor_chre_enabled_prop:s0
 vendor.sku_name                  u:object_r:vendor_sku_prop:s0
 # WLAN dynamic detect
-ro.vendor.wlan.chip u:object_r:qti_wlan_prop:s0
+ro.vendor.wlan.                    u:object_r:qti_wlan_prop:s0
 
 # Wifi Softap
 persist.vendor.wifi.softap.        u:object_r:wifi_prop:s0
