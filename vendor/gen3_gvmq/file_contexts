@@ -179,3 +179,7 @@
 
 #SW Sync
 /sys/kernel/debug/sync/sw_sync                                      u:object_r:sw_sync_file:s0
+
+#ssr_setup can set ssr restart_level
+/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level       u:object_r:sysfs_ssr_toggle:s0
