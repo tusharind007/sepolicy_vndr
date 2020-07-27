@@ -108,3 +108,7 @@ vendor.sys.boot_completed                        u:object_r:vendor_sysboot_compl
 
 # Boot Animation start
 vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_bootanim_prop:s0
+
+# Camera Hal
+ro.camera.req.fmq.size u:object_r:hal_camera_default_prop:s0
+ro.camera.res.fmq.size u:object_r:hal_camera_default_prop:s0
