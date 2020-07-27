@@ -94,3 +94,6 @@ type vendor_initsvc_bootanim_prop, property_type;
 
 #WLAN property
 type vendor_qcom_wlan_prop, property_type;
+
+# Camera provider
+type hal_camera_default_prop, property_type;
