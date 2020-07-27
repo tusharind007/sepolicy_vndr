@@ -127,3 +127,6 @@ ro.vendor.wlan.chip                          u:object_r:vendor_qcom_wlan_prop:s0
 
 # WLAN vendor softap
 persist.vendor.wifi.softap.                  u:object_r:wifi_prop:s0
+
+# Car service property
+persist.vendor.car.                          u:object_r:vendor_car_service_prop:s0
