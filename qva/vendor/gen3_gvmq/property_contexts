@@ -27,3 +27,6 @@
 
 # WLAN dynamic detect
 ro.vendor.wlan.chip        u:object_r:qcom_wlan_prop:s0
+
+# Wifi Softap
+persist.vendor.wifi.softap.        u:object_r:wifi_prop:s0
