@@ -78,6 +78,7 @@
 
 /dev/ttyAMA0                                                        u:object_r:tty_device:s0
 /dev/hab                                                            u:object_r:hab_device:s0
+/dev/hgsl                                                           u:object_r:vendor_hgsl_device:s0
 
 #SW Sync
 /sys/kernel/debug/sync/sw_sync                                      u:object_r:sw_sync_file:s0
