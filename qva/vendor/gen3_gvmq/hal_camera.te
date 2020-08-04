@@ -27,4 +27,3 @@
 
 allow hal_camera_default hab_device:chr_file rw_file_perms;
 allow hal_camera_default sw_sync_file:file { read write };
-allow hal_camera_default vendor_gles_data_file:dir search;
