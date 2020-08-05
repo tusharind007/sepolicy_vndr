@@ -28,3 +28,4 @@
 allow bootanim vendor_hab_device:chr_file rw_file_perms;
 allow bootanim vendor_sw_sync_file:file rw_file_perms;
 allowxperm bootanim vendor_sw_sync_file:file ioctl { SW_SYNC_IOC_CREATE_FENCE SW_SYNC_IOC_INC };
+allow bootanim vendor_hgsl_device:chr_file rw_file_perms;

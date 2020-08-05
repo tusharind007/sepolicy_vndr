@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type vendor_hab_device, dev_type, mlstrustedobject;
+type vendor_hgsl_device, dev_type, mlstrustedobject;
