@@ -56,7 +56,7 @@
 
 # EVS and Qcarcam HAL
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.0-ais     u:object_r:hal_evs_driver_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service     u:object_r:hal_ais_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.automotive\.qcarcam@1\.0-service     u:object_r:hal_ais_qti_exec:s0
 
 #Old partitions
 /dev/block/vda                                                      u:object_r:system_block_device:s0
