@@ -36,16 +36,21 @@ init_daemon_domain(vendor_hal_evs_driver)
 # Allow use of gralloc buffers, and surface flinger
 allow vendor_hal_evs_driver video_device:chr_file { ioctl open read write };
 hal_client_domain(vendor_hal_evs_driver, hal_graphics_allocator);
+hal_client_domain(vendor_hal_evs_driver, hal_configstore);
+hal_client_domain(vendor_hal_evs_driver, hal_graphics_composer);
 
-allow vendor_hal_evs_driver gpu_device:chr_file { getattr ioctl open read write };
-allow vendor_hal_evs_driver hal_graphics_composer_default:fd use;
+allow vendor_hal_evs_driver gpu_device:chr_file rw_file_perms;
 allow vendor_hal_evs_driver hal_graphics_allocator_default_tmpfs:file { read write };
+allow vendor_hal_evs_driver surfaceflinger:fd use;
 
 #removed typeattribute hal_evs_driver binder_in_vendor_violators in Android R
 allow vendor_hal_evs_driver binder_device:chr_file { read write };
 allow vendor_hal_evs_driver vendor_camera_socket:sock_file write;
 allow vendor_hal_evs_driver vendor_ais_server:unix_stream_socket connectto;
 allow vendor_hal_evs_driver ion_device:chr_file { ioctl open read };
+allow vendor_hal_evs_driver vendor_camera_socket:dir search;
+allow vendor_hal_evs_driver vendor_sysfs_kgsl_gpu_model:file { getattr open read };
 
 # to access automotive proxy display
+binder_call(vendor_hal_evs_driver, automotive_display_service_server);
 allow vendor_hal_evs_driver fwk_automotive_display_hwservice:hwservice_manager find;
