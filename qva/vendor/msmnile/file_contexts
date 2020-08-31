@@ -62,8 +62,6 @@
 /(vendor|system/vendor)/bin/car_power_daemon            u:object_r:carpowerd_exec:s0
 
 /(vendor|system/vendor)/bin/audiod                      u:object_r:audiod_exec:s0
-# WLAN dynamic detect
-/(vendor|system/vendor)/bin/init\.qcom\.wlan\.sh                    u:object_r:init-qcom-wifi-sh_exec:s0
 
 # amfs service
 /(vendor|system/vendor)/bin/amfsservice                             u:object_r:amfsservice_exec:s0
