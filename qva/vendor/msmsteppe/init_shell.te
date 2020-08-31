@@ -33,9 +33,6 @@ allow qti_init_shell {
     vendor_chre_enabled_prop
 }:property_service set;
 
-# WLAN dynamic detect
-set_prop(qti_init_shell, qti_wlan_prop);
-
 set_prop(qti_init_shell,vendor_sku_identified_prop);
 get_prop(qti_init_shell,vendor_sku_identified_prop);
 
