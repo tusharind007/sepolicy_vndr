@@ -187,6 +187,7 @@
 
 #wifilearner daemon
 /(vendor|system/vendor)/bin/wifilearner    u:object_r:wifilearnersvc_exec:s0
+/(vendor|system/vendor)/bin/init\.(qcom|qti)\.wlan\.sh              u:object_r:init-qcom-wifi-sh_exec:s0
 
 # ais camera
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:ais_server_exec:s0
