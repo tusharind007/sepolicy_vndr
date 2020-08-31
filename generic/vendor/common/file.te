@@ -198,3 +198,9 @@ type sysfs_suspend, fs_type, sysfs_type;
 #early_services file
 type early_services, file_type;
 type earlyinit_test_exec, exec_type, file_type, vendor_file_type;
+
+#memhotplug
+type sysfs_aligned_blocks_addr, sysfs_type, fs_type;
+type sysfs_aligned_blocks_num, sysfs_type, fs_type;
+type sysfs_probe, sysfs_type, fs_type;
+type sysfs_memorybank, sysfs_type, fs_type;
