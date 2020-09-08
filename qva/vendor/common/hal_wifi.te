@@ -27,3 +27,6 @@
 
 # For bridge ioctl
 allowxperm hal_wifi_default self:udp_socket ioctl { SIOCBRADDBR SIOCBRDELBR SIOCBRADDIF SIOCBRDELIF SIOCDEVPRIVATE };
+
+# allow access vendor prop
+get_prop(hal_wifi_default, vendor_qcom_wlan_prop)
