@@ -27,3 +27,4 @@
 #
 type location_device, dev_type;
 type hab_device, dev_type, mlstrustedobject;
+type vendor_hgsl_device, dev_type, mlstrustedobject;

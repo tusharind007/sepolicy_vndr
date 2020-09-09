@@ -27,4 +27,5 @@
 
 allow bootanim hab_device:chr_file rw_file_perms;
 allow bootanim sw_sync_file:file rw_file_perms;
+allow bootanim vendor_hgsl_device:chr_file rw_file_perms;
 allowxperm bootanim sw_sync_file:file ioctl { SW_SYNC_IOC_CREATE_FENCE SW_SYNC_IOC_INC };
