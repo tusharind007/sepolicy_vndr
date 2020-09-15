@@ -112,3 +112,7 @@ vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_boot
 # Camera Hal
 ro.camera.req.fmq.size u:object_r:hal_camera_default_prop:s0
 ro.camera.res.fmq.size u:object_r:hal_camera_default_prop:s0
+
+# WLAN vendor prop
+ro.vendor.wlan.                              u:object_r:vendor_qcom_wlan_prop:s0
+persist.vendor.wifi.softap.                  u:object_r:wifi_prop:s0
