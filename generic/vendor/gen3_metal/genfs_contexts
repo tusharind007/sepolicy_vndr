@@ -57,24 +57,6 @@ genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-2/
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/extldo u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
 
-# subsys nodes
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys3/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys2/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys0/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys1/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys5/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys4/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged/subsys6/name u:object_r:vendor_sysfs_ssr:s0
-
-#restart level
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/9800000.qcom,npu/subsys2/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/17300000.qcom,lpass/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/188101c.qcom,spss/subsys1/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys5/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged/subsys6/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-
 #net sysfs
 genfscon sysfs /devices/platform/soc/1c08000.qcom,pcie/pci0001:00/0001:00:00.0/0001:01:00.0/0306_01.01.00_IP_HW0/net u:object_r:sysfs_net:s0
 #/sys/class/rtc
@@ -85,19 +67,6 @@ genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.q
 
 #msmsteppe nodes
 genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm6155@0:qcom,pm6155_1_rtc/rtc u:object_r:sysfs_rtc:s0
-
-#SSR nodes
-genfscon sysfs /devices/platform/soc/62400000.qcom,lpass/subsys0/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys1/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys2/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys3/name u:object_r:vendor_sysfs_ssr:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys4/name u:object_r:vendor_sysfs_ssr:s0
-
-genfscon sysfs /devices/platform/soc/62400000.qcom,lpass/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/4080000.qcom,mss/subsys1/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/8300000.qcom,turing/subsys2/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/aae0000.qcom,venus/subsys3/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys4/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
 
 #devfreq nodes
 genfscon sysfs /devices/platform/soc/soc:qcom,cpu6-cpu-l3-lat/devfreq u:object_r:vendor_sysfs_devfreq:s0
