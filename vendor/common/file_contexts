@@ -382,6 +382,7 @@
 /sys/devices/virtual/graphics/fb([0-3])+/msm_cmd_autorefresh_en     u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/mdp/bw_mode_bitmap         u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/edid_modes                 u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/graphics/fb([0-3])+/edid_screen_size           u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/hdcp2p2(/.*)               u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/scan_info                  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/graphics/fb([0-3])+/edid_3d_modes              u:object_r:sysfs_graphics:s0
