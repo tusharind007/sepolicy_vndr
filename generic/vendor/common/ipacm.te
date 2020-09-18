@@ -47,7 +47,7 @@ allow hal_tetheroffload ipa_dev:chr_file rw_file_perms;
 
 # Allow UDP socket create and ioctl
 allow hal_tetheroffload self:udp_socket create_socket_perms;
-allowxperm ipacm self:udp_socket ioctl SIOCGIFNAME;
+allowxperm hal_tetheroffload self:udp_socket ioctl priv_sock_ioctls;
 
 # Allow receiving NETLINK messages
 allow hal_tetheroffload self:netlink_route_socket { nlmsg_read create_socket_perms_no_ioctl };
