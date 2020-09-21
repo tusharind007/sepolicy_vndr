@@ -25,6 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow untrusted_app_all hab_device:chr_file rw_file_perms;
-allow untrusted_app_all sw_sync_file:file rw_file_perms;
-allowxperm untrusted_app_all sw_sync_file:file ioctl { SW_SYNC_IOC_CREATE_FENCE SW_SYNC_IOC_INC };
+userdebug_or_eng(`
+allow kitchensink_app hab_device:chr_file rw_file_perms;
+allow kitchensink_app sw_sync_file:file rw_file_perms;
+allowxperm kitchensink_app sw_sync_file:file ioctl { SW_SYNC_IOC_CREATE_FENCE SW_SYNC_IOC_INC };
+allow kitchensink_app cgroup:file rw_file_perms;
+')

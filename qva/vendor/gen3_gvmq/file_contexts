@@ -89,3 +89,7 @@
 #ssr_setup can set ssr restart_level
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                u:object_r:sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level       u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/name                           u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,ipa_fws/subsys[0-9]+/restart_level                  u:object_r:sysfs_ssr_toggle:s0
+/sys/devices/platform/soc/soc:qcom,ipa_uc/subsys[0-9]+/name                            u:object_r:sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,ipa_uc/subsys[0-9]+/restart_level                   u:object_r:sysfs_ssr_toggle:s0
