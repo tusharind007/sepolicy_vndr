@@ -73,6 +73,10 @@ attribute vendor_hal_vpp;
 attribute vendor_hal_vpp_client;
 attribute vendor_hal_vpp_server;
 
+attribute vendor_hal_qconfig;
+attribute vendor_hal_qconfig_client;
+attribute vendor_hal_qconfig_server;
+
 attribute vendor_hal_esepowermanager;
 attribute vendor_hal_esepowermanager_client;
 attribute vendor_hal_esepowermanager_server;
@@ -122,3 +126,7 @@ attribute vendor_qtiloopback_client;
 attribute vendor_hal_debugutils;
 attribute vendor_hal_debugutils_client;
 attribute vendor_hal_debugutils_server;
+
+attribute vendor_hal_wifimyftm;
+attribute vendor_hal_wifimyftm_client;
+attribute vendor_hal_wifimyftm_server;
