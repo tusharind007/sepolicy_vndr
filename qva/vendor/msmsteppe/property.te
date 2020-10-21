@@ -32,3 +32,6 @@ type vendor_chre_enabled_prop, property_type;
 type vendor_sku_prop, property_type;
 
 type vendor_sku_identified_prop, property_type;
+
+# ethavb
+type automotive_ethavb_prop, property_type;

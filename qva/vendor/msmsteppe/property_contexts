@@ -32,3 +32,6 @@ vendor.sku_name                  u:object_r:vendor_sku_prop:s0
 
 # SKU identified property
 vendor.sku_identified    u:object_r:vendor_sku_identified_prop:s0
+
+#Early EAVB property
+automotive.ethavb.early_enable    u:object_r:automotive_ethavb_prop:s0

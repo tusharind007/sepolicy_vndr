@@ -33,6 +33,8 @@
 
 /dev/spidev2.0                                                                  u:object_r:audio_device:s0
 /dev/i2c-7                                                                      u:object_r:audio_device:s0
+/dev/ptpshm                                                                     u:object_r:ptpshm_node:s0
+/dev/ptp([0-2])+                                                                u:object_r:ptpclk_node:s0
 
 #GNSS device
 /dev/ttyHS1                                                                     u:object_r:location_device:s0
@@ -213,9 +215,19 @@
 # Car power daemon
 /(vendor|system/vendor)/bin/car_power_daemon            u:object_r:carpowerd_exec:s0
 
+#EAVB Executables
+/(vendor|system/vendor)/bin/gptp                        u:object_r:gptp_exec:s0
+/(vendor|system/vendor)/bin/openavb_harness             u:object_r:openavb_harness_exec:s0
+
 # Dynamic splash
 /(vendor|system/vendor)/bin/esplash                                 u:object_r:esplash_exec:s0
+
+#Ethernet AVB
+/(vendor|system/vendor)/bin/init\.qti\.eavb\.sh             u:object_r:qti_init_shell_exec:s0
 
 # EVS and Qcarcam HAL
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.0-ais     u:object_r:hal_evs_driver_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.automotive\.qcarcam@1\.0-service     u:object_r:hal_ais_qti_exec:s0
+
+#early ethavb
+/data/vendor/avb(/.*)?                     u:object_r:ethavb_vendor_data_file:s0

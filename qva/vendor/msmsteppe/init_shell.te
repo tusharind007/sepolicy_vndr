@@ -38,3 +38,7 @@ get_prop(qti_init_shell,vendor_sku_identified_prop);
 
 allow qti_init_shell debugfs_aop:file { write open };
 set_prop(qti_init_shell, vendor_sku_prop);
+
+#eth eavb qti prop
+allow qti_init_shell automotive_ethavb_prop:property_service set;
+get_prop(qti_init_shell, automotive_ethavb_prop)
