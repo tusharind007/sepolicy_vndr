@@ -33,3 +33,10 @@ type sysfs_hsusb_mode, sysfs_type, fs_type;
 type secure_element_vendor_data_file, file_type, data_file_type;
 
 type debugfs_aop, fs_type, debugfs_type;
+
+#ethavb files
+type ptpshm_node, file_type;
+type ptpclk_node, dev_type;
+type gptp_exec, file_type, exec_type, vendor_file_type;
+type openavb_harness_exec, file_type, exec_type, vendor_file_type;
+type ethavb_vendor_data_file, file_type, data_file_type;
