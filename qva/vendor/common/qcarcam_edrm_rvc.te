@@ -41,3 +41,5 @@ allow qcarcam_edrm_rvc hal_graphics_mapper_hwservice:hwservice_manager find;
 allow qcarcam_edrm_rvc hwservicemanager:binder call;
 allow qcarcam_edrm_rvc hwservicemanager_prop:file { getattr map open read };
 allow qcarcam_edrm_rvc sysfs_kgsl:file { getattr open read };
+allow qcarcam_edrm_rvc early_services:dir r_dir_perms;
+allow qcarcam_edrm_rvc early_services:file r_file_perms;

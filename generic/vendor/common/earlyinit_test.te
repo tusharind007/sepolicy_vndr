@@ -30,3 +30,6 @@ type earlyinit_test, domain;
 allow earlyinit_test tmpfs:dir r_dir_perms;
 allow earlyinit_test tmpfs:file rw_file_perms;
 allow earlyinit_test tmpfs:chr_file rw_file_perms;
+allow earlyinit_test early_services:dir r_dir_perms;
+allow earlyinit_test early_services:file r_file_perms;
+allow earlyinit_test kmsg_device:chr_file rw_file_perms;
