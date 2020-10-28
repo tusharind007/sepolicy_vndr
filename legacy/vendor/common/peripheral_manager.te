@@ -51,3 +51,6 @@ allow vendor_per_mgr sysfs_data:file r_file_perms;
 
 # Set the peripheral state property
 set_prop(vendor_per_mgr, vendor_per_mgr_state_prop);
+
+# Allow pm-service to open/read subsystem sysfs
+allow vendor_per_mgr sysfs:file { open read };
