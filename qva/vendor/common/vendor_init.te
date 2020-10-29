@@ -50,3 +50,5 @@ userdebug_or_eng(`
 set_prop(vendor_init, vendor_disable_spu_prop)
 
 set_prop(vendor_init, vendor_bluetooth_prop)
+
+get_prop(vendor_init, vendor_qcom_wlan_prop)

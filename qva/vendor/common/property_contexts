@@ -108,3 +108,7 @@ vendor.sys.boot_completed                        u:object_r:vendor_sysboot_compl
 
 # Boot Animation start
 vendor.init.svc.bootanim                          u:object_r:vendor_initsvc_bootanim_prop:s0
+
+# WLAN vendor prop
+ro.vendor.wlan.                              u:object_r:vendor_qcom_wlan_prop:s0
+persist.vendor.wifi.softap.                  u:object_r:wifi_prop:s0
