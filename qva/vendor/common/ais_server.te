@@ -47,3 +47,8 @@ allow ais_server ion_device:chr_file r_file_perms;
 #To create/delete singleton lock file
 allow ais_server camera_socket_device:file create;
 allow ais_server camera_socket_device:file unlink;
+allow ais_server early_services:dir r_dir_perms;
+allow ais_server early_services:file r_file_perms;
+allow ais_server device:dir r_dir_perms;
+allow ais_server device:file r_file_perms;
+allow ais_server kmsg_device:chr_file r_file_perms;
