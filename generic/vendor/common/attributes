@@ -59,3 +59,7 @@ attribute vendor_hal_capabilityconfigstore_qti_server;
 attribute vendor_hal_dataconnection_qti;
 attribute vendor_hal_dataconnection_qti_client;
 attribute vendor_hal_dataconnection_qti_server;
+
+attribute vendor_hal_diaghal;
+attribute vendor_hal_diaghal_client;
+attribute vendor_hal_diaghal_server;
