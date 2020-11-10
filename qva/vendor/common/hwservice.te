@@ -28,6 +28,7 @@
 type vendor_hal_dpmqmi_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_iop_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_pasrmanager_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_pasrmanager_memory_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_wifidisplayhalservice_hwservice , hwservice_manager_type, protected_hwservice;
 type vendor_hal_alarm_qti_hwservice , hwservice_manager_type, protected_hwservice;
 type vendor_hal_vpp_hwservice , hwservice_manager_type, protected_hwservice;
@@ -59,3 +60,4 @@ type vendor_hal_qccvndhal_hwservice , hwservice_manager_type, protected_hwservic
 type vendor_hal_spu_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_slmadapter_hwservice, hwservice_manager_type, protected_hwservice;
 type vendor_hal_perfcallback_hwservice, hwservice_manager_type, protected_hwservice;
+type vendor_hal_mwqemadapter_hwservice, hwservice_manager_type, protected_hwservice;
