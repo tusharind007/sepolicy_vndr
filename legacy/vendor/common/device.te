@@ -184,5 +184,8 @@ type persist_block_device, dev_type;
 #Define npu device
 type npu_device, dev_type;
 
+#Define smcinvoke device
+type smcinvoke_device, dev_type;
+
 #define qg char device
 type qg_device, dev_type;
