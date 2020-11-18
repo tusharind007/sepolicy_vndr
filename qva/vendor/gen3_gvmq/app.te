@@ -25,7 +25,4 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-allow surfaceflinger vendor_hab_device:chr_file rw_file_perms;
-allow surfaceflinger vendor_sw_sync_file:file rw_file_perms;
-allowxperm surfaceflinger vendor_sw_sync_file:file ioctl { SW_SYNC_IOC_CREATE_FENCE SW_SYNC_IOC_INC };
-allow surfaceflinger vendor_hgsl_device:chr_file rw_file_perms;
+allow appdomain vendor_hgsl_device:chr_file rw_file_perms;
