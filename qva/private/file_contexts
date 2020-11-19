@@ -26,7 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ####### device files ##############
-/dev/smcinvoke                                  u:object_r:smcinvoke_device:s0
 /dev/smd7                                       u:object_r:smd7_device:s0
 
 ####### dev/socket files ##########
@@ -49,6 +48,7 @@
 /system/bin/mmi                                 u:object_r:vendor_mmi_sys_exec:s0
 /system/bin/mmi_diag                            u:object_r:vendor_mmi_sys_exec:s0
 /system/bin/perfservice                         u:object_r:perfservice_exec:s0
+/system/bin/qdtservice                          u:object_r:qdtservice_exec:s0
 /system/bin/vpsservice                          u:object_r:vpsservice_exec:s0
 /system/bin/qspmsvc                             u:object_r:qspmsvc_exec:s0
 /system/bin/sigma_miracasthalservice            u:object_r:sigmahal_qti_exec:s0
