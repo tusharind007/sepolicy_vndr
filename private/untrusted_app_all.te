@@ -27,3 +27,6 @@
 
 unix_socket_connect(untrusted_app_all, qvrd, qvrd)
 allow untrusted_app_all qvrd:fd use;
+
+unix_socket_connect(untrusted_app_all, sxrd, sxrd)
+allow untrusted_app_all sxrd:fd use;
