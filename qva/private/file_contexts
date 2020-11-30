@@ -26,7 +26,6 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ####### device files ##############
-/dev/smcinvoke                                  u:object_r:smcinvoke_device:s0
 /dev/smd7                                       u:object_r:smd7_device:s0
 
 ####### dev/socket files ##########
