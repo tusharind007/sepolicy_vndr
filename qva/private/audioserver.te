@@ -27,5 +27,8 @@
 
 binder_call(audioserver,vendor_wfdservice);
 
+hal_client_domain(audioserver, vendor_agmservice);
+hal_client_domain(audioserver, hal_audio);
+
 #allow access to ALSA MMAP FDs for AAudio API
 allow audioserver audio_service:service_manager find;
