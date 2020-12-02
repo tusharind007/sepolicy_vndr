@@ -26,6 +26,9 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ###################################
 
+/(vendor|system/vendor)/bin/hyp_dvr_mux_be                          u:object_r:vendor_hyp_dvr_mux_be_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.dvr@1\.0-service        u:object_r:vendor_hal_dvr_qti_exec:s0
+
 #Old partition naming
 /dev/block/vda                                                      u:object_r:system_block_device:s0
 /dev/block/vdb                                                      u:object_r:userdata_block_device:s0
@@ -64,3 +67,7 @@
 
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                  u:object_r:vendor_sysfs_ssr:s0
 /sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level         u:object_r:vendor_sysfs_ssr_toggle:s0
+#####################################
+# DVR
+/mnt/vendor/dvr_ctl(/.*)?                                           u:object_r:vendor_dvr_pipe_file:s0
+/mnt/vendor/dvr_mux(/.*)?                                           u:object_r:vendor_dvr_mux_file:s0

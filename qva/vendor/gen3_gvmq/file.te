@@ -26,3 +26,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 type vendor_sw_sync_file, fs_type, debugfs_type, mlstrustedobject;
+
+# DVR
+type vendor_dvr_pipe_file, file_type;
+type vendor_dvr_mux_file, file_type;
