@@ -61,3 +61,6 @@
 
 # amfs service
 /(vendor|system/vendor)/bin/amfsservice                             u:object_r:vendor_amfsservice_exec:s0
+
+/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/name                  u:object_r:vendor_sysfs_ssr:s0
+/sys/devices/platform/soc/soc:qcom,cnss-qca-converged/subsys[0-9]+/restart_level         u:object_r:vendor_sysfs_ssr_toggle:s0
