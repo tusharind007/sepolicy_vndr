@@ -26,3 +26,4 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow appdomain vendor_hgsl_device:chr_file rw_file_perms;
+allow { appdomain -shell } vendor_hab_device:chr_file rw_file_perms;
