@@ -44,3 +44,4 @@ allow ais_v4l2_proxy hal_tv_input_default:unix_dgram_socket sendto;
 allow ais_v4l2_proxy audio_device:chr_file { rw_file_perms };
 allow ais_v4l2_proxy camera_socket_device:dir search;
 allow ais_v4l2_proxy camera_socket_device:sock_file create_file_perms;
+allow ais_v4l2_proxy early_services:dir r_dir_perms;
