@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2020, The Linux Foundation. All rights reserved.
+# Copyright (c) 2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,55 +25,18 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-set_prop(cnd, cnd_vendor_prop)
+type vendor_hal_secureprocessor_qti, domain;
+hal_server_domain(vendor_hal_secureprocessor_qti, vendor_hal_secureprocessor)
 
-net_domain(cnd)
+type vendor_hal_secureprocessor_qti_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(vendor_hal_secureprocessor_qti)
 
-allow cnd smem_log_device:chr_file rw_file_perms;
+binder_call(vendor_hal_secureprocessor_client, vendor_hal_secureprocessor_server)
+binder_call(vendor_hal_secureprocessor_server, vendor_hal_secureprocessor_client)
 
-# allow cnd the following capability
-allow cnd self:capability {
-    net_admin
-};
+hal_attribute_hwservice(vendor_hal_secureprocessor, vendor_hal_secureprocessor_hwservice)
 
-allow cnd self:{
-    netlink_tcpdiag_socket
-    netlink_route_socket
-} create_socket_perms_no_ioctl;
+allow vendor_hal_secureprocessor_qti tee_device:chr_file rw_file_perms;
+allow vendor_hal_secureprocessor_qti ion_device:chr_file r_file_perms;
 
-# allow cnd to access wpa_socket
-allow cnd wifi_vendor_data_file:dir r_dir_perms;
-allow cnd wifi_vendor_wpa_socket:sock_file write;
-
-#allow cnd daemon to invoke hostapd_cli
-allow cnd vendor_shell_exec:file rx_file_perms;
-domain_auto_trans(cnd, hostapd_exec, hostapd)
-allow cnd hostapd_socket:dir r_dir_perms;
-unix_socket_send(cnd, hostapd, hostapd)
-
-# only allow getopt for appdomain
-allow appdomain zygote:unix_dgram_socket getopt;
-dontaudit { domain -appdomain } zygote:unix_dgram_socket getopt;
-
-allow cnd self:socket create_socket_perms_no_ioctl;
-
-allowxperm cnd self:udp_socket ioctl wlan_sock_ioctls;
-
-add_hwservice(cnd, hal_latency_hwservice)
-
-add_hwservice(cnd,hal_slmadapter_hwservice)
-
-get_prop(cnd,slm_prop)
-
-add_hwservice(cnd,hal_mwqemadapter_hwservice)
-
-get_prop(cnd,mwqem_prop)
-
-##############################################################
-#for using public interface vendor.qti.data.factory
-#client should add their domain to cnd.te
-##############################################################
-userdebug_or_eng(`
-  binder_call(cnd, radio)
-  diag_use(cnd)
-')
+hal_client_domain(vendor_hal_secureprocessor_qti, hal_graphics_allocator);
