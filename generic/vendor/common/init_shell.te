@@ -36,6 +36,11 @@ domain_auto_trans(init, vendor_shell_exec, qti_init_shell)
 
 # For executing init shell scripts (init.qcom.early_boot.sh)
 allow qti_init_shell qti_init_shell_exec:file { rx_file_perms entrypoint };
+allow qti_init_shell sysfs_aligned_blocks_addr:file rw_file_perms;
+allow qti_init_shell sysfs_aligned_blocks_addr:file rw_file_perms;
+allow qti_init_shell sysfs_probe:file rw_file_perms;
+allow qti_init_shell sysfs_memorybank:file rw_file_perms;
+
 #execute init scripts
 allow qti_init_shell vendor_shell_exec:file {rx_file_perms entrypoint };
 allow qti_init_shell vendor_toolbox_exec:file  rx_file_perms;
