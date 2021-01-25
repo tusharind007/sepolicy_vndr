@@ -1,4 +1,4 @@
-# Copyright (c) 2018-2020 The Linux Foundation. All rights reserved.
+# Copyright (c) 2018-2021 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -337,6 +337,7 @@
 /dev/mdss_rotator                               u:object_r:graphics_device:s0
 /dev/dri/card0                                  u:object_r:graphics_device:s0
 /dev/dri/card1                                  u:object_r:graphics_device:s0
+/dev/dri/card3                                  u:object_r:graphics_device:s0
 /dev/dri/controlD64                             u:object_r:graphics_device:s0
 /dev/dri/renderD128                             u:object_r:graphics_device:s0
 
