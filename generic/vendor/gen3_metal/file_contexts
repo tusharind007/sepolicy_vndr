@@ -209,8 +209,9 @@
 /dev/block/mmcblk0rpmb                                                          u:object_r:vendor_rpmb_device:s0
 /dev/block/mmcblk0                                                              u:object_r:root_block_device:s0
 
-/sys/devices/virtual/bdi/179:0/read_ahead_kb                                    u:object_r:vendor_sysfs_mmc_host:s0
-/sys/devices/virtual/bdi/179:32/read_ahead_kb                                   u:object_r:vendor_sysfs_mmc_host:s0
+/sys/devices/virtual/bdi/179:0/read_ahead_kb                                                             u:object_r:vendor_sysfs_mmc_host:s0
+/sys/devices/virtual/bdi/179:32/read_ahead_kb                                                            u:object_r:vendor_sysfs_mmc_host:s0
+/sys/devices/platform/soc/8804000\.sdhci/mmc_host/mmc0/mmc0:aaaa/block/mmcblk0/queue/read_ahead_kb       u:object_r:vendor_sysfs_mmc_host:s0
 
 #for eMMC
 /dev/block/platform/soc/7c4000.sdhci/by-name/abl_[ab]          u:object_r:vendor_custom_ab_block_device:s0
