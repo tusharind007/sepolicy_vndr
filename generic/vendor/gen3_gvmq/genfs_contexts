@@ -32,6 +32,12 @@ genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:objec
 
 # subsys nodes
 genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged/subsys0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca-converged/subsys2/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/name u:object_r:vendor_sysfs_ssr:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/name u:object_r:vendor_sysfs_ssr:s0
 
 #restart level
 genfscon sysfs /devices/platform/soc/soc:qcom,cnss-qca-converged/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/b0000000.qcom,cnss-qca-converged/subsys2/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_fws/subsys0/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,ipa_uc/subsys1/restart_level u:object_r:vendor_sysfs_ssr_toggle:s0
