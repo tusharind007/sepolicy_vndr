@@ -26,5 +26,3 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 allow priv_app vendor_hab_device:chr_file rw_file_perms;
-allow priv_app vendor_sw_sync_file:file rw_file_perms;
-allowxperm priv_app vendor_sw_sync_file:file ioctl { SW_SYNC_IOC_CREATE_FENCE SW_SYNC_IOC_INC };
