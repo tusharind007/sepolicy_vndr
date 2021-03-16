@@ -36,5 +36,6 @@ userdebug_or_eng(`
 allow vendor_esplash graphics_device:chr_file rw_file_perms;
 allow vendor_esplash gpu_device:chr_file rw_file_perms;
 allow vendor_esplash ion_device:chr_file rw_file_perms;
+allow vendor_esplash sysfs_power:file r_file_perms;
 get_prop(vendor_esplash, vendor_initsvc_bootanim_prop)
 get_prop(vendor_esplash, vendor_sysboot_completed_prop)
