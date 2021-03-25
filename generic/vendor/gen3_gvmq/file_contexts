@@ -90,6 +90,7 @@
 /sys/devices/platform/soc/soc:qcom,ipa_uc/subsys[0-9]+/wakeup(/.*)?                                                                              u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/b0000000\.qcom,cnss-qca-converged/wakeup(/.*)?                                                                         u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/b0000000\.qcom,cnss-qca-converged/subsys[0-9]+/wakeup(/.*)?                                                            u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/soc/a88000\.qcom,qup_uart/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 
 /sys/devices/platform/soc/88e0000\.qcom,msm-eud/wakeup(/.*)?                                                                                     u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/soc/20000\.qcom,emac/wakeup(/.*)?                                                                                          u:object_r:sysfs_wakeup:s0
