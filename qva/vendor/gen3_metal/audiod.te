@@ -40,4 +40,12 @@ allow vendor_audiod vendor_proc_audiod:file r_file_perms;
 allow vendor_audiod audio_device:dir r_dir_perms;
 allow vendor_audiod audio_device:chr_file rw_file_perms;
 
+# Allow vendor_audiod to read silent mode node
+allow vendor_audiod sysfs_power:file r_file_perms;
+
+# Allow vendor_audiod to communicate with Audio HAL Plugin Service
+allow vendor_audiod vendor_audio_hal_plugin_service_service:service_manager find;
+binder_call(vendor_audiod, vendor_audio_hal_plugin_service)
+vndbinder_use(vendor_audiod)
+
 wakelock_use(vendor_audiod);
