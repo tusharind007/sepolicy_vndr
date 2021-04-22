@@ -47,3 +47,6 @@ allow tee vendor_persist_qti_fp_file:file create_file_perms;
 
 allowxperm tee vendor_rpmb_device:blk_file ioctl { MMC_IOC_CMD };
 allowxperm tee vendor_rpmb_device:chr_file ioctl {MMC_IOC_MULTI_CMD};
+
+# Allow get prop  access for User space reboot property
+get_prop(tee, userspace_reboot_exported_prop);
