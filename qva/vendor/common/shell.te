@@ -28,3 +28,7 @@
 userdebug_or_eng(`
   allow shell vendor_debugfs_kpi:file r_file_perms;
 ')
+
+userdebug_or_eng(`
+  allow shell vendor_sysfs_kpi:file r_file_perms;
+')
