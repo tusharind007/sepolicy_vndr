@@ -54,9 +54,6 @@
 /dev/hab                                                            u:object_r:vendor_hab_device:s0
 /dev/hgsl                                                           u:object_r:vendor_hgsl_device:s0
 
-#SW Sync
-/sys/kernel/debug/sync/sw_sync                                      u:object_r:vendor_sw_sync_file:s0
-
 /vendor/lib(64)?/libuhab\.so                                        u:object_r:same_process_hal_file:s0
 
 # amfs service

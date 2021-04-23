@@ -37,7 +37,3 @@ allow vendor_hal_ais_qti hal_graphics_allocator_default:fd use;
 allow vendor_hal_ais_qti vendor_ais_server:unix_stream_socket connectto;
 
 add_hwservice(vendor_hal_ais_qti, vendor_hal_ais_hwservice)
-
-userdebug_or_eng(`
-  allow vendor_hal_ais_qti vendor_debugfs_kpi:file rw_file_perms;
-')
