@@ -208,3 +208,9 @@ type vendor_sysfs_suspend, fs_type, sysfs_type;
 type vendor_sysfs_kgsl_gpu_model, sysfs_type, fs_type;
 
 type vendor_sysfs_kgsl_gpuclk, sysfs_type, fs_type;
+
+#EMAC
+type vendor_sysfs_rx_config, fs_type, sysfs_type;
+
+# SKU settings
+type vendor_sysfs_aop_freq_message, fs_type, sysfs_type;

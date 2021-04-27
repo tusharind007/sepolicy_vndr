@@ -30,3 +30,9 @@ allowxperm hal_wifi_default self:udp_socket ioctl { SIOCBRADDBR SIOCBRDELBR SIOC
 
 # allow access vendor prop
 get_prop(hal_wifi_default, vendor_qcom_wlan_prop)
+
+# allow hal_wifi_default to write into /proc/sys/net/ipv4
+allow hal_wifi_default proc_net:file w_file_perms;
+
+# allow bridge/wlan intf mgmt
+allow hal_wifi_default self:capability { sys_module };
