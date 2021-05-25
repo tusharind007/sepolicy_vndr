@@ -49,3 +49,5 @@ allow vendor_ais_server ion_device:chr_file r_file_perms;
 # To create and delete singleton lock
 allow vendor_ais_server vendor_camera_socket:file create;
 allow vendor_ais_server vendor_camera_socket:file unlink;
+# To connect v4l2 proxy service
+allow vendor_ais_server ais_v4l2_proxy:unix_stream_socket { read write };
