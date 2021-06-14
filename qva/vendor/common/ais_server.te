@@ -31,6 +31,7 @@ type vendor_ais_server_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(vendor_ais_server)
 
+allow vendor_ais_server vendor_sysfs_kpi:file w_file_perms;
 userdebug_or_eng(`
 allow vendor_ais_server su:unix_dgram_socket sendto;
 ')
