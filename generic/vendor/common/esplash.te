@@ -30,9 +30,7 @@ type vendor_esplash, domain;
 type vendor_esplash_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(vendor_esplash)
-userdebug_or_eng(`
- allow vendor_esplash vendor_debugfs_kpi:file rw_file_perms;
-')
+allow vendor_esplash vendor_sysfs_kpi:file w_file_perms;
 allow vendor_esplash graphics_device:chr_file rw_file_perms;
 allow vendor_esplash gpu_device:chr_file rw_file_perms;
 allow vendor_esplash ion_device:chr_file rw_file_perms;
