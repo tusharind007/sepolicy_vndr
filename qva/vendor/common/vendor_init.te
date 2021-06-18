@@ -36,6 +36,8 @@ get_prop(vendor_init, vendor_hvdcp_opti_prop)
 get_prop(vendor_init, vendor_boot_mode_prop)
 get_prop(vendor_init, vendor_mmi_prop)
 
+dontaudit vendor_init persist_debug_prop:file r_file_perms;
+
 set_prop(vendor_init, vendor_usb_prop)
 
 get_prop(vendor_init, vendor_video_prop)
