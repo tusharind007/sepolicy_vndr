@@ -1,42 +1,45 @@
 # Board specific SELinux policy variable definitions
 ifeq ($(call is-vendor-board-platform,QCOM),true)
-SEPOLICY_PATH:= device/qcom/sepolicy
+SEPOLICY_PATH:= device/qcom/sepolicy_vndr
+QSSI_SEPOLICY_PATH:= device/qcom/sepolicy
+SYS_ATTR_PROJECT_PATH := $(TOP)/device/qcom/sepolicy/generic/public/attribute
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/generic/public \
-    $(SEPOLICY_PATH)/generic/public/attribute
+    $(QSSI_SEPOLICY_PATH)/generic/public \
+    $(QSSI_SEPOLICY_PATH)/generic/public/attribute
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/generic/private
+    $(QSSI_SEPOLICY_PATH)/generic/private
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR := \
     $(BOARD_PLAT_PUBLIC_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/qva/public \
-    $(SEPOLICY_PATH)/qva/public/attribute
+    $(QSSI_SEPOLICY_PATH)/qva/public \
+    $(QSSI_SEPOLICY_PATH)/qva/public/attribute
 
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := \
     $(BOARD_PLAT_PRIVATE_SEPOLICY_DIR) \
-    $(SEPOLICY_PATH)/qva/private
+    $(QSSI_SEPOLICY_PATH)/qva/private
 
 #once all the services are moved to Product /ODM above lines will be removed.
 # sepolicy rules for product images
 PRODUCT_PUBLIC_SEPOLICY_DIRS := \
     $(PRODUCT_PUBLIC_SEPOLICY_DIRS) \
-    $(SEPOLICY_PATH)/generic/product/public \
-    $(SEPOLICY_PATH)/qva/product/public 
+    $(QSSI_SEPOLICY_PATH)/generic/product/public \
+    $(QSSI_SEPOLICY_PATH)/qva/product/public
 
 PRODUCT_PRIVATE_SEPOLICY_DIRS := \
     $(PRODUCT_PRIVATE_SEPOLICY_DIRS) \
-    $(SEPOLICY_PATH)/generic/product/private \
-    $(SEPOLICY_PATH)/qva/product/private
+    $(QSSI_SEPOLICY_PATH)/generic/product/private \
+    $(QSSI_SEPOLICY_PATH)/qva/product/private
 
-ifeq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PLATFORM)))
+ifeq (,$(filter sdm845 sdm710 msm8937, $(TARGET_BOARD_PLATFORM)))
+$(warning "Build generic/qva sepolicy")
     BOARD_SEPOLICY_DIRS := \
        $(BOARD_SEPOLICY_DIRS) \
        $(SEPOLICY_PATH) \
        $(SEPOLICY_PATH)/generic/vendor/common \
-       $(SEPOLICY_PATH)/qva/vendor/common/sysmonapp \
+       $(SEPOLICY_PATH)/generic/vendor/common/attribute \
        $(SEPOLICY_PATH)/qva/vendor/ssg \
        $(SEPOLICY_PATH)/qva/vendor/common
 
@@ -49,16 +52,18 @@ ifeq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PLA
     endif
 
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/generic/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/sysmonapp
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/qva/vendor/test/mst_test_app
     endif
 endif
 
-ifneq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PLATFORM)))
+ifneq (,$(filter sdm845 sdm710 msm8937, $(TARGET_BOARD_PLATFORM)))
+$(warning "Build legacy sepolicy")
     BOARD_SEPOLICY_DIRS := \
                  $(BOARD_SEPOLICY_DIRS) \
                  $(SEPOLICY_PATH) \
-                 $(SEPOLICY_PATH)/legacy/vendor/common/sysmonapp \
                  $(SEPOLICY_PATH)/legacy/vendor/ssg \
                  $(SEPOLICY_PATH)/legacy/vendor/common
 
@@ -68,7 +73,8 @@ ifneq (,$(filter sdm845 sdm710 sdm660 msm8937 msm8953 msm8998, $(TARGET_BOARD_PL
       BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/$(TARGET_SEPOLICY_DIR)
     endif
     ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-    BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/test
+      BOARD_SEPOLICY_DIRS += $(SEPOLICY_PATH)/legacy/vendor/test/sysmonapp
     endif
 endif
 endif
