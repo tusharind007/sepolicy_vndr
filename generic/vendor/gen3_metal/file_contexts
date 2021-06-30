@@ -35,6 +35,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/metadata              u:object_r:metadata_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/userdata              u:object_r:userdata_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/boot                  u:object_r:boot_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/vendor_boot           u:object_r:boot_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/logdump               u:object_r:vendor_logdump_partition:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/fsc                   u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/fsg                   u:object_r:vendor_modem_efs_partition_device:s0
@@ -64,6 +65,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/apdp_[ab]             u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/bluetooth_[ab]        u:object_r:vendor_modem_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/boot_[ab]             u:object_r:boot_block_device:s0
+/dev/block/platform/soc/1d84000.ufshc/by-name/vendor_boot_[ab]      u:object_r:boot_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/cmnlib_[ab]           u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/cmnlib64_[ab]         u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/devcfg_[ab]           u:object_r:vendor_custom_ab_block_device:s0
@@ -233,6 +235,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/abl_[ab]          u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/apdp_[ab]         u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/boot_[ab]         u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/vendor_boot_[ab]  u:object_r:boot_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/cmnlib_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/cmnlib64_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/devcfg_[ab]       u:object_r:vendor_custom_ab_block_device:s0
@@ -262,11 +265,12 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/vbmeta_system_[ab]     u:object_r:vendor_custom_ab_block_device:s0
 
 #non A/B
-/dev/block/platform/soc/7c4000.sdhci/by-name/system                            u:object_r:system_block_device:s0
-/dev/block/platform/soc/7c4000.sdhci/by-name/metadata                            u:object_r:metadata_block_device:s0
-/dev/block/platform/soc/7c4000.sdhci/by-name/userdata                          u:object_r:userdata_block_device:s0
-/dev/block/platform/soc/7c4000.sdhci/by-name/boot                              u:object_r:boot_block_device:s0
-/dev/block/platform/soc/7c4000.sdhci/by-name/logdump                           u:object_r:vendor_logdump_partition:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/system                             u:object_r:system_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/metadata                           u:object_r:metadata_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/userdata                           u:object_r:userdata_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/boot                               u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/vendor_boot                        u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/logdump                            u:object_r:vendor_logdump_partition:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/fsc                                u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/fsg                                u:object_r:vendor_modem_efs_partition_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/modemst1                           u:object_r:vendor_modem_efs_partition_device:s0
