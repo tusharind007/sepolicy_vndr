@@ -119,6 +119,7 @@
 /(vendor|system/vendor)/bin/ks                                                     u:object_r:vendor_mdm_helper_exec:s0
 /(vendor|system/vendor)/bin/mmi                                                    u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.3-service.playready-qti   u:object_r:vendor_hal_drm_playready_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service         u:object_r:vendor_hal_factory_qti_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.[0-1]-service u:object_r:vendor_hal_srvctracker_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
@@ -147,6 +148,8 @@
 /(vendor|system/vendor)/bin/garden_app                                             u:object_r:vendor_location_exec:s0
 /(vendor|system/vendor)/bin/DR_AP_Service                                          u:object_r:vendor_location_exec:s0
 /(vendor|system/vendor)/bin/slim_daemon                                            u:object_r:vendor_location_exec:s0
+/(vendor|system/vendor)/bin/edgnss-daemon                                          u:object_r:vendor_location_exec:s0
+
 #GNSS SiRFStarV device
 /dev/ttyHS1                                                                        u:object_r:vendor_location_device:s0
 /dev/gnss_sirf                                                                     u:object_r:vendor_location_device:s0

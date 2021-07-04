@@ -47,3 +47,4 @@ allow vendor_ais_server ion_device:chr_file r_file_perms;
 # To create and delete singleton lock
 allow vendor_ais_server vendor_camera_socket:file create;
 allow vendor_ais_server vendor_camera_socket:file unlink;
+allow vendor_ais_server vendor_sysfs_kpi:file w_file_perms;

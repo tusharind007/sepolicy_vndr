@@ -41,3 +41,5 @@ allow vendor_audio_chime vendor_audio_hal_plugin_service:binder call;
 allow vendor_audio_chime vendor_audio_hal_plugin_service_service:service_manager find;
 vndbinder_use(vendor_audio_chime)
 get_prop(vendor_audio_chime, vendor_audio_prop)
+
+allow vendor_audio_chime vendor_sysfs_kpi:file w_file_perms;

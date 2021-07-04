@@ -49,3 +49,4 @@ binder_call(vendor_audiod, vendor_audio_hal_plugin_service)
 vndbinder_use(vendor_audiod)
 
 wakelock_use(vendor_audiod);
+allow vendor_audiod vendor_sysfs_kpi:file w_file_perms;
