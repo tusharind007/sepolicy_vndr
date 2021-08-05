@@ -53,5 +53,6 @@ allow vendor_ais_server vendor_camera_socket:file unlink;
 allow vendor_ais_server ais_v4l2_proxy:unix_stream_socket { read write };
 
 allow vendor_ais_server su:fifo_file read;
-allow vendor_ais_server self:qipcrtr_socket create;
+allow vendor_ais_server self:qipcrtr_socket create_socket_perms;
+allowxperm vendor_ais_server self:qipcrtr_socket ioctl msm_sock_ipc_ioctls;
 allow vendor_ais_server vendor_sysfs_kpi:file w_file_perms;
