@@ -1,4 +1,4 @@
-# Copyright (c) 2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2021, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -12,7 +12,7 @@
 #    * Neither the name of The Linux Foundation nor the names of its
 #      contributors may be used to endorse or promote products derived
 #      from this software without specific prior written permission.
-#
+
 # THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
 # WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -25,74 +25,21 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-define(`gpu_ioctls', `{
-IOCTL_KGSL_DEVICE_GETPROPERTY
-IOCTL_KGSL_DEVICE_WAITTIMESTAMP_CTXTID
-IOCTL_KGSL_DRAWCTXT_CREATE
-IOCTL_KGSL_DRAWCTXT_DESTROY
-IOCTL_KGSL_MAP_USER_MEM
-IOCTL_KGSL_SHAREDMEM_FREE
-IOCTL_KGSL_SETPROPERTY
-IOCTL_KGSL_TIMESTAMP_EVENT
-IOCTL_KGSL_PERFCOUNTER_GET
-IOCTL_KGSL_PERFCOUNTER_PUT
-IOCTL_KGSL_SYNCSOURCE_CREATE
-IOCTL_KGSL_SYNCSOURCE_DESTROY
-IOCTL_KGSL_SYNCSOURCE_CREATE_FENCE
-IOCTL_KGSL_SYNCSOURCE_SIGNAL_FENCE
-IOCTL_KGSL_GPUOBJ_ALLOC
-IOCTL_KGSL_GPUOBJ_FREE
-IOCTL_KGSL_GPUOBJ_INFO
-IOCTL_KGSL_GPUOBJ_IMPORT
-IOCTL_KGSL_GPUOBJ_SYNC
-IOCTL_KGSL_GPU_COMMAND
-}')
+type vendor_early_chime, domain;
+type vendor_early_chime_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(vendor_early_chime)
 
-define(`msm_sock_ipc_ioctls', `{
-IPC_ROUTER_IOCTL_GET_VERSION
-IPC_ROUTER_IOCTL_GET_MTU
-IPC_ROUTER_IOCTL_LOOKUP_SERVER
-IPC_ROUTER_IOCTL_GET_CURR_PKT_SIZE
-IPC_ROUTER_IOCTL_BIND_CONTROL_PORT
-IPC_ROUTER_IOCTL_CONFIG_SEC_RULES
-}')
-
-define(`msm_sock_qrtr_ioctls', `{
-TIOCOUTQ
-}')
-
-define(`rmnet_sock_ioctls', `{
-SIOCDEVPRIVATE_1
-SIOCDEVPRIVATE_2
-SIOCDEVPRIVATE_3
-SIOCDEVPRIVATE_4
-SIOCDEVPRIVATE_5
-SIOCDEVPRIVATE_6
-SIOCDEVPRIVATE_7
-SIOCDEVPRIVATE_8
-SIOCDEVPRIVATE_9
-SIOCDEVPRIVATE_A
-SIOCDEVPRIVATE_B
-SIOCDEVPRIVATE_C
-SIOCDEVPRIVATE_D
-}')
-
-define(`wlan_sock_ioctls', `{
-SIOCSIWPRIV
-SIOCIWFIRSTPRIV_15
-}')
-
-define(`lowi_server_ioctls', `{
-SIOCGIFINDEX
-SIOCGIFHWADDR
-SIOCGIFFLAGS
-SIOCIWFIRSTPRIV_05
-SIOCIWFIRSTPRIV_11
-SIOCIWFIRSTPRIV_13
-SIOCDEVPRIVATE_1
-}')
-
-define(`ethavb_ptp_ioctls', `{
-PTP_CLOCK_GETCAPS
-PTP_SYS_OFFSET
-}')
+allow vendor_early_chime audio_device:dir search;
+allow vendor_early_chime audio_device:dir rw_dir_perms;;
+allow vendor_early_chime audio_device:chr_file rw_file_perms;
+allow vendor_early_chime audio_device:chr_file {map ioctl};
+allow vendor_early_chime kmsg_device:chr_file rw_file_perms;
+allow vendor_early_chime sysfs:file rw_file_perms;
+allow vendor_early_chime vendor_early_services:dir r_dir_perms;
+allow vendor_early_chime vendor_early_services:file r_file_perms;
+allow vendor_early_chime vendor_early_chime:capability {sys_module};
+allow vendor_early_chime vendor_acdb_loader_service:binder call;
+allow vendor_early_chime vendor_acdb_loader_service_service:service_manager find;
+allow vendor_early_chime vendor_audio_hal_plugin_service:binder call;
+allow vendor_early_chime vendor_audio_hal_plugin_service_service:service_manager find;
+allow vendor_early_chime vendor_sysfs_kpi:file w_file_perms;
