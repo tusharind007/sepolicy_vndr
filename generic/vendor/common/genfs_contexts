@@ -93,6 +93,7 @@ genfscon sysfs /class/typec                                             u:object
 genfscon sysfs /class/typec/usbc0                                       u:object_r:vendor_sysfs_usb_c:s0
 genfscon sysfs /devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb1 u:object_r:vendor_sysfs_usb_device:s0
 genfscon sysfs /devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto/usb2 u:object_r:vendor_sysfs_usb_device:s0
+genfscon sysfs /devices/platform/soc/a400000.ssusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
 genfscon sysfs /devices/platform/soc/a600000.ssusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
 genfscon sysfs /devices/platform/soc/a800000.ssusb/mode                 u:object_r:vendor_sysfs_usb_device:s0
 
@@ -146,4 +147,3 @@ genfscon debugfs /msm_ipc_router                      u:object_r:vendor_debugfs_
 genfscon debugfs /mdp                                 u:object_r:vendor_debugfs_mdp:s0
 genfscon debugfs /rmt_storage                         u:object_r:vendor_debugfs_rmt_storage:s0
 genfscon debugfs /icnss                               u:object_r:vendor_debugfs_icnss:s0
-genfscon debugfs /bootkpi/kpi_values                  u:object_r:vendor_debugfs_kpi:s0

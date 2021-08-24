@@ -41,3 +41,4 @@ allow vendor_audiod audio_device:dir r_dir_perms;
 allow vendor_audiod audio_device:chr_file rw_file_perms;
 
 wakelock_use(vendor_audiod);
+allow vendor_audiod vendor_sysfs_kpi:file w_file_perms;

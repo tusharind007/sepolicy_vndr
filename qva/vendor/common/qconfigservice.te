@@ -1,4 +1,4 @@
-# Copyright (c) 2019, The Linux Foundation. All rights reserved.
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
 
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are
@@ -25,8 +25,13 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-hal_server_domain(hal_bluetooth_default, vendor_hal_fm)
-hal_server_domain(hal_bluetooth_default, vendor_hal_btconfigstore)
-hal_client_domain(hal_bluetooth_default, hal_vehicle)
-# hal_bluetooth_default needes  open read on fm_radio_device
-allow hal_bluetooth_default vendor_fm_radio_device:chr_file r_file_perms;
+type vendor_qconfigservice, domain;
+type vendor_qconfigservice_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(vendor_qconfigservice)
+hal_server_domain(vendor_qconfigservice, vendor_hal_qconfig)
+
+hal_attribute_hwservice(vendor_hal_qconfig, vendor_hal_qconfig_hwservice)
+
+binder_call(vendor_hal_qconfig_client, vendor_hal_qconfig_server)
+binder_call(vendor_hal_qconfig_server, vendor_hal_qconfig_client)
