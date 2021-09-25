@@ -47,6 +47,7 @@ dontaudit kernel kernel:system module_request;
 #re-exec early init.
 allow kernel vendor_early_services:dir r_dir_perms;
 allow kernel vendor_early_services:file r_file_perms;
+allow kernel vendor_early_services:lnk_file read;
 
 #Allow early init first stage to log to kmesg
 #To be removed once restorecon is up
