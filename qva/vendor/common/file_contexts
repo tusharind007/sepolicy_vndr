@@ -119,7 +119,7 @@
 /(vendor|system/vendor)/bin/mmid                                                   u:object_r:vendor_mmi_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.3-service.playready-qti   u:object_r:vendor_hal_drm_playready_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.factory@1\.0-service         u:object_r:vendor_hal_factory_qti_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.[0-1]-service u:object_r:vendor_hal_srvctracker_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.servicetracker@1\.[0-2]-service u:object_r:vendor_hal_srvctracker_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.cvp@1\.0-service             u:object_r:vendor_cvp_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.qti\.hardware\.secureprocessor@1\.0-seccam-tee-qti      u:object_r:vendor_hal_secureprocessor_qti_exec:s0
 /(vendor|system/vendor)/bin/fstman                                                 u:object_r:vendor_fstman_exec:s0
@@ -238,6 +238,7 @@
 /(vendor|system/vendor)/bin/ais_server                              u:object_r:vendor_ais_server_exec:s0
 /dev/socket/camera(/.*)?                                            u:object_r:vendor_camera_socket:s0
 /(vendor|system/vendor)/bin/qcarcam_edrm_rvc                        u:object_r:vendor_qcarcam_edrm_rvc_exec:s0
+/(vendor|system/vendor)/bin/ais_v4l2_proxy                          u:object_r:vendor_ais_v4l2_proxy_exec:s0
 # EVS and Qcarcam HAL
 /(vendor|system/vendor)/bin/android\.hardware\.automotive\.evs@1\.1-ais     u:object_r:vendor_hal_evs_driver_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor.qti.automotive.qcarcam@1.0-service    u:object_r:vendor_hal_ais_qti_exec:s0
